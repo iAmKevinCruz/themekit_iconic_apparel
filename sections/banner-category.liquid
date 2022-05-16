@@ -1,0 +1,181 @@
+{%- assign default_banner_image = true -%}
+<div class="category-banner">
+  {% for block in section.blocks %}
+  
+  {% assign collection_handle = block.settings.collection %}
+  <span data-stl="{{ block.settings.collection}}" data-ss="{{collection_handle}}"></span>
+  {% if collection_handle == collection.handle %}
+  {%- assign default_banner_image = false -%}
+  <div class="header-menu-img">
+    {% if block.settings.image_link != blank %}
+      <a class="image-bar__link" href="{{ block.settings.image_link }}"> 
+    {% endif %}
+      <div class="desktop-banner">
+        {% if block.settings.banner-img %}
+        {{ block.settings.banner-img | img_url: '600x1900', scale: 2 | img_tag: block.settings.banner-img.alt, 'logo-bar__image' }}
+        {% endif %}     
+        <h1>
+            <span role="text">
+              <span class="visually-hidden">{{ 'collections.general.collection_label' | t }}: </span>
+              {{ collection.title }}
+            </span>  
+        </h1>  
+      </div>  
+      <div class="mobile-banner">
+        {% if block.settings.mobile-banner-img %}
+        {{ block.settings.mobile-banner-img | img_url: '350x1800', scale: 2 | img_tag: block.settings.mobile-banner-img.alt, 'logo-bar__image' }}
+        {% endif %} 
+      </div>
+      <div class="banner-text-inner-page"> 
+        <div class="page-width-small left-right-heading">
+           <h1 class="h2">
+                <span class="visually-hidden">{{ 'collections.general.collection_label' | t }}: </span>
+                {{ collection.title }}
+           </h1> 
+        </div>
+      </div>
+    {% if block.settings.image_link != blank %}
+      </a>
+    {% endif %}
+  </div>           
+  {% endif %}            
+  {% endfor %}
+  {%- if default_banner_image and section.settings.default_banner_img and section.settings.default_mobile_banner_img -%}
+    <div class="header-menu-img">
+        <div class="desktop-banner">
+          {% if section.settings.default_banner_img %}
+          {{ section.settings.default_banner_img | img_url: '600x1900', scale: 2 | img_tag: section.settings.default_banner_img.alt, 'logo-bar__image' }}
+          {% endif %}     
+          <h1>
+              <span role="text">
+                <span class="visually-hidden">{{ 'collections.general.collection_label' | t }}: </span>
+                {{ collection.title }}
+              </span>  
+          </h1>  
+        </div>  
+        <div class="mobile-banner">
+          {% if section.settings.default_mobile_banner_img %}
+          {{ section.settings.default_mobile_banner_img | img_url: '350x1800', scale: 2 | img_tag: section.settings.default_mobile_banner_img.alt, 'logo-bar__image' }}
+          {% endif %} 
+        </div>
+        <div class="banner-text-inner-page"> 
+          <div class="page-width-small left-right-heading">
+             <h1 class="h2">
+                  <span class="visually-hidden">{{ 'collections.general.collection_label' | t }}: </span>
+                  {{ collection.title }}
+             </h1> 
+          </div>
+        </div>
+    </div>
+  {%- endif -%}
+</div>
+<style>
+  .header-menu-img .desktop-banner{
+    padding-bottom:26%;
+    position: relative;
+    min-height:400px;
+  }
+  .header-menu-img .desktop-banner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+  
+@media (min-width: 300px) and (max-width:749px) {
+ 
+.template-collection .category-banner .desktop-banner {
+    display: none !important;
+}  
+
+  
+}
+@media (min-width: 750px){  
+.mobile-banner {
+    display: none! important;
+}  
+}
+</style>
+
+{% schema %}
+{
+  "name": {
+    "en": "Category Banner"
+  },
+  "settings": [
+    {
+          "type": "image_picker",
+          "id": "default_banner_img",
+          "label": "Default Collection Banner"
+        },
+        {
+          "type": "image_picker",
+          "id": "default_mobile_banner_img",
+          "label": "Default Mobile Collection Banner"
+        }
+  ],
+ "blocks": [
+    {
+      "type": "image",
+      "name": {
+        "en": "Banners for collections",        
+        "zh-TW": "圖片"
+      },
+      "settings": [
+       {
+        "type": "collection",
+        "id": "collection",
+        "label": "Select collection",
+        "info": "Collection specific banner image"
+       },
+       {
+          "type": "image_picker",
+          "id": "banner-img",
+          "label": {       
+            "en": "Collection Banner"
+          }
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile-banner-img",
+          "label": {       
+            "en": "Mobile Collection Banner"
+          }
+        },        
+        {
+          "type": "url",
+          "id": "image_link",
+          "label": {        
+            "en": "Link"                  
+          }, 
+          "info": {
+            "de": "Optional",
+            "en": "Optional",
+            "zh-TW": "(選填)"
+          }
+        }
+     
+      ]
+    }
+  ]
+  
+}
+{% endschema %}
+<style>
+ @media (min-width: 300px) and (max-width: 749px) {
+ 
+.template-collection .category-banner .desktop-banner {
+    display: none !important;
+}  
+
+}
+@media (min-width:750px){  
+.mobile-banner {
+    display: none! important;
+}  
+}
+</style>

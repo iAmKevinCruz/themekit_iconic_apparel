@@ -1,0 +1,71 @@
+<div class="page-width grid-slider-collection">
+  <div class="section-header text-center left-right-heading">
+    {% if section.settings.title != blank %}
+        <h2>{{ section.settings.title | escape }}</h2>
+    {% endif %}
+    {% if section.settings.title1 != blank %}
+        <span><a class="only-link bold-link" href="{{section.settings.shop-url}}">{{ section.settings.title1 | escape }}</a></span>
+    {% endif %}
+    </div>
+    {%- assign max_height = 250 -%}
+    {%- assign grid_item_width = 'small--one-half medium-up--one-quarter' -%}
+    {%- if section.blocks.size > 0 -%}
+      <ul class="grid grid--uniform grid--view-items grid-slider-pro">
+		{%- for block in section.blocks -%}
+          {%- assign product = all_products[block.settings.product] -%}
+          <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
+            {% include 'home-product-card-grid', max_height: max_height, product: product %}
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+</div>
+{% schema %}
+{
+  "name": "Featured product list",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titel",
+      "default": "Hats that Feed People"
+    },
+    {
+      "type": "text",
+      "id": "title1",
+      "label": "Shop"
+    },
+    {
+      "type": "url",
+      "id": "shop-url",
+      "label": "Shop url"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured product list",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

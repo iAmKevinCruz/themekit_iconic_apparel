@@ -1,0 +1,1124 @@
+{
+  "current": {
+    "color_text": "#000000",
+    "color_body_text": "#333232",
+    "color_sale_text": "#fa4545",
+    "color_button": "#000000",
+    "color_button_text": "#ffffff",
+    "color_small_button_text_border": "#3a3a3a",
+    "color_text_field_text": "#000000",
+    "color_text_field_border": "#000000",
+    "color_text_field": "rgba(0,0,0,0)",
+    "color_image_overlay_text": "#ffffff",
+    "color_image_overlay": "#685858",
+    "image_overlay_opacity": 40,
+    "color_borders": "#ebebeb",
+    "color_body_bg": "#ffffff",
+    "type_header_font": "montserrat_n5",
+    "type_header_base_size": 36,
+    "type_base_font": "montserrat_n4",
+    "type_base_size": 20,
+    "predictive_search_enabled": true,
+    "predictive_search_show_vendor": false,
+    "predictive_search_show_price": true,
+    "share_image": "shopify:\/\/shop_images\/Iconicapparel.png",
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
+    "social_twitter_link": "",
+    "social_facebook_link": "https:\/\/www.facebook.com\/Iconicapparel",
+    "social_pinterest_link": "",
+    "social_instagram_link": "https:\/\/www.instagram.com\/iconicapparel\/",
+    "social_tumblr_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "favicon": "shopify:\/\/shop_images\/X-Black.png",
+    "enable_ajax": true,
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Iconicapparel_Logo_Black_RGB_2x_87585b48-9035-4016-93d7-a84cb7d4c076.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "small",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "Abel",
+    "checkout_body_font": "Abel",
+    "checkout_accent_color": "#333232",
+    "checkout_button_color": "#000000",
+    "checkout_error_color": "#e32c2b",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "align_logo": "center",
+          "logo": "shopify:\/\/shop_images\/Iconicapparel_Logotype_Black_RGB_4x_99b43506-0f90-47e5-b74c-bebd8a3fb4d2.png",
+          "logo_sticky": "shopify:\/\/shop_images\/Iconic-logo-Black.png",
+          "logo_max_width": 260,
+          "main_linklist": "main-menu-1",
+          "message": false,
+          "home_page_only": true,
+          "message_text": "Free U.S shipping over $75 | Free international shipping over $150",
+          "message_link": "",
+          "color_bg": "#000000",
+          "color_text": "#ffffff"
+        }
+      },
+      "feature-row": {
+        "type": "feature-row",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/100KGraphic2_1_copy.png",
+          "layout": "right",
+          "title": "AloneTogether™ Campaign",
+          "text": "<br>\n<p>Isolation doesn't mean you have to be alone.<\/p>\n<p>At Iconic Apparel, we believe in physical distancing while maintaining social interaction. Through the AloneTogether™ campaign, unite with others and share your story! <\/p>\n<p><\/p>\n<p>The first $100,000 in hat sales will be donated to Feeding America’s® COVID-19 Response Fund. <\/p>\n<p><\/p>\n<p>Together, we can make a difference.<br><br><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0348\/1285\/4408\/files\/fw0qOtuw-2-1.png?v=1586843362\"><a href=\"https:\/\/www.instagram.com\/iconiclids\/\" title=\"https:\/\/www.instagram.com\/iconicapparel\/\">@IconicApparel <br>\n<\/a><a href=\"https:\/\/www.instagram.com\/explore\/tags\/hatsthatfeedpeople\/\" title=\"https:\/\/www.instagram.com\/explore\/tags\/hatsthatfeedpeople\/\"> #HatsThatFeedPeople<\/a><\/p>",
+          "button_label": "Shop Now",
+          "button_link": "shopify:\/\/collections\/alonetogether-campaign",
+          "button_position": "below_description"
+        }
+      },
+      "feature-columns": {
+        "type": "feature-columns",
+        "blocks": {
+          "feature-columns-0": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/Image2_1.png",
+              "title": "Food Bank for the Heartland – Omaha, NE",
+              "text": "<p>Food Bank for the Heartland volunteers and staff distributed more than 9,300 pounds of food at an emergency drive-up mobile pantry in Omaha during the COVID-19 pandemic.<\/p>",
+              "button_label": ""
+            }
+          },
+          "feature-columns-1": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/Mr_Reeves2_1.png",
+              "title": "San Antonio Food Bank - San Antonio, TX",
+              "text": "<p>Mr. Reeves is the Academic Dean at a middle school in San Antonio. His school is working with the San Antonio Food Bank to host an emergency food distribution during the COVID- 19 pandemic.<\/p>",
+              "button_label": ""
+            }
+          },
+          "feature-columns-2": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/FB_of_Southern_Tier5-1_1.png",
+              "title": "Food Bank of the Southern Tier – Elmira, NY",
+              "text": "<p>Food Bank of the Southern Tier volunteers load up cars at a &quot;no-contact&quot; food distribution during the COVID-19 pandemic. Clients received nearly 60 pounds of canned food, produce and frozen meat.<\/p>",
+              "button_label": ""
+            }
+          }
+        },
+        "block_order": [
+          "feature-columns-0",
+          "feature-columns-1",
+          "feature-columns-2"
+        ],
+        "settings": {
+          "title": "",
+          "align_text": "left"
+        }
+      },
+      "collection": {
+        "type": "collection",
+        "settings": {
+          "title": "Featured collection",
+          "collection": "",
+          "grid": 4,
+          "rows": 2,
+          "show_vendor": false,
+          "show_view_all": false
+        }
+      },
+      "quotes": {
+        "type": "quotes",
+        "disabled": true,
+        "blocks": {
+          "quotes-0": {
+            "type": "quote",
+            "settings": {
+              "quote": "<p>Quote is pending.Quote is pending.Quote is pending.<\/p>",
+              "author": "",
+              "image": "shopify:\/\/shop_images\/lct4QAlg.png"
+            }
+          }
+        },
+        "block_order": [
+          "quotes-0"
+        ],
+        "settings": {
+          "title": ""
+        }
+      },
+      "image-bar": {
+        "type": "image-bar",
+        "blocks": {
+          "image-bar-0": {
+            "type": "image",
+            "settings": {
+              "alignment": "center",
+              "cta_label": ""
+            }
+          },
+          "image-bar-1": {
+            "type": "image",
+            "settings": {
+              "alignment": "center",
+              "cta_label": ""
+            }
+          },
+          "image-bar-2": {
+            "type": "image",
+            "settings": {
+              "alignment": "center",
+              "cta_label": ""
+            }
+          }
+        },
+        "block_order": [
+          "image-bar-0",
+          "image-bar-1",
+          "image-bar-2"
+        ],
+        "settings": {
+          "section_height": "medium"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "30540827-4b8d-4d5a-967b-da73b8f831a6": {
+            "type": "newsletter",
+            "settings": {
+              "title": "",
+              "name-sub": "Stay connected. Subscribe to our newsletter."
+            }
+          },
+          "45467140-58bb-451f-a6f1-0fc1267e8c7a": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/ia-logo_3ec1c303-a057-4a39-a1ca-43fc30eca8f6.png"
+            }
+          },
+          "1586969299427": {
+            "type": "text",
+            "settings": {
+              "title": "Born in Los Angeles",
+              "text": "<p>contact@iconicapparel.com<\/p>"
+            }
+          },
+          "472b035a-bc3b-4846-b841-a828c42e944e": {
+            "type": "socila-share",
+            "settings": {
+              "show_payment_icons": true
+            }
+          },
+          "footer-0": {
+            "type": "link_list",
+            "settings": {
+              "title": "",
+              "menu": "footer-menu-new"
+            }
+          }
+        },
+        "block_order": [
+          "30540827-4b8d-4d5a-967b-da73b8f831a6",
+          "45467140-58bb-451f-a6f1-0fc1267e8c7a",
+          "1586969299427",
+          "472b035a-bc3b-4846-b841-a828c42e944e",
+          "footer-0"
+        ],
+        "settings": {
+          "show_payment_icons": false,
+          "color_footer_bg": "#000000",
+          "color_footer_text": "#ffffff",
+          "show_locale_selector": true,
+          "show_currency_selector": true
+        }
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "cart_ajax_enable": true,
+          "cart_notes_enable": false,
+          "shipping_text": "Complimentary shipping within the United States."
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "blocks": {
+          "7339626f-a022-4456-b895-e76dbcd78917": {
+            "type": "text",
+            "settings": {
+              "content_title": "MATERIALS AND CARE",
+              "content_description": "<p>Iconic Apparel products are made with carefully selected materials. Please handle with care for longer product life.<\/p>"
+            }
+          },
+          "2f0bec7a-087e-4be3-a10e-f7eace83aed6": {
+            "type": "text",
+            "settings": {
+              "content_title": "SHIPPING & RETURNS",
+              "content_description": "<p>Complimentary shipping for all orders within the United States.<\/p><p> • Ground- complimentary in the US<\/p><p> • 2nd day- $25<\/p><p> • Overnight- $50<\/p><p>Complimentary returns for all orders within the United States. <a href=\"\/pages\/contact-1\" title=\"Contact\">Visit our FAQ page to learn more here.<\/a><\/p>"
+            }
+          },
+          "4a6b6efe-53a1-46b2-815b-8d88244ab4a8": {
+            "type": "text",
+            "settings": {
+              "content_title": "STREETWEAR WITH A PURPOSE",
+              "content_description": "<p>For every item purchased, a minimum of 10 meals will be donated to a vetted hunger relief organization.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "7339626f-a022-4456-b895-e76dbcd78917",
+          "2f0bec7a-087e-4be3-a10e-f7eace83aed6",
+          "4a6b6efe-53a1-46b2-815b-8d88244ab4a8"
+        ],
+        "settings": {
+          "show_quantity_selector": false,
+          "show_variant_labels": true,
+          "show_vendor": false,
+          "enable_payment_button": false,
+          "show_share_buttons": true,
+          "media_size": "medium",
+          "enable_image_zoom": true,
+          "enable_video_looping": false
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_product_recommendations": false,
+          "heading": "You may also like",
+          "show_vendor": false
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "layout": "grid",
+          "grid": 3,
+          "rows": 7,
+          "show_collection_image": false,
+          "show_vendor": false,
+          "sort_enable": false,
+          "tags_enable": true
+        }
+      },
+      "list-collections-template": {
+        "type": "list-collections-template",
+        "settings": {
+          "display_type": "all",
+          "sort": "alphabetical",
+          "grid": 3
+        }
+      },
+      "password-header": {
+        "type": "password-header",
+        "settings": {
+          "logo": "",
+          "logo_max_width": 100,
+          "header": "Coming Soon"
+        }
+      },
+      "password-content": {
+        "type": "password-content",
+        "settings": {
+          "newsletter_enable": true,
+          "newsletter_form_heading": "Be the first to know when we launch.",
+          "newsletter_form_subheading": "<p>A short sentence describing what someone will receive by subscribing<\/p>",
+          "newsletter_placeholder": "Email address",
+          "newsletter_button_text": "Notify me"
+        }
+      },
+      "password-footer": {
+        "type": "password-footer",
+        "settings": {
+          "show_share_buttons": true,
+          "social_message": "Spread the word"
+        }
+      },
+      "blog-template": {
+        "type": "blog-template",
+        "settings": {
+          "layout": "grid",
+          "blog_show_author": true,
+          "blog_show_date": true
+        }
+      },
+      "product-banner": {
+        "type": "product-banner",
+        "settings": {
+          "title": "<small>Feeding America<sup class=\"small_r\">®️<\/sup> &amp; Food Banks Canada\n<\/small><p><\/p>",
+          "subtitle": ""
+        }
+      },
+      "page-banner": {
+        "type": "page-banner",
+        "blocks": {
+          "1586842911172": {
+            "type": "page-banner",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Banner-ContactPage_2x_a22d7ff5-c5eb-448e-a114-46b4f8d68bd5.png",
+              "page": "contact",
+              "title": "FAQ’s",
+              "subtitle": "contact@iconicapparel.com"
+            }
+          }
+        },
+        "block_order": [
+          "1586842911172"
+        ],
+        "settings": {}
+      },
+      "1608705353bac2bc47": {
+        "type": "slideshow",
+        "blocks": {
+          "1608705353bac2bc47-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/ICONICAPPARELSSM22-95_copy.jpg",
+              "alignment": "center top",
+              "slide_title": "",
+              "subheading": "",
+              "button_label": "DISCOVER",
+              "button_link": "shopify:\/\/collections\/apparel-1"
+            }
+          }
+        },
+        "block_order": [
+          "1608705353bac2bc47-0"
+        ],
+        "settings": {
+          "slideshow_height": "adapt",
+          "text_size": "large",
+          "text_alignment": "center center",
+          "show_overlay": false,
+          "autorotate": false,
+          "autorotate_speed": 5
+        }
+      },
+      "1608707122342b4341": {
+        "type": "collection-list",
+        "blocks": {
+          "1608707122342b4341-0": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "hats-that-feed-people-1",
+              "collection_title": "Hats",
+              "collection_image": "shopify:\/\/shop_images\/BC-FEMALE-WT_BK-3_4.png",
+              "button_label": "shop now",
+              "button_link": "shopify:\/\/collections\/hats-that-feed-people-1"
+            }
+          },
+          "1608707122342b4341-1": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "apparel-1",
+              "collection_title": "",
+              "collection_image": "shopify:\/\/shop_images\/ICONICAPPARELSSM22-111-edited_1.jpg",
+              "button_label": "shop now",
+              "button_link": "\/timer-popup"
+            }
+          }
+        },
+        "block_order": [
+          "1608707122342b4341-0",
+          "1608707122342b4341-1"
+        ],
+        "settings": {
+          "title": "",
+          "grid": 2
+        }
+      },
+      "1608708924643c1f5f": {
+        "type": "rich-text",
+        "settings": {
+          "full_width": false,
+          "section_title": "LA vs NY",
+          "text": "<p><\/p>",
+          "button_label": "shop now",
+          "button_link": "shopify:\/\/collections\/la-vs-ny",
+          "button_label2": "",
+          "button_link2": "",
+          "text_size": "medium"
+        }
+      },
+      "1608710778c8340f5f": {
+        "type": "collection",
+        "settings": {
+          "title": "Hats that Feed People",
+          "title1": "shop all hats",
+          "shop-url": "shopify:\/\/collections\/hats-that-feed-people-1",
+          "collection": "frontpage",
+          "grid": 4,
+          "rows": 2,
+          "show_vendor": true,
+          "show_view_all": false
+        }
+      },
+      "1608710788c3106e51": {
+        "type": "rich-text",
+        "settings": {
+          "full_width": false,
+          "section_title": "Streetwear<br>With a Purpose",
+          "text": "",
+          "button_label": "Shop Now",
+          "button_link": "shopify:\/\/collections\/hats-that-feed-people-1",
+          "button_label2": "Mission",
+          "button_link2": "shopify:\/\/pages\/mission",
+          "text_size": "medium"
+        }
+      },
+      "16087944665b6daeec": {
+        "type": "image-bar",
+        "blocks": {
+          "16087944665b6daeec-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Iconic_Web_-_Landscape_Truckers_edited.jpg",
+              "alignment": "center",
+              "button_label": "shop now",
+              "button_link": "shopify:\/\/collections\/la-vs-ny",
+              "cta_label": "FEATURED CAMPAIGN"
+            }
+          }
+        },
+        "block_order": [
+          "16087944665b6daeec-0"
+        ],
+        "settings": {
+          "section_height": "x-large"
+        }
+      },
+      "banner-category": {
+        "type": "banner-category",
+        "blocks": {
+          "51cfd682-56a8-45df-b441-1ab2beaf4df8": {
+            "type": "image",
+            "settings": {
+              "collection": "hats",
+              "banner-img": "shopify:\/\/shop_images\/QQ1A0495.png",
+              "mobile-banner-img": "shopify:\/\/shop_images\/QQ1A0495.png"
+            }
+          },
+          "c8a235f0-9bfc-4a8e-900e-8352e68bf9b8": {
+            "type": "image",
+            "settings": {
+              "collection": "alonetogether-campaign",
+              "banner-img": "shopify:\/\/shop_images\/QQ1A0495.png",
+              "mobile-banner-img": "shopify:\/\/shop_images\/QQ1A0495.png"
+            }
+          }
+        },
+        "block_order": [
+          "51cfd682-56a8-45df-b441-1ab2beaf4df8",
+          "c8a235f0-9bfc-4a8e-900e-8352e68bf9b8"
+        ],
+        "settings": {
+          "default_banner_img": "shopify:\/\/shop_images\/QQ1A0495.png",
+          "default_mobile_banner_img": "shopify:\/\/shop_images\/QQ1A0495.png"
+        }
+      },
+      "contact2": {
+        "type": "contact2",
+        "blocks": {
+          "8706aef1-ccd9-4f1b-9b2d-c39a0d5c5db0": {
+            "type": "text",
+            "settings": {
+              "title": "What forms of payment do you accept?",
+              "text": "<p>Following forms of payment are accepted for online purchases:<\/p>\n<ul>\n<li>Visa<\/li>\n<li>Mastercard<\/li>\n<li>American Express<\/li>\n<li>Discover<\/li>\n<li>JCB<\/li>\n<li>Diners Club<\/li>\n<li>Elo<\/li>\n<li>Shop Pay<\/li>\n<li>Apple Pay<\/li>\n<li>Google Pay<\/li>\n<\/ul>"
+            }
+          },
+          "fd135f55-969f-4fce-aa32-dda488f69865": {
+            "type": "text",
+            "settings": {
+              "title": "Which shipping options are available and what are the costs?",
+              "text": "<ul>\n<li>Ground  - complimentary in the US<\/li>\n<li>2nd day - $25<\/li>\n<li>Overnight -$50<\/li>\n<\/ul>\n<p>If you encounter any issue with the products you received but do not wish to make a return, please contact us. We will be glad to assist you in finding the best possible solution.<\/p>"
+            }
+          },
+          "14f54536-9d5a-4868-b00a-b8f773cd6e26": {
+            "type": "text",
+            "settings": {
+              "title": "What is your online return policy? How many days do I have to return a product?",
+              "text": "<p>Returns are offered within 30 days after product delivery on items that are unworn, unaltered and in new condition with all tags attached.<\/p>"
+            }
+          },
+          "e6fa9e42-d4d6-4425-8f5a-52ac70a20199": {
+            "type": "text",
+            "settings": {
+              "title": "How can I return a product I purchased online?",
+              "text": "<p>Please follow the return instructions below:<br><strong>Return by mail:<\/strong><\/p>\n<ul>\n<li>Pack the item(s) you wish to return in the original packaging.<\/li>\n<li>Print and include the invoice received in your shipping confirmation email.\n<\/li>\n<li>Please send an email to <a href=\"mailto:orders@iconicapparel.com\">orders@iconicapparel.com<\/a> and we will send you a prepaid shipping label. All returns are shipped via USPS. Shipping costs are complimentary. \n<\/li>\n<li>Once received in the warehouse, returns will be processed within approximately 7-10 business days and credited back to the original form of payment. <\/li>\n<\/ul>"
+            }
+          },
+          "229c594a-5679-4e61-8c7d-7ea5f11daa89": {
+            "type": "text",
+            "settings": {
+              "title": "When would I receive my refund?",
+              "text": "<p>On receipt of the parcel, we will verify the integrity of the items before accepting your return and issuing the refund.  This may take between 5 and 10 days.<\/p>\n<p>The refund is issued directly to the original method of purchase and in the same currency.<\/p>"
+            }
+          },
+          "77b467a6-507e-438f-afdf-ade4c233d706": {
+            "type": "text",
+            "settings": {
+              "title": "Will the AloneTogether™ Baseball Cap ever  be back in stock?",
+              "text": "<p>Unfortunately, The AloneTogether campaign is over but in the future we may do a limited throwback release.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "8706aef1-ccd9-4f1b-9b2d-c39a0d5c5db0",
+          "fd135f55-969f-4fce-aa32-dda488f69865",
+          "14f54536-9d5a-4868-b00a-b8f773cd6e26",
+          "e6fa9e42-d4d6-4425-8f5a-52ac70a20199",
+          "229c594a-5679-4e61-8c7d-7ea5f11daa89",
+          "77b467a6-507e-438f-afdf-ade4c233d706"
+        ],
+        "settings": {
+          "contactemail": "contact@iconicapparel.com",
+          "address": "",
+          "title-contact": "FAQ’s"
+        }
+      },
+      "header-contact2": {
+        "type": "header-contact2",
+        "blocks": {
+          "fd93fbd1-183f-42ec-8295-50d9adc8c151": {
+            "type": "text",
+            "settings": {
+              "message_text": "COVID-19 updates"
+            }
+          },
+          "70466ef3-4da3-4250-ab84-2e0893f00406": {
+            "type": "text",
+            "settings": {
+              "message_text": "Free shipping"
+            }
+          }
+        },
+        "block_order": [
+          "fd93fbd1-183f-42ec-8295-50d9adc8c151",
+          "70466ef3-4da3-4250-ab84-2e0893f00406"
+        ],
+        "settings": {
+          "title": ""
+        }
+      },
+      "product-related": {
+        "type": "product-related",
+        "settings": {
+          "show_related_products": true,
+          "show_vendor": true,
+          "related_title": "You May Also Like",
+          "related_grid_num": 8,
+          "related_grid_row": "1"
+        }
+      },
+      "timer-popup": {
+        "type": "timer-popup",
+        "settings": {
+          "enable_bar": true,
+          "home_page_only": false,
+          "background": "#000000",
+          "text_color": "#ffffff",
+          "content": "Coming Soon",
+          "enable_timer": true,
+          "timer_date": "Apr 12, 2021 12:00:00"
+        }
+      },
+      "mission-rich-text": {
+        "type": "mission-rich-text",
+        "settings": {
+          "full_width": false,
+          "section_title": "Let's End Hunger, Together!",
+          "text": "The impact of Coronavirus has created a national hunger crisis. COVID-19 has worsened the problem, nearly on-in-four households experienced food insecurity in 2020. – Enter Iconic Apparel. The brand was born during the pandemic with the sole purpose of aiding in the fight against hunger. While the brand has experienced incredible growth in the past year, the mission still remains the same. For every item purchased, 10 meals will be donated. Thank you for the support, together we can make a difference!",
+          "text_size": "medium"
+        }
+      },
+      "mission-logo-bar": {
+        "type": "mission-logo-bar",
+        "blocks": {
+          "27e58a0f-9782-41bf-b093-1c4075c24271": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/logo-2020.png",
+              "button_label": "Donate Here",
+              "button_link": "https:\/\/secure.feedingamerica.org\/site\/Donation2;jsessionid=00000000.app20123a?idb=533590472&28370.donation=form1&df_id=28370&mfc_pref=T&NONCE_TOKEN=F94ED31A93BCF16AFCFB2C4BF609D33D&s_subsrc=iconiclids&28370_donation=form1"
+            }
+          }
+        },
+        "block_order": [
+          "27e58a0f-9782-41bf-b093-1c4075c24271"
+        ],
+        "settings": {
+          "title": "Want to Donate Directly?"
+        }
+      },
+      "16119075406b138f15": {
+        "type": "feature-columns",
+        "disabled": true,
+        "blocks": {
+          "16119075406b138f15-0": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "title": "Add a title or tagline",
+              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "16119075406b138f15-1": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "title": "Add a title or tagline",
+              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "16119075406b138f15-2": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "title": "Add a title or tagline",
+              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "16119075406b138f15-0",
+          "16119075406b138f15-1",
+          "16119075406b138f15-2"
+        ],
+        "settings": {
+          "title": "Text columns with images",
+          "align_text": "left"
+        }
+      },
+      "mission-timer": {
+        "type": "mission-timer",
+        "blocks": {
+          "4e487ff1-513a-40fe-983c-d83ff9d78975": {
+            "type": "text_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/cap-111.jpg"
+            }
+          },
+          "69566844-2e96-4269-9cf8-1c1de86f149c": {
+            "type": "text_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/beautiful-clothing-fashion-2498791.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "4e487ff1-513a-40fe-983c-d83ff9d78975",
+          "69566844-2e96-4269-9cf8-1c1de86f149c"
+        ],
+        "settings": {
+          "title": "1 Purchase = 10 Donated",
+          "subtitle": "Meals Donated"
+        }
+      }
+    },
+    "content_for_index": [
+      "1608705353bac2bc47",
+      "1608707122342b4341",
+      "16087944665b6daeec",
+      "1608708924643c1f5f",
+      "1608710778c8340f5f",
+      "1608710788c3106e51",
+      "16119075406b138f15"
+    ]
+  },
+  "presets": {
+    "Default": {
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {}
+        },
+        "hero-1": {
+          "type": "hero",
+          "settings": {
+            "hero_size": "large",
+            "text_size": "large"
+          }
+        },
+        "feature-row": {
+          "type": "feature-row",
+          "settings": {}
+        },
+        "feature-columns": {
+          "type": "feature-columns",
+          "blocks": {
+            "feature-columns-0": {
+              "type": "text_block",
+              "settings": {}
+            },
+            "feature-columns-1": {
+              "type": "text_block",
+              "settings": {}
+            },
+            "feature-columns-2": {
+              "type": "text_block",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "feature-columns-0",
+            "feature-columns-1",
+            "feature-columns-2"
+          ],
+          "settings": {
+            "title": ""
+          }
+        },
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "grid": 4
+          }
+        },
+        "hero-2": {
+          "type": "hero",
+          "settings": {
+            "text_size": "large"
+          }
+        },
+        "quotes": {
+          "type": "quotes",
+          "blocks": {
+            "quotes-0": {
+              "type": "quote",
+              "settings": {}
+            },
+            "quotes-1": {
+              "type": "quote",
+              "settings": {}
+            },
+            "quotes-2": {
+              "type": "quote",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "quotes-0",
+            "quotes-1",
+            "quotes-2"
+          ],
+          "settings": {
+            "title": ""
+          }
+        },
+        "image-bar": {
+          "type": "image-bar",
+          "blocks": {
+            "image-bar-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "image-bar-1": {
+              "type": "image",
+              "settings": {}
+            },
+            "image-bar-2": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "image-bar-0",
+            "image-bar-1",
+            "image-bar-2"
+          ],
+          "settings": {}
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "footer-0": {
+              "type": "link_list",
+              "settings": {}
+            },
+            "footer-1": {
+              "type": "newsletter",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "footer-0",
+            "footer-1"
+          ],
+          "settings": {
+            "show_payment_icons": true
+          }
+        }
+      },
+      "content_for_index": [
+        "hero-1",
+        "feature-row",
+        "feature-columns",
+        "collection",
+        "hero-2",
+        "quotes",
+        "image-bar"
+      ]
+    },
+    "Light": {
+      "color_text": "#162950",
+      "color_body_text": "#6d6d6d",
+      "color_sale_text": "#DA2F0C",
+      "color_borders": "#e4e4e4",
+      "color_button": "#DA2F0C",
+      "color_button_text": "#ffffff",
+      "color_small_button_text_border": "#162950",
+      "color_text_field": "#ffffff",
+      "color_text_field_text": "#162950",
+      "color_text_field_border": "#909090",
+      "color_image_overlay_text": "#ffffff",
+      "color_image_overlay": "#3d3d3d",
+      "image_overlay_opacity": 40,
+      "color_body_bg": "#f8f8f8",
+      "type_header_font": "muli_n6",
+      "type_header_base_size": 26,
+      "type_base_font": "muli_n4",
+      "type_base_size": 18,
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "social_twitter_link": "",
+      "social_facebook_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_tumblr_link": "",
+      "social_snapchat_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": "",
+      "favicon": "",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "small",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#e8f3f6",
+      "checkout_heading_font": "Roboto",
+      "checkout_body_font": "Source Sans Pro",
+      "checkout_accent_color": "#1990c6",
+      "checkout_button_color": "#23314e",
+      "checkout_error_color": "#ff6d6d",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "align_logo": "left",
+            "logo": "",
+            "logo_max_width": 135,
+            "main_linklist": "main-menu",
+            "message": true,
+            "color_bg": "#162950",
+            "color_text": "#ffffff"
+          }
+        },
+        "hero": {
+          "type": "hero",
+          "settings": {
+            "alignment": "center",
+            "hero_size": "x-large",
+            "text_size": "large"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "alignment": "center center"
+              }
+            },
+            "1492095993817": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "alignment": "center"
+              }
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "1492095993817"
+          ],
+          "settings": {
+            "slideshow_height": "medium",
+            "text_size": "medium",
+            "autorotate": false,
+            "autorotate_speed": 5
+          }
+        },
+        "featured-collections": {
+          "type": "collection",
+          "settings": {
+            "grid": 3,
+            "rows": 1,
+            "show_vendor": true,
+            "show_view_all": true
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "show_quantity_selector": false,
+            "show_variant_labels": true,
+            "show_vendor": false,
+            "show_share_buttons": true,
+            "media_size": "medium",
+            "enable_image_zoom": true,
+            "enable_video_looping": false
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "layout": "grid",
+            "grid": 2,
+            "rows": 2,
+            "show_collection_image": true,
+            "show_vendor": false,
+            "sort_enable": true,
+            "tags_enable": true
+          }
+        },
+        "1492033809691": {
+          "type": "map",
+          "settings": {}
+        },
+        "1492033877875": {
+          "type": "quotes",
+          "blocks": {
+            "1492033877875-0": {
+              "type": "quote",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "1492033877875-0"
+          ],
+          "settings": {}
+        },
+        "1492033924902": {
+          "type": "custom-content",
+          "blocks": {
+            "1492033924902-0": {
+              "type": "text",
+              "settings": {
+                "width": "100%",
+                "alignment": "center",
+                "align_text": "center"
+              }
+            }
+          },
+          "block_order": [
+            "1492033924902-0"
+          ],
+          "settings": {
+            "title": ""
+          }
+        },
+        "1492096252560": {
+          "type": "collection-list",
+          "blocks": {
+            "1492096252560-0": {
+              "type": "featured_collection",
+              "settings": {}
+            },
+            "1492096252560-1": {
+              "type": "featured_collection",
+              "settings": {}
+            },
+            "1492096252560-2": {
+              "type": "featured_collection",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "1492096252560-0",
+            "1492096252560-1",
+            "1492096252560-2"
+          ],
+          "settings": {
+            "grid": 3
+          }
+        },
+        "blog-template": {
+          "type": "blog-template",
+          "settings": {
+            "layout": "grid",
+            "blog_show_author": true,
+            "blog_show_date": false
+          }
+        },
+        "article-template": {
+          "type": "article-template",
+          "settings": {
+            "blog_show_author": true,
+            "blog_show_date": true,
+            "show_share_buttons": true
+          }
+        },
+        "cart-template": {
+          "type": "cart-template",
+          "settings": {
+            "cart_notes_enable": false
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "link_list": {
+              "type": "link_list",
+              "settings": {}
+            },
+            "text": {
+              "type": "text",
+              "settings": {}
+            },
+            "newsletter": {
+              "type": "newsletter",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "link_list",
+            "text",
+            "newsletter"
+          ],
+          "settings": {
+            "color_footer_bg": "#f8f8f8",
+            "color_footer_text": "#6d6d6d"
+          }
+        }
+      },
+      "content_for_index": [
+        "hero",
+        "featured-collections",
+        "slideshow",
+        "1492033924902",
+        "1492096252560",
+        "1492033877875",
+        "1492033809691"
+      ]
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{% if section.settings.image %}
+<div class="product-banner">
+  <div class="product-banner-image">
+    <img class="product-banner-img" src="{{ section.settings.image | img_url: '1920x' }}" alt="">
+    <div class="product-banner-text">
+      	<h2 class="product-banner-title">{{ section.settings.title }}</h2>
+      	<h3 class="product-banner-sub-title">{{ section.settings.subtitle }}</h3>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% schema %}
+  {
+    "name": "Product Banner",
+    "settings": [
+		{
+        	"type": "image_picker",
+        	"id": "image",
+        	"label": "Image"
+      	},
+		{
+        	"type": "html",
+        	"id": "title",
+        	"label": "Title"
+      	},
+		{
+        	"type": "html",
+        	"id": "subtitle",
+        	"label": "Sub Title"
+      	}
+
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

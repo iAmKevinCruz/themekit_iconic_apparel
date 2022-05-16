@@ -1,0 +1,257 @@
+<div class="text-center map-title">
+        <h2 class="h3">{{ section.settings.title }}</h2>
+  		<h3 class="h4">{{ section.settings.sub_title }}</h3>
+  	
+  </div>
+<div class="page-width feature-row">
+ 
+<div id="map" style="height: 400px;width: 100%;"></div>
+</div>
+<script>
+  var default_markers = [{"name": "Abbotsford","latitude":"44.94569","longitude":"-90.32223"},{"name": "Albany","latitude":"44.636501","longitude":"-123.106018"},{"name": "Allentown","latitude":"40.60275","longitude":"-75.46976"},{"name": "aston","latitude":"39.86454","longitude":"-75.45564"},{"name": "Atlanta","latitude":"33.749","longitude":"-84.38633"},{"name": "Atlanta ","latitude":"33.749","longitude":"-84.388"},{"name": "Aurora","latitude":"41.760585","longitude":"-88.290099"},{"name": "Austin","latitude":"30.266666","longitude":"-97.73333"},{"name": "Austintown","latitude":"41.0883","longitude":"-80.7362"},{"name": "Bakersfield","latitude":"35.393528","longitude":"-119.043732"},{"name": "Baraboo","latitude":"43.474731","longitude":"-89.744186"},{"name": "Bartlett","latitude":"41.97337","longitude":"-88.183723"},{"name": "Berlin","latitude":"52.520008","longitude":"13.404954"},{"name": "Beverly Hills","latitude":"34.07362","longitude":"-118.400352"},{"name": "Birmingham","latitude":"33.522861","longitude":"-86.807701"},{"name": "Blackwood","latitude":"39.80209","longitude":"-75.06692"},{"name": "Bloomfield Hills","latitude":"42.584091","longitude":"-83.24324"},{"name": "Bloomfield Township","latitude":"41.91332","longitude":"-83.42964"},{"name": "Bloomingdale","latitude":"41.957527","longitude":"-88.080902"},{"name": "Blue Bell","latitude":"40.146599","longitude":"-75.271309"},{"name": "Blue Springs","latitude":"39.023899","longitude":"-94.276031"},{"name": "BOCA RATON","latitude":"26.350519","longitude":"-80.089828"},{"name": "Bonney Lake","latitude":"47.191952","longitude":"-122.180687"},{"name": "Boone","latitude":"42.05657","longitude":"-93.87996"},{"name": "Boston","latitude":"42.360081","longitude":"-71.058884"},{"name": "Bradenton","latitude":"27.48896","longitude":"-82.562798"},{"name": "Bradford","latitude":"44.16296","longitude":"-79.57684"},{"name": "Branford","latitude":"41.76907","longitude":"-72.8849"},{"name": "Bremerton","latitude":"47.567371","longitude":"-122.632927"},{"name": "Bridgeport","latitude":"39.28384","longitude":"-80.253708"},{"name": "Bridport","latitude":"50.73321","longitude":"-2.75495"},{"name": "Brooklyn","latitude":"40.692532","longitude":"-73.990997"},{"name": "Canton","latitude":"42.29969","longitude":"-83.486794"},{"name": "Canton","latitude":"40.798946","longitude":"-81.378448"},{"name": "Canyon","latitude":"29.87538","longitude":"-98.26266"},{"name": "Carson","latitude":"33.82782","longitude":"-118.272346"},{"name": "Cary","latitude":"35.79147","longitude":"-78.78114"},{"name": "Chapel Hill","latitude":"35.910259","longitude":"-79.055473"},{"name": "CHARLESTON","latitude":"32.77647","longitude":"-79.93103"},{"name": "Charleston","latitude":"32.77647","longitude":"-79.93103"},{"name": "Charlotte","latitude":"35.227085","longitude":"-80.843124"},{"name": "Chattanooga","latitude":"35.045761","longitude":"-85.308289"},{"name": "Cincinnati","latitude":"39.103699","longitude":"-84.513611"},{"name": "College Station","latitude":"30.62237","longitude":"-96.32585"},{"name": "COLONIAL BEACH","latitude":"38.26618","longitude":"-76.98471"},{"name": "Colorado Springs","latitude":"38.83522","longitude":"-104.819801"},{"name": "Colton","latitude":"34.07014","longitude":"-117.32364"},{"name": "Columbia City","latitude":"41.15704","longitude":"-85.488411"},{"name": "Columbus","latitude":"39.962761","longitude":"-82.996292"},{"name": "Commack","latitude":"40.84231","longitude":"-73.30031"},{"name": "Commerce Charter Township","latitude":"42.81708","longitude":"-86.11317"},{"name": "Corona","latitude":"33.875671","longitude":"-117.56884"},{"name": "Corona del Mar","latitude":"32.49798","longitude":"-117.10318"},{"name": "Costa Mesa","latitude":"33.66386","longitude":"-117.90477"},{"name": "Crofton","latitude":"39.01293","longitude":"-76.6898"},{"name": "Cushing","latitude":"35.98108","longitude":"-96.77019"},{"name": "Cypress","latitude":"29.97333","longitude":"-95.687332"},{"name": "Dallas","latitude":"32.777981","longitude":"-96.796211"},{"name": "Danville","latitude":"37.82258","longitude":"-122.00084"},{"name": "Deerfield","latitude":"42.167309","longitude":"-87.845741"},{"name": "Denver","latitude":"39.738449","longitude":"-104.984848"},{"name": "Derry","latitude":"42.88198","longitude":"-71.32417"},{"name": "Diamond Bar","latitude":"33.998138","longitude":"-117.835258"},{"name": "Doral","latitude":"25.81155","longitude":"-80.353477"},{"name": "Douglasville","latitude":"33.75217","longitude":"-84.74075"},{"name": "Dublin","latitude":"40.09956","longitude":"-83.11381"},{"name": "Duluth","latitude":"34.00379","longitude":"-84.14555"},{"name": "Dumfries","latitude":"38.566528","longitude":"-77.328743"},{"name": "Durango","latitude":"37.282249","longitude":"-107.877762"},{"name": "East Moline","latitude":"41.50056","longitude":"-90.44441"},{"name": "East Palo Alto","latitude":"37.464161","longitude":"-122.139282"},{"name": "Eden","latitude":"46.43974","longitude":"17.01633"},{"name": "Effort","latitude":"40.939041","longitude":"-75.43586"},{"name": "El Paso","latitude":"31.760111","longitude":"-106.492287"},{"name": "Encino","latitude":"34.158852","longitude":"-118.499382"},{"name": "Farmers Branch","latitude":"32.933","longitude":"-96.87309"},{"name": "Fitchburg","latitude":"43.01323","longitude":"-89.44672"},{"name": "Fitzroy North","latitude":"-37.78365","longitude":"144.9837"},{"name": "Fort McMurray","latitude":"56.72665","longitude":"-111.378937"},{"name": "fort Myers","latitude":"26.614149","longitude":"-81.825768"},{"name": "Gahanna","latitude":"40.02446","longitude":"-82.874702"},{"name": "Gainesville","latitude":"29.651634","longitude":"-82.324829"},{"name": "Garden Grove","latitude":"33.774269","longitude":"-117.937996"},{"name": "Gerrardstown ","latitude":"39.37576","longitude":"-78.11434"},{"name": "Glasgow","latitude":"55.86568","longitude":"-4.25714"},{"name": "Glen Burnie","latitude":"39.16482","longitude":"-76.62498"},{"name": "Glen Mills","latitude":"39.919498","longitude":"-75.491379"},{"name": "Glendale","latitude":"34.14814","longitude":"-118.246437"},{"name": "Granada Hills","latitude":"34.32257","longitude":"-118.52953"},{"name": "Greeley","latitude":"38.469139","longitude":"-101.983528"},{"name": "Greenbrier","latitude":"36.4261","longitude":"-86.80549"},{"name": "Haymarket","latitude":"38.81271","longitude":"-77.63754"},{"name": "Heflin","latitude":"33.6445","longitude":"-85.5842"},{"name": "Hermosa Beach","latitude":"33.8635","longitude":"-118.39515"},{"name": "Highland","latitude":"40.4249","longitude":"-111.7979"},{"name": "Houston","latitude":"29.7604","longitude":"-95.3698"},{"name": "Huntersville","latitude":"35.4107","longitude":"-80.8429"},{"name": "Huntington","latitude":"40.8831","longitude":"-85.4975"},{"name": "Jacksonville","latitude":"30.3322","longitude":"-81.6557"},{"name": "Janesville","latitude":"42.6828","longitude":"-89.0187"},{"name": "Jersey City","latitude":"40.7178","longitude":"-74.0431"},{"name": "Kent","latitude":"47.3809","longitude":"-122.237381"},{"name": "Key Largo","latitude":"24.5551","longitude":"-81.78"},{"name": "La Canada","latitude":"34.19509","longitude":"-118.1982"},{"name": "La Puente","latitude":"34.020012","longitude":"-117.949509"},{"name": "Lagrange","latitude":"33.038738","longitude":"-85.02964"},{"name": "Lake Alfred","latitude":"28.092779","longitude":"-81.723068"},{"name": "Lakeland","latitude":"28.04051","longitude":"-81.954109"},{"name": "Lakeville","latitude":"44.65599","longitude":"-93.24275"},{"name": "Latrobe","latitude":"40.318279","longitude":"-79.381081"},{"name": "Lawton","latitude":"34.60638","longitude":"-98.39682"},{"name": "LEPANTO","latitude":"35.61341","longitude":"-90.33101"},{"name": "Lexington","latitude":"38.040585","longitude":"-84.503716"},{"name": "Little Elm","latitude":"33.16269","longitude":"-96.93762"},{"name": "London","latitude":"51.500149","longitude":"-0.12624"},{"name": "Los Altos","latitude":"37.384998","longitude":"-122.106689"},{"name": "Los Angeles","latitude":"34.052235","longitude":"-118.243683"},{"name": "Macomb ","latitude":"42.70071","longitude":"-82.959023"},{"name": "Maitland","latitude":"28.62707","longitude":"-81.3591"},{"name": "Malden","latitude":"42.4265","longitude":"-71.07355"},{"name": "Malibu","latitude":"34.0358","longitude":"-118.69153"},{"name": "Malvern","latitude":"40.033428","longitude":"-75.512711"},{"name": "Manhattan Beach","latitude":"33.88509","longitude":"-118.40971"},{"name": "Mansfield","latitude":"29.51986","longitude":"-98.76351"},{"name": "MARIETTA","latitude":"39.42","longitude":"-81.45731"},{"name": "Marina Del Rey","latitude":"36.92255","longitude":"-121.85178"},{"name": "McDonough","latitude":"33.446999","longitude":"-84.1464"},{"name": "Meridian","latitude":"43.61012","longitude":"-116.39157"},{"name": "Meridian","latitude":"43.61012","longitude":"-116.39157"},{"name": "Miami","latitude":"25.761681","longitude":"-80.191788"},{"name": "Miami Beach","latitude":"25.79224","longitude":"-80.13485"},{"name": "Midland","latitude":"43.62362","longitude":"-84.22554"},{"name": "Mill valley","latitude":"37.90667","longitude":"-122.54755"},{"name": "Millersville","latitude":"39.057449","longitude":"-76.648613"},{"name": "Millington","latitude":"35.3414","longitude":"-89.910004"},{"name": "Miramar Beach","latitude":"30.37513","longitude":"-86.363487"},{"name": "Mission","latitude":"26.212379","longitude":"-98.318153"},{"name": "Monterey","latitude":"36.598339","longitude":"-121.896431"},{"name": "Monument","latitude":"39.091579","longitude":"-104.86824"},{"name": "Mount Prospect","latitude":"42.064491","longitude":"-87.936783"},{"name": "Mt Pleasant","latitude":"32.79044","longitude":"-79.876503"},{"name": "Mullica Hill","latitude":"39.73997","longitude":"-75.224854"},{"name": "Murray","latitude":"40.656109","longitude":"-111.886238"},{"name": "Myrtle Beach","latitude":"33.68906","longitude":"-78.886696"},{"name": "Naperville","latitude":"41.771488","longitude":"-88.148003"},{"name": "Nashville","latitude":"36.162663","longitude":"-86.781601"},{"name": "Nashville","latitude":"36.162663","longitude":"-86.781601"},{"name": "Nebo","latitude":"37.38379","longitude":"-87.6426"},{"name": "New Hartford","latitude":"43.072311","longitude":"-75.291"},{"name": "New Smyrna Beach","latitude":"29.02972","longitude":"-80.923752"},{"name": "New York","latitude":"40.712776","longitude":"-74.005974"},{"name": "Newbury Park","latitude":"34.181499","longitude":"-118.925423"},{"name": "Newport Beach","latitude":"33.618881","longitude":"-117.929848"},{"name": "Niagara Falls","latitude":"43.09446","longitude":"-79.05643"},{"name": "Norman","latitude":"35.22105","longitude":"-97.445938"},{"name": "North Hills","latitude":"34.235592","longitude":"-118.476334"},{"name": "North Hollywood","latitude":"34.1388","longitude":"-118.35222"},{"name": "North Redington Beach","latitude":"27.81976","longitude":"-82.82274"},{"name": "Northport","latitude":"48.999119","longitude":"-102.549004"},{"name": "Northridge","latitude":"34.2584","longitude":"-118.54908"},{"name": "Nortonville","latitude":"37.19383","longitude":"-87.449"},{"name": "Oakland","latitude":"37.804829","longitude":"-122.272476"},{"name": "Olathe","latitude":"38.88353","longitude":"-94.81824"},{"name": "Omaha","latitude":"41.258652","longitude":"-95.937187"},{"name": "Ormand Breach","latitude":"29.27748","longitude":"-81.04176"},{"name": "Pacific Palisades","latitude":"34.07982","longitude":"-118.54439"},{"name": "Paia","latitude":"20.916071","longitude":"-156.381256"},{"name": "Palm Desert","latitude":"33.72888","longitude":"-116.38253"},{"name": "Palm Springs","latitude":"33.8303","longitude":"-116.54684"},{"name": "Pampa","latitude":"35.53334","longitude":"-100.97188"},{"name": "Pasadena","latitude":"34.149551","longitude":"-118.141449"},{"name": "Patchogue","latitude":"40.76569","longitude":"-73.015137"},{"name": "Pflugerville","latitude":"30.43992","longitude":"-97.620956"},{"name": "Phoenix","latitude":"33.4482","longitude":"-112.072578"},{"name": "Piermont","latitude":"41.041039","longitude":"-73.920624"},{"name": "Pittsboro","latitude":"35.72015","longitude":"-79.173271"},{"name": "Placentia","latitude":"33.876389","longitude":"-117.85907"},{"name": "Plainfield","latitude":"41.608551","longitude":"-88.200752"},{"name": "PLAQUEMINE","latitude":"30.289289","longitude":"-91.234558"},{"name": "Playa Vista","latitude":"33.97595","longitude":"-118.41695"},{"name": "Portola Valley","latitude":"37.37542","longitude":"-122.219513"},{"name": "Pound Ridge","latitude":"41.2152","longitude":"-73.57441"},{"name": "Prunedale","latitude":"36.80062","longitude":"-121.66079"},{"name": "Raleigh","latitude":"35.7813","longitude":"-78.641678"},{"name": "Rancho Cucamonga","latitude":"34.1064","longitude":"-117.57576"},{"name": "Redondo Beach","latitude":"33.844978","longitude":"-118.387238"},{"name": "Redwood City","latitude":"37.484779","longitude":"-122.228149"},{"name": "Reinbeck","latitude":"42.32569","longitude":"-92.59923"},{"name": "Robbinsville Township","latitude":"40.13072","longitude":"-74.72756"},{"name": "Rochester","latitude":"41.732121","longitude":"-70.819458"},{"name": "Roslyn","latitude":"40.7999","longitude":"-73.65072"},{"name": "Roswell","latitude":"34.02165","longitude":"-84.36167"},{"name": "Round  Rock","latitude":"30.50879","longitude":"-97.67997"},{"name": "Rumson","latitude":"40.37619","longitude":"-74.00995"},{"name": "Saddle River","latitude":"41.03091","longitude":"-74.09511"},{"name": "Saint Charles","latitude":"38.81396","longitude":"-90.45763"},{"name": "Saint Charles","latitude":"38.81396","longitude":"-90.45763"},{"name": "Salt Lake City","latitude":"40.76078","longitude":"-111.891045"},{"name": "San Antonio","latitude":"29.425171","longitude":"-98.494614"},{"name": "San Diego","latitude":"-25.42481","longitude":"-49.17467"},{"name": "San Dimas","latitude":"34.106682","longitude":"-117.80275"},{"name": "San Francisco","latitude":"37.774929","longitude":"-122.419418"},{"name": "San Jose","latitude":"37.334789","longitude":"-121.888138"},{"name": "San Marcos","latitude":"29.88208","longitude":"-97.939987"},{"name": "San Ramon","latitude":"37.7747","longitude":"-121.9735"},{"name": "Sanford","latitude":"35.479961","longitude":"-79.18058"},{"name": "Santa Clarita","latitude":"34.391663,","longitude":"-118.542587"},{"name": "Santa Monica","latitude":"34.024212","longitude":"-118.496475"},{"name": "Sarasota","latitude":"27.341274","longitude":"-82.528267"},{"name": "Satellite Beach","latitude":"28.1707","longitude":"-80.5913."},{"name": "Savage","latitude":"44.7647","longitude":"-93.3591"},{"name": "Scottsdale","latitude":"33.501324","longitude":"-111.925278."},{"name": "Sea Ranch Lakes","latitude":"26.20327","longitude":"-80.09558"},{"name": "Sedona","latitude":"34.869709","longitude":"-111.760902"},{"name": "SEQUIM","latitude":"48.07784","longitude":"-123.10768"},{"name": "Shawnee","latitude":"39.02292","longitude":"-94.71458"},{"name": "Sherman Oaks","latitude":"33.63559","longitude":"-96.60902"},{"name": "Sidney","latitude":"41.137","longitude":"-102.9737"},{"name": "Sierra Vista","latitude":"31.547194","longitude":"-110.278641"},{"name": "Somerville","latitude":"40.567053","longitude":"-74.613811°"},{"name": "South Orange","latitude":"40.742608","longitude":"-74.246206"},{"name": "South Pasadena","latitude":"34.116539","longitude":"-118.146835"},{"name": "Stanwood","latitude":"48.245144","longitude":"-122.342232."},{"name": "Staten Island","latitude":"40.579021","longitude":"-74.151535"},{"name": "Studio City","latitude":"34.141323","longitude":"-118.387833"},{"name": "Studio City","latitude":"34.141323","longitude":"-118.387833"},{"name": "Tallai","latitude":"-28.057885","longitude":"153.310426"},{"name": "Tampa","latitude":"27.964157","longitude":"-82.452606"},{"name": "Tarzana","latitude":"34.150879","longitude":"-118.551651"},{"name": "Toluca Lake","latitude":"34.147858","longitude":"-118.348581"},{"name": "Toronto","latitude":"43.65107","longitude":"-79.347015"},{"name": "Tucson","latitude":"32.25346","longitude":"-110.911789"},{"name": "University Heights","latitude":"41.4978","longitude":"-81.5373"},{"name": "Upper Arlington","latitude":"39.994508","longitude":"-83.062408"},{"name": "Valley Village","latitude":"34.1633","longitude":"-118.3842"},{"name": "Van Nuys","latitude":"34.189857","longitude":"-118.451355"},{"name": "Vancouver","latitude":"49.2827","longitude":"-123.1207"},{"name": "Venice","latitude":"33.985","longitude":"-118.4695"},{"name": "W Dublin","latitude":"40.0992294","longitude":"-83.1140771"},{"name": "Wallan","latitude":"-37.413086","longitude":"144.979394"},{"name": "Walnut","latitude":"34.02029","longitude":"-117.865341"},{"name": "WASHINGTON","latitude":"42.7509","longitude":"-83.0576"},{"name": "Waterloo","latitude":"43.4643","longitude":"-80.5204"},{"name": "Waxhaw","latitude":"34.9246","longitude":"-80.7434"},{"name": "Wentzville","latitude":"38.8114","longitude":"-90.8529"},{"name": "West Haven","latitude":"41.2705","longitude":"-72.947"},{"name": "West Hills","latitude":"34.1973","longitude":"-118.644"},{"name": "West Hollywood","latitude":"34.09","longitude":"-118.3617"},{"name": "WESTFIELD","latitude":"40.659","longitude":"-74.3474"},{"name": "Westlake Village","latitude":"34.1466","longitude":"-118.8074"},{"name": "Weston","latitude":"26.1004","longitude":"-80.3998"},{"name": "White Lake charter Township","latitude":"42.6593","longitude":"-83.4857"},{"name": "Wichita","latitude":"37.6872","longitude":"-97.3301"},{"name": "Wilson","latitude":"35.721268","longitude":"-77.915543"},{"name": "Wimberley","latitude":"29.9974","longitude":"-98.0986"},{"name": "Windfall","latitude":"40.2672","longitude":"-86.1349"},{"name": "Winter Garden","latitude":"28.5653","longitude":"-81.5862"},{"name": "Woodland Hills","latitude":"34.1654","longitude":"-118.609"},{"name": "Woodside","latitude":"37.4299","longitude":"-122.2539"},{"name": "Youngstown","latitude":"41.0998","longitude":"-80.6495"}];
+  function initMap() {
+    // Styles a map in night mode.
+    
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 41.262227, lng: -102.739342},
+      zoom: {{ section.settings.zoom_level }},
+      disableDefaultUI: true,
+      styles: [
+        {
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#f5f5f5"
+            }
+          ]
+        },
+        {
+          "elementType": "labels.icon",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        },
+        {
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#616161"
+            }
+          ]
+        },
+        {
+          "elementType": "labels.text.stroke",
+          "stylers": [
+            {
+              "color": "#f5f5f5"
+            }
+          ]
+        },
+        {
+          "featureType": "administrative.land_parcel",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#bdbdbd"
+            }
+          ]
+        },
+        {
+          "featureType": "poi",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#eeeeee"
+            }
+          ]
+        },
+        {
+          "featureType": "poi",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#757575"
+            }
+          ]
+        },
+        {
+          "featureType": "poi.park",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#e5e5e5"
+            }
+          ]
+        },
+        {
+          "featureType": "poi.park",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#9e9e9e"
+            }
+          ]
+        },
+        {
+          "featureType": "road",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#ffffff"
+            }
+          ]
+        },
+        {
+          "featureType": "road.arterial",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#757575"
+            }
+          ]
+        },
+        {
+          "featureType": "road.highway",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#dadada"
+            }
+          ]
+        },
+        {
+          "featureType": "road.highway",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#616161"
+            }
+          ]
+        },
+        {
+          "featureType": "road.local",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#9e9e9e"
+            }
+          ]
+        },
+        {
+          "featureType": "transit.line",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#e5e5e5"
+            }
+          ]
+        },
+        {
+          "featureType": "transit.station",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#eeeeee"
+            }
+          ]
+        },
+        {
+          "featureType": "water",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "color": "#c9c9c9"
+            }
+          ]
+        },
+        {
+          "featureType": "water",
+          "elementType": "labels.text.fill",
+          "stylers": [
+            {
+              "color": "#9e9e9e"
+            }
+          ]
+        }
+      ]
+    });
+    if (screen.width < 600)
+    {
+        map.setZoom(3);
+    }
+    default_markers.forEach(function(value,index){
+      var marker = new google.maps.Marker({
+          position: {lat: parseFloat(value.latitude), lng: parseFloat(value.longitude) },
+          map: map,
+          icon: "{{ 'pin2.png' | asset_url }}"
+        });
+    });
+    {% for block in section.blocks %}
+    var marker = new google.maps.Marker({
+      position: {lat: {{ block.settings.latitude }}, lng: {{ block.settings.longitude }} },
+      map: map,
+      icon: "{{ 'pin2.png' | asset_url }}"
+    });
+    {% endfor %}
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{section.settings.google_map_key}}&callback=initMap"
+        async defer></script>
+
+{% schema %}
+{
+  "name": "Google Map",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+	  "label": "Title",
+	  "default": "Together, we can make a difference"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+	  "label": "Sub Title"
+	  
+    },
+	{
+      "type": "text",
+      "id": "google_map_key",
+	  "label": "Googel Map Key",
+	   "default": "AIzaSyCXhn93Y8tP75nxPKURCQd8ex4X8pSIXPY"
+    },
+	{
+      "type": "text",
+      "id": "zoom_level",
+	  "label": "Zoom Level",
+	  "default": "4"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "marker",
+      "name": "Marker",
+      "settings": [
+        {
+          "type": "text",
+          "id": "latitude",
+          "label": "latitude"
+        },
+		{
+          "type": "text",
+          "id": "longitude",
+          "label": "longitude"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Google Map",
+      "category": "Map"
+    }
+  ]
+}
+{% endschema %}

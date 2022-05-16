@@ -1,0 +1,109 @@
+<style>
+  #insta-feed{
+    width:{{section.settings.feed_width}}%;
+  }#insta-feed h2{font-size:{{section.settings.heading_size}}px;font-family: {{section.settings.heading_font.family }};}
+  {{ section.settings.heading_font | font_face }}
+</style>
+<div class="index-section">
+<div class="insta-img">
+  {% if section.settings.logo %}
+              {%- assign img_url = section.settings.logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+              <a href="{{ routes.root_url }}" class="site-header__logo-image{% if section.settings.align_logo == 'center' %} insta-header   site-header__logo-image--centered{% endif %}">
+                {% capture logo_alt %}{{ section.settings.logo.alt | default: shop.name }}{% endcapture %}
+                <img class="lazyload js"
+                     src="{{ section.settings.logo | img_url: '590x590' }}"               
+                     style="max-width: {{ section.settings.logo_max_width }}px">
+                <noscript>
+                  {% capture image_size %}{{ section.settings.logo_max_width | escape }}x{% endcapture %}
+                  <img src="{{ section.settings.logo | img_url: image_size }}"
+                       srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+                       alt="{{ section.settings.logo.alt | default: shop.name }}"
+                       style="max-width: {{ section.settings.logo_max_width }}px;">
+                </noscript>
+              </a>
+            {% else %}
+              <a class="site-header__logo-link" href="{{ routes.root_url }}">{{ shop.name }}</a>
+            {% endif %}
+          {% if request.page_type == 'index' %}
+            </h1>
+          {% else %}
+            </div>
+          {% endif %}
+</div>
+
+{{section.settings.html_area}}
+{% unless section.settings.html_area contains "feed-" %}
+   <div id="insta-feed"></div>
+{% endunless  %}
+</div>
+
+{%schema%}
+{
+ "name":"Instafeed App",
+ "settings":[
+    {
+     "type":"font_picker",
+     "label":"Heading font",
+     "id":"heading_font",
+     "default": "helvetica_n4"
+    },
+   {
+     "type":"range",
+     "id":"heading_size",
+     "min":10,
+     "max":30,
+     "step":1,
+     "unit":"px",
+     "label":"Heading Size",
+     "default":20
+   },
+   {
+     "type":"range",
+     "id":"feed_width",
+     "min":50,
+     "max":100,
+     "step":5,
+     "unit":"%",
+     "label":"Feed Width",
+     "default":100
+   },
+   {
+      "type": "image_picker",
+      "id": "logo",
+      "label": {
+        "da": "Logobillede",
+        "de": "Logo-Foto",
+        "en": "Logo image",
+        "es": "Logotipo",
+        "fi": "Logokuva",
+        "fr": "Image du logo",
+        "hi": "लोगो इमेज",
+        "it": "Immagine del logo",
+        "ja": "ロゴ画像",
+        "ko": "로고 이미지",
+        "nb": "Logobilde",
+        "nl": "Afbeelding van logo",
+        "pt-BR": "Imagem do logotipo",
+        "pt-PT": "Imagem do logótipo",
+        "sv": "Logobild",
+        "th": "รูปภาพโลโก้",
+        "zh-CN": "logo 图片",
+        "zh-TW": "標誌圖片"
+      }
+    },
+   {
+     "type":"html",
+     "id":"html_area",
+     "label":"Custom Code (optional)",
+     "default":"<!-- -->",
+     "info":"Save to see your changes"
+    }
+  ],
+  "presets":[
+    { 
+      "name":"Instafeed App",
+      "category":"Instagram Feed"
+    }
+  ]
+}
+{%endschema%}

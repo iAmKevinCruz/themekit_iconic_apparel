@@ -1,0 +1,237 @@
+<div class="mission-timer">
+  <div class="page-width">
+  <div class="grid {% unless section.blocks.size == 5 %}grid--uniform{% endunless %} grid--flush-bottom">
+    {%- assign grid_item_width = 'medium-up--one-third' -%}
+    {%- assign max_height = 345 -%}
+    {% case section.blocks.size %}
+      {% when 1 %}
+        {%- assign grid_item_width = 'medium-up--one-half' -%}
+        {%- assign max_height = 530 -%}
+      {% when 2 %}
+        {%- assign grid_item_width = 'medium-up--one-half' -%}
+        {%- assign max_height = 530 -%}
+      {% when 4 %}
+        {%- assign grid_item_width = 'medium-up--one-half' -%}
+        {%- assign max_height = 530 -%}
+    {% endcase %}
+    <div class="grid__item mobile-center-part {{ column_width }} text-{{ section.settings.align_text }}" {{ block.shopify_attributes }}>
+      <div class="mission_image_slider">
+    {% for block in section.blocks %}
+      {% if section.blocks.size == 5 and forloop.index < 3 %}
+        {%- assign column_width = 'medium-up--one-half' -%}
+        {%- assign max_height = 530 -%}
+      {% else %}
+        {%- assign column_width = grid_item_width -%}
+      {% endif %}
+      
+           
+          {% if block.settings.image != blank %}
+             <div class="product_image">
+               <img class="grid-view-item__image lazyload product_main_image productslickslider"
+                    alt="{{ block.settings.image.alt }}"
+                    data-src="{{block.settings.image | img_url :'1000x'}}"
+                    data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                    data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                    data-sizes="auto"
+                    data-image>
+             </div>
+          {% endif %}
+    {% endfor %}
+          </div>
+      </div>
+  </div>
+
+  {% if section.blocks.size == 0 %}
+    {% include 'no-blocks' %}
+  {% endif %}
+  <div class="mission-timer-content">
+    {% if section.settings.title != blank %}
+      <div class="section-header text-center">
+        <h2>{{ section.settings.title | escape }}</h2>
+      </div>
+    {% endif %}
+    <div id="mission_counter"></div>
+    {% if section.settings.subtitle != blank %}
+        <div class="mission_counter_subtitle">{{ section.settings.subtitle | escape }}</div>
+    {% endif %}
+  </div>
+  </div>
+</div>
+<script>
+  function numberWithCommas(x) {
+    x=x.toString();
+    var lastThree = x.substring(x.length-3);
+    var otherNumbers = x.substring(0,x.length-3);
+    if(otherNumbers != '')
+        lastThree = ',' + lastThree;
+    var res = otherNumbers.replace(/\B(?=(\d{3})+(?!\d))/g, ",") + lastThree;
+    return res
+  }
+  $(document).ready(function(){
+    $.fn.jQuerySimpleCounter = function( options ) {
+      var settings = $.extend({
+        easing: 'linear',
+        complete: ''
+      }, options );
+
+      var thisElement = $(this);
+
+      $({count: settings.start}).animate({count: settings.end}, {
+        duration: settings.duration,
+        easing: settings.easing,
+        step: function() {
+          var mathCount = Math.ceil(this.count);
+          thisElement.text(numberWithCommas(mathCount));
+        },
+        complete: function(){
+          thisElement.text(numberWithCommas(settings.end));
+        }
+      });
+    };
+
+
+    $('#mission_counter').jQuerySimpleCounter({start: 100000,end: 160000, duration: 200 * 60 * 10000});
+    
+    $('.mission_image_slider').slick({
+      dots: true,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 2,
+      slidesToScroll: 2,
+      prevArrow:"<img class='a-left control-c prev slick-prev' src='https://cdn.shopify.com/s/files/1/0348/1285/4408/files/arrow-left.svg?v=1611030234'>",
+      nextArrow:"<img class='a-right control-c next slick-next' src='https://cdn.shopify.com/s/files/1/0348/1285/4408/files/arrow-right.svg?v=1611030234'>",
+      customPaging : function(slider, i) {
+        var thumb = $(slider.$slides[i]).data();
+        var noslide = Math.ceil(slider.slideCount/2);
+        return  (i + 1) + '/' + noslide;
+      },
+      responsive: [{ 
+        breakpoint: 990,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          customPaging : function(slider, i) {
+            var thumb = $(slider.$slides[i]).data();
+            var noslide = Math.ceil(slider.slideCount);
+            return  (i + 1) + '/' + noslide;
+          }
+        } 
+      }]
+
+    });
+  });
+  
+</script>
+
+{% schema %}
+{
+  "name": {
+   
+    "en": "Mission Timer with Images"
+  },
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "da": "Overskrift",
+        "de": "Titel",
+        "en": "Heading",
+        "es": "Título",
+        "fi": "Otsake",
+        "fr": "En-tête",
+        "hi": "शीर्षक",
+        "it": "Heading",
+        "ja": "見出し",
+        "ko": "제목",
+        "nb": "Overskrift",
+        "nl": "Kop",
+        "pt-BR": "Título",
+        "pt-PT": "Título",
+        "sv": "Rubrik",
+        "th": "ส่วนหัว",
+        "zh-CN": "标题",
+        "zh-TW": "標題"
+      },
+      "default": {
+        "da": "Tekstkolonner med billeder",
+        "de": "Textspalten mit Fotos",
+        "en": "Text columns with images",
+        "es": "Col. de texto con imagen",
+        "fi": "Tekstisarakkeet kuvilla",
+        "fr": "Colonnes de texte et images",
+        "hi": "इमेज के साथ टेक्स्ट कॉलम",
+        "it": "Colonne di testo con foto",
+        "ja": "画像付きテキスト列",
+        "ko": "이미지 포함 텍스트 열",
+        "nb": "Tekstkolonner med bilder",
+        "nl": "Tekstkolommen met afbeeldingen",
+        "pt-BR": "Texto em coluna com imagens",
+        "pt-PT": "Colunas texto c/ imagens",
+        "sv": "Textkolumner med bilder",
+        "th": "คอลัมน์ข้อความพร้อมรูปภาพ",
+        "zh-CN": "带有图片的文本列",
+        "zh-TW": "附圖片的文字欄"
+      }
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subheading",
+      "default": "Meals Donated"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_block",
+      "name": {
+        "da": "Kolonne",
+        "de": "Spalte",
+        "en": "Column",
+        "es": "Columna",
+        "fi": "Sarake",
+        "fr": "Colonne",
+        "hi": "कॉलम",
+        "it": "Colonna",
+        "ja": "列",
+        "ko": "칼럼",
+        "nb": "Kolonne",
+        "nl": "Kolom",
+        "pt-BR": "Coluna",
+        "pt-PT": "Coluna",
+        "sv": "Kolumn",
+        "th": "คอลัมน์",
+        "zh-CN": "列",
+        "zh-TW": "欄"
+      },
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": {
+            "da": "Billede",
+            "de": "Foto",
+            "en": "Image",
+            "es": "Imagen",
+            "fi": "Kuva",
+            "fr": "Image",
+            "hi": "इमेज",
+            "it": "Immagine",
+            "ja": "画像",
+            "ko": "이미지",
+            "nb": "Bilde",
+            "nl": "Afbeelding",
+            "pt-BR": "Imagem",
+            "pt-PT": "Imagem",
+            "sv": "Bild",
+            "th": "รูปภาพ",
+            "zh-CN": "图片",
+            "zh-TW": "圖片"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

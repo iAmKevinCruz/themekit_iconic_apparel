@@ -1,0 +1,156 @@
+{%- if section.settings.enable_bar -%}
+
+{%- unless section.settings.home_page_only and template != 'index' -%}
+    <div id="timer_popup_section" data-section-type="timer popup" data-now-date="{{ "now" | date: "%b %d, %Y %H:%M:%S" }}"
+         
+             {% unless section.settings.background_image == blank %}
+             class="box ratio-container lazyload lazypreload js"
+             data-bg="{{ section.settings.background_image | img_url: '300x300' }}"
+             data-bgset="{% include 'bgset', image: section.settings.background_image %}"
+             data-sizes="auto"
+             data-parent-fit="contain"
+             style="background-position: center;
+                    background-image: url('{{ section.settings.background_image | img_url: '300x300' }}');"
+             {% endunless %}>
+      <span class="timer_popup_close">{%- render 'icon-close' -%}</span>
+      <div class="timer_popup">
+        <div class="timer_popup_wrapper">
+          {%- unless section.settings.content == blank -%}
+            <p class="timer_popup_Content Heading">
+              {{ section.settings.content | escape }}
+            </p>
+          {%- endunless -%}
+            {% if section.settings.enable_timer %}
+          	<div class="count_down_timer">
+			    <span id="timer">
+                    <span> 
+                      <span class="ts-value" id="day"></span> 
+                      <span class='ts-unit'>Days</span>
+                    </span> 
+                    <span> 
+                      <span class="ts-value" id="hour"></span> 
+                      <span class='ts-unit'>Hours</span>
+                    </span> 
+                    <span> 
+                      <span class="ts-value" id="minute"></span> 
+                      <span class='ts-unit'>Minutes</span>
+                    </span> 
+                    <span> 
+                      <span class="ts-value" id="second"></span> 
+                      <span class='ts-unit'>Seconds</span>
+                    </span> 
+                  </span>
+                <script>
+                  var countDownDate = new Date("{{ section.settings.timer_date }}").getTime();
+                  var increment_seconds = 0;
+                  var now_date = new Date($('#timer_popup_section').data('now-date')).getTime();
+                  var x = setInterval(function() {
+                    
+                    var now_current = now_date + increment_seconds;
+                    increment_seconds += 1000;
+                    var distance = countDownDate - now_current;
+                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    //days = days < 10 ? "0" + days : days;
+                    //hours = hours < 10 ? "0" + hours : hours;
+                    //minutes = minutes < 10 ? "0" + minutes : minutes;
+                    //seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                    document.getElementById("day").innerHTML =days < 10 ? "0" + days : days ; 
+                    document.getElementById("hour").innerHTML =hours < 10 ? "0" + hours : hours ; 
+                    document.getElementById("minute").innerHTML = minutes < 10 ? "0" + minutes : minutes ;  
+                    document.getElementById("second").innerHTML =seconds < 10 ? "0" + seconds : seconds ;
+
+                    if (distance < 0) {
+                      clearInterval(x);
+                      document.getElementById("timer").innerHTML = "EXPIRED";
+                    }
+                  }, 1000);
+                </script>
+            	<style>
+                  a.notification-bar__message {display: inline-block;vertical-align: middle;}
+                  #timer {display: inline-block;vertical-align: middle;text-transform: uppercase;font-size: 10px;}
+                  #timer > span {padding: 5px 7px;display: inline-block;}
+                  #timer span.ts-value {font-size: 24px;line-height: 24px;}
+                  #timer span.ts-unit {display: block;}
+                </style>
+          </div>
+    		{% endif %}
+          
+        </div>
+      </div>
+
+
+    </div>
+  <div class="timer_popup_section_overlay"></div>
+    <style>
+      #timer_popup_section {
+        background-color: {{ section.settings.background }};
+        color: {{ section.settings.text_color }};
+        display: none;
+      }
+    </style>
+  {%- endunless -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Timer Popup",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_bar",
+      "label": "Enable bar",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "home_page_only",
+      "label": "Home page only",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "content",
+      "label": "Text",
+      "default": "Coming Soon"
+    },
+	{
+      "type": "header",
+      "content": "Timer"   
+	},
+	{
+      "type": "checkbox",
+      "id": "enable_timer",
+      "label": "Enable ?"     
+	},
+	{
+      "type": "text",
+      "id": "timer_date",
+      "label": "Expiration date",
+      "default": "Nov 30, 2019 15:37:25",
+      "info": "Format: Nov 30, 2021 15:37:25"
+	}
+  ]
+}
+{% endschema %}
