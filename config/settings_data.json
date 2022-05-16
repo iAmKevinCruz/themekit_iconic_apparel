@@ -57,7 +57,7 @@
           "logo": "shopify:\/\/shop_images\/Iconicapparel_Logotype_Black_RGB_4x_99b43506-0f90-47e5-b74c-bebd8a3fb4d2.png",
           "logo_sticky": "shopify:\/\/shop_images\/Iconic-logo-Black.png",
           "logo_max_width": 260,
-          "main_linklist": "main-menu-1",
+          "main_linklist": "shop",
           "message": false,
           "home_page_only": true,
           "message_text": "Free U.S shipping over $75 | Free international shipping over $150",
