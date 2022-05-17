@@ -132,7 +132,7 @@
         
           {% if section.settings.align_logo == 'center' %}
                 <nav class="small--hide  secound-header" id="AccessibleNav" role="navigation">
-                  {% include 'site-nav', linklist: section.settings.main_linklist, wrapper_class: 'site-nav--centered' %}
+                  {% include 'site-nav-new', linklist: section.settings.main_linklist, wrapper_class: 'site-nav--centered' %}
                 </nav>
               {% endif %}
           
@@ -249,7 +249,7 @@
                       </button>
                     </div>
                     <span class="mobile-nav__sublist-link mobile-nav__sublist-header mobile-nav__sublist-header--main-nav-parent">
-                      <span class="mobile-nav__label">{{ link.title | escape }}</span>
+                      <span class="mobile-nav__label text-black">{{ link.title | escape }}</span>
                     </span>
                   </div>
                 </li>

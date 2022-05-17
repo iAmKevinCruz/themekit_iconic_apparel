@@ -7,6 +7,12 @@
     Usage:
     {% include 'site-nav', linklist: section.settings.main_linklist, wrapper_class: 'site-nav--centered' %}
 {% endcomment %}
+
+ 
+ <style>
+  
+</style>
+
 <ul class="site-nav list--inline{% if wrapper_class != blank %} {{ wrapper_class }}{% endif %}" id="SiteNav">
   {% for link in linklists[linklist].links %}
     {%- assign child_list_handle = link.title | handleize -%}
@@ -27,7 +33,9 @@
           <span class="site-nav__label">{{ link.title | escape }}</span>{% include 'icon-chevron-down' %}
         </button>
 
+
         <div class="site-nav__dropdown{% if three_level_nav %} site-nav__dropdown--centered{% endif %}" id="SiteNavLabel-{{ child_list_handle }}">
+          
           {% if three_level_nav %}
             <div class="site-nav__childlist">
               <ul class="site-nav__childlist-grid">
@@ -63,11 +71,25 @@
             </div>
 
           {% else %}
+            <div class="nav-background-{{ child_list_handle }} {{ length }}"></div>
             <ul>
               {% for childlink in link.links %}
+              {% capture length %} {{ forloop.length }} {% endcapture %}
+              <style>
+                .nav-background-{{ child_list_handle }}{
+                  display: block;
+                  position: absolute;
+                  background-color: white;
+                  left: -100%;
+                  top: -10px;
+                  width: 150vw;
+                  height: calc(({{length}} * 10px) + 125px);
+                  z-index: -5;
+                }
+              </style>
                 <li>
                   <a href="{{ childlink.url }}"
-                  class="site-nav__link site-nav__child-link{% if forloop.last %} site-nav__link--last{% endif %}"
+                  class="{{ length }} site-nav__link site-nav__child-link{% if forloop.last %} site-nav__link--last{% endif %}"
                   {% if childlink.current %} aria-current="page"{% endif %}>
                     <span style="color: black;" class="site-nav__label">{{ childlink.title | escape }}</span>
                   </a>

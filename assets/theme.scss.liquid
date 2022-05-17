@@ -2015,7 +2015,8 @@ a[href^="tel"] {
   background-color: transparent;
   border: 0;
   margin: 0;
-  color: #fff;
+  // font-weight: 700;
+  color: #333232;
   text-align: left;
 
   &:not([disabled]):hover,
@@ -2677,14 +2678,14 @@ textarea {
 .site-nav__dropdown {
   display: none;
   position: absolute;
-  padding: 11px 30px 11px 0;
+  padding: 33px 30px 33px 0;
   margin: 0;
   z-index: $z-index-dropdown;
   text-align: left;
   border: 1px solid $color-border;
   background: $color-bg;
   left: -1px;
-  top: 41px;
+  top: 45px;
 
   .site-nav__link {
     padding: 4px 15px 5px;
@@ -2697,6 +2698,10 @@ textarea {
   li {
     display: block;
   }
+}
+
+.test-active{
+  display: block;
 }
 
 .site-nav__dropdown--right:not(.site-nav__dropdown--centered) {
@@ -6207,10 +6212,12 @@ $nav-button-padding: 15px;
 
 .mobile-nav__link {
   position: relative;
+  color: #333232;
 }
 
 .mobile-nav__label {
   border-bottom: 1px solid transparent;
+  color: #333232;
 
   .mobile-nav__link--active & {
     border-bottom-color: $color-text;
@@ -6237,13 +6244,14 @@ $nav-button-padding: 15px;
 }
 
 .mobile-nav__return {
-  border-right: 1px solid $color-border;
+  // border-right: 1px solid $color-border;
 }
 
 .mobile-nav__return-btn {
   position: relative;
   padding: 24px 0;
   width: $return-button-width;
+  color: #333232;
 }
 
 .mobile-nav__icon {
