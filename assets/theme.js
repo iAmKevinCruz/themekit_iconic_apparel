@@ -2413,6 +2413,9 @@ theme.Header = (function () {
         var $el = $(this);
       }
     );
+    // cache.$parents.hasClass(config.activeClass)
+    //   ? showDeco(cache.$parents)
+    //   : removeDeco(cache.$parents);
     $("#site-header").hover(
       function () {
         return;
@@ -2473,7 +2476,7 @@ theme.Header = (function () {
   }
 
   function showDropdown($el) {
-    $el.addClass(config.activeClass);
+    $el.addClass(config.activeClass).addClass("site-nav__link--active");
     // $("#site-header").addClass("header-style-toggle");
     // close open dropdowns
     if (cache.$activeDropdown.length) {
@@ -2499,6 +2502,8 @@ theme.Header = (function () {
   }
 
   function hideDropdown($el) {
+    // remove underline on currently active dropdown
+    cache.$activeDropdown.removeClass("site-nav__link--active");
     // remove aria on open dropdown
     $el.find(selectors.siteNavLinkMain).attr("aria-expanded", "false");
     $el.removeClass(config.activeClass);

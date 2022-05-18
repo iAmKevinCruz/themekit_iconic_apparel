@@ -1243,6 +1243,13 @@ header.border-bottom.site-header.header-fixed .site-nav__link--active .site-nav_
 }
 .header-style-toggle{
 	background-color: #000 !important;
+	transition: ease-in-out .5s all;
+}
+#site-header{
+	transition: ease-in-out .5s all;
+}
+.site-nav__dropdown{
+	// transition: ease-in-out .5s all;
 }
 header.border-bottom.site-header.header-style-toggle a.normal_logo{
 	display: block !important;
@@ -1267,6 +1274,7 @@ header.border-bottom.site-header.header-fixed .site-header__logo a.site-header__
 
 header.border-bottom.site-header.header-fixed .site-header__logo a.site-header__logo-image.site-header__logo-image--centered.sticky_header_logo {
 	display: block;
+	padding: 8px 0;
 }
 
 header.border-bottom.site-header .site-header__logo a.site-header__logo-image.site-header__logo-image--centered.sticky_header_logo {

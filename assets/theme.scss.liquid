@@ -2677,32 +2677,48 @@ textarea {
 }
 
 .site-nav__dropdown {
-  display: none;
+  display: block;
   position: absolute;
-  padding: 33px 30px 33px 0;
+  padding: 0;
   margin: 0;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  // height: 0;
+  // transform: scaleY(.5);
   z-index: $z-index-dropdown;
   text-align: left;
-  border: 1px solid $color-border;
+  border: 0;
   background: $color-bg;
   left: -1px;
   top: 45px;
-
+  
   .site-nav__link {
     padding: 4px 15px 5px;
   }
-
+  
   .site-nav--active-dropdown & {
-    display: block;
+    // display: block;
+    padding: 33px 30px 33px 0;
+    border: 1px solid $color-border;
+    opacity: 1;
+    height: auto;
+    overflow: unset;
+    transition: all .2s cubic-bezier(.075,.82,.165,1);
+    
+    .nav-background-collection{
+      height: 143px;
+      transition: all .2s cubic-bezier(.075,.82,.165,1);
+    }
+    .nav-background-shop{
+      height: 192.5px;
+      transition: all .2s cubic-bezier(.075,.82,.165,1);
+    }
   }
 
   li {
     display: block;
   }
-}
-
-.test-active{
-  display: block;
 }
 
 .site-nav__dropdown--right:not(.site-nav__dropdown--centered) {
