@@ -2395,6 +2395,33 @@ theme.Header = (function () {
     styleDropdowns($(selectors.siteNavHasDropdown));
     positionFullWidthDropdowns();
 
+    cache.$siteHeader.hover(
+      function () {
+        $("#site-header").addClass("header-style-toggle");
+      },
+      function () {
+        $("#site-header").removeClass("header-style-toggle");
+      }
+    );
+    cache.$parents.hover(
+      function () {
+        hideDropdown(cache.$activeDropdown);
+        var $el = $(this);
+        showDropdown($el);
+      },
+      function () {
+        var $el = $(this);
+      }
+    );
+    $("#site-header").hover(
+      function () {
+        return;
+      },
+      function () {
+        hideDropdown(cache.$activeDropdown);
+      }
+    );
+
     cache.$parents.on("click.siteNav", function () {
       var $el = $(this);
       $el.hasClass(config.activeClass) ? hideDropdown($el) : showDropdown($el);
@@ -2447,7 +2474,7 @@ theme.Header = (function () {
 
   function showDropdown($el) {
     $el.addClass(config.activeClass);
-    $("#site-header").addClass("site-test");
+    // $("#site-header").addClass("header-style-toggle");
     // close open dropdowns
     if (cache.$activeDropdown.length) {
       hideDropdown(cache.$activeDropdown);
@@ -2475,7 +2502,7 @@ theme.Header = (function () {
     // remove aria on open dropdown
     $el.find(selectors.siteNavLinkMain).attr("aria-expanded", "false");
     $el.removeClass(config.activeClass);
-    $("#site-header").removeClass("site-test");
+    // $("#site-header").removeClass("header-style-toggle");
 
     // reset active dropdown
     cache.$activeDropdown = $(selectors.siteNavActiveDropdown);

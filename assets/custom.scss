@@ -1241,19 +1241,19 @@ header.border-bottom.site-header.header-fixed .site-nav__label {
 header.border-bottom.site-header.header-fixed .site-nav__link--active .site-nav__label {
 	border-bottom-color: #000;
 }
-.site-test{
+.header-style-toggle{
 	background-color: #000 !important;
 }
-header.border-bottom.site-header.site-test a.normal_logo{
+header.border-bottom.site-header.header-style-toggle a.normal_logo{
 	display: block !important;
 }
-header.border-bottom.site-header.site-test a.sticky_header_logo{
+header.border-bottom.site-header.header-style-toggle a.sticky_header_logo{
 	display: none !important;
 }
-header.border-bottom.site-header.site-test .site-nav__label {
+header.border-bottom.site-header.header-style-toggle .site-nav__label {
 	color: #fff;
 }
-header.border-bottom.site-header.site-test .site-nav__link--active .site-nav__label {
+header.border-bottom.site-header.header-style-toggle .site-nav__link--active .site-nav__label {
 	border-bottom-color: #fff;
 }
 
@@ -1542,7 +1542,10 @@ div#shopify-section-1608705353bac2bc47 .slideshow__arrows .slick-dots li{ margin
 }
 
 
-.site-nav--centered .site-nav__link{ padding-bottom:0px!important;}
+.site-nav--centered .site-nav__link{ 
+	padding-bottom:0px!important;
+	margin-bottom: 5px;
+}
 .site-header__mobile-nav .grid__item .mobile-right-header .site-header__icons-wrapper .site-header__menu{ 
   margin-top:3px;
   position: absolute;
