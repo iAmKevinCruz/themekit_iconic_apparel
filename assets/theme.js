@@ -2447,6 +2447,7 @@ theme.Header = (function () {
 
   function showDropdown($el) {
     $el.addClass(config.activeClass);
+    $("#site-header").addClass("site-test");
     // close open dropdowns
     if (cache.$activeDropdown.length) {
       hideDropdown(cache.$activeDropdown);
@@ -2474,6 +2475,7 @@ theme.Header = (function () {
     // remove aria on open dropdown
     $el.find(selectors.siteNavLinkMain).attr("aria-expanded", "false");
     $el.removeClass(config.activeClass);
+    $("#site-header").removeClass("site-test");
 
     // reset active dropdown
     cache.$activeDropdown = $(selectors.siteNavActiveDropdown);

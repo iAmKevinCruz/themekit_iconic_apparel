@@ -1181,10 +1181,19 @@ div#shopify-section-1586805429324 {
 }
 
 .site-nav a {
+	text-decoration: none;
 	padding: 3px 15px;
 	letter-spacing: 2px !important;
 	font-size: 12px;
 }
+
+.mega-menu-parent {
+	// padding: 3px 15px;
+	// margin-bottom: 3px;
+	letter-spacing: 2px !important;
+	font-size: 12px;
+}
+
 .site-header__logo-image img {
     width: 187px;
 }
@@ -1208,7 +1217,7 @@ div#shopify-section-1586805429324 {
 
 header.border-bottom.site-header.header-fixed {
 	position: fixed;
-	background: #fff !important;
+	background: #fff ;
 	top: 0;
 	width: 100%;
 	transition: .5s all;
@@ -1228,6 +1237,24 @@ header.border-bottom.site-header.header-fixed {
 
 header.border-bottom.site-header.header-fixed .site-nav__label {
 	color: #000;
+}
+header.border-bottom.site-header.header-fixed .site-nav__link--active .site-nav__label {
+	border-bottom-color: #000;
+}
+.site-test{
+	background-color: #000 !important;
+}
+header.border-bottom.site-header.site-test a.normal_logo{
+	display: block !important;
+}
+header.border-bottom.site-header.site-test a.sticky_header_logo{
+	display: none !important;
+}
+header.border-bottom.site-header.site-test .site-nav__label {
+	color: #fff;
+}
+header.border-bottom.site-header.site-test .site-nav__link--active .site-nav__label {
+	border-bottom-color: #fff;
 }
 
 header.border-bottom.site-header.header-fixed .site-header__icon.site-header__cart svg path {
