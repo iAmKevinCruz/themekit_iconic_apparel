@@ -1,3 +1,18 @@
+<style>
+  @media screen and (max-width: 749px) {
+    .custom-content-custom{
+      padding: 0 7.5px;
+      margin-left: -15px;
+    }
+    .custom__item{
+      padding: 0 0 0 15px;
+    }
+  }
+  .template-index .site-footer {
+    margin-top: 0;
+  }
+</style>
+
 <div class="page-width">
   {% if section.settings.title != blank %}
     <div class="section-header text-center">
@@ -5,7 +20,7 @@
     </div>
   {% endif %}
 
-  <div class="custom-content">
+  <div class="custom-content custom-content-custom">
     {%- assign block_width_mobile = '' -%}
 
     {% for block in section.blocks %}
@@ -94,7 +109,7 @@
             {% when 'product' %}
               {%- assign product = all_products[block.settings.product] -%}
               {% if product.title.size > 0 %}
-                {% include 'product-card-grid', max_height: max_height, product: product %}
+                {% include 'home-product-card-grid', max_height: max_height, product: product %}
               {% else %}
                 {% comment %}
                   No product yet. Show onboarding one.

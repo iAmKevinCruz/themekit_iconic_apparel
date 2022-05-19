@@ -18,7 +18,7 @@
 {% endif %}
 
 <div class="collection-grid-item">
-  <a href="{% if button_link == blank %}{{collection.url}}{% else %}{{ button_link }}{% endif %}" class="collection-grid-item__link">
+  <a style="text-decoration: none;" href="{% if button_link == blank %}{{collection.url}}{% else %}{{ button_link }}{% endif %}" class="collection-grid-item__link">
     {% unless collection_image == blank %}
       <div class="collection-grid-item__overlay box ratio-container lazyload js"
         data-bgset="{% include 'bgset', image: collection_image %}"

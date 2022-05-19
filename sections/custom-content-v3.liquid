@@ -1,11 +1,42 @@
 <style>
+  .product-one{
+    padding-bottom: 0;
+  }
+  .product-two{
+    padding-top: 0;
+  }
+  @media screen and (min-width: 750px) {
+    .product-one{
+      padding-bottom: 7.5px;
+    }
+    .product-two{
+      padding-top: 7.5px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .product-one{
+      padding-bottom: 15px;
+    }
+    .product-two{
+      padding-top: 15px;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    .product-one{
+      padding-bottom: 25px;
+    }
+    .product-two{
+      padding-top: 25px;
+    }
+  }
+  
   @media screen and (max-width: 749px) {
     .custom-grid{
       display: grid;
+      padding: 0 7.5px;
       grid-template-columns: repeat(2,1fr);
       grid-auto-rows: minmax(250px, auto);
-      gap: 10px;
-      width: 95vw;
+      gap: 15px;
       margin: auto;
     }
     .product_one{
@@ -19,7 +50,7 @@
       width: 100%;
       padding: 0;
       grid-column: 1/3;
-      grid-row: 1/3;
+      grid-row: 1/4;
     }
     .product_stacked{
       margin: 0;
@@ -34,6 +65,7 @@
     }
   }
 </style>
+
 <div class="page-width">
   {% if section.settings.title != blank %}
     <div class="section-header text-center">
@@ -75,52 +107,60 @@
             {% case block.type %}
 
               {% when 'image_text' %}
-                {% if block.settings.image != blank %}
-                {%- assign img_url_text = block.settings.image | img_url: 'master' -%}
-                {% assign set = block.settings %}
-                  <div style="background-image: url('{{ img_url_text }}');" class="image-text">
-                    <span class="image-heading">{{ set.text_in_image }}</span>
-                    <a href="{{ set.image_link }}">{{ set.image_link_label }}</a>
-                  </div>
+                  {%- assign collection = collections[block.settings.collection] -%}
+                  {% if block.settings.image != blank %}
+                    {% assign collection_image = block.settings.image %}
+                  {% elsif collection.image %}
+                    {% assign collection_image = collection.image %}
+                  {% elsif collection.products.first and collection.products.first.media != empty %}
+                    {%- assign collection_image = collection.products.first.featured_media.preview_image -%}
+                  {% else %}
+                    {% assign collection_image = blank %}
+                  {% endif %}
+
+                  {%- assign img_url_text = collection_image | img_url: '1024x1024' -%}
+
+                  {% assign set = block.settings %}
+                  <a href="{% if set.image_link == blank %}{{collection.url}}{% else %}{{ set.image_link  }}{% endif %}" style="text-decoration: none;">
+                    <div data-bgset="{% include 'bgset', image: collection_image %}"
+                    data-sizes="auto"
+                    data-parent-fit="cover" style="background-image: url('{{ img_url_text }}');" class="image-text collection-grid-item__overlay">
+                    </div>
+                    <div class="collection-grid-item__title-wrapper bottom-left-title">
+                      <div class="collection-grid-item__title h2 large-title">
+                        {% if set.text_in_image != blank %}
+                          {{set.text_in_image}}
+                        {% elsif collection.title == blank %}
+                          {{ 'homepage.onboarding.collection_title' | t }}
+                        {% else %}
+                          {{ collection.title }}
+                        {% endif %}
+                      </div>
+                      {% if set.image_link != blank %}
+                        <a class="only-link shop-now" href="{{ set.image_link }}">{{set.image_link_label}}</a>
+                      {% endif %}
+                    </div>
+                  </a>
                   <style>
-                    .image-heading{
-                      margin-bottom: {{ set.text_in_image_margin_bottom }}px;
-                    }
-                    .image-heading p{
-                      font-size: {{ set.text_in_image_size }}px;
-                      letter-spacing: {{ set.text_in_image_letter_spacing }}px;
-                      line-height: {{ set.text_in_image_line_height }}px;
-                      color: {{ set.text_in_image_color }};
-                    }
                     .image-text {
-                      display: flex;
-                      flex-direction: column;
-                      justify-content: end;
-                      padding: 5%;
-                      color: white;
                       background-repeat: no-repeat;
                       background-position: center;
                       background-size: cover;
                       height: 100%;
                     }
-                    .image-text a {
-                      color: white;
-                      text-decoration: underline;
-                    }
                     .custom__item-inner--image_text {
                       height: 100%;
                     }
                   </style>
-                {% endif %}
 
               {% when 'product_stacked' %}
               {%- assign product_one = all_products[block.settings.product_one] -%}
               {%- assign product_two = all_products[block.settings.product_two] -%}
                 <div class="product-one">
-                  {% include 'product-card-grid', max-height: max_height, product: product_one %}
+                  {% include 'home-product-card-grid', max-height: max_height, product: product_one %}
                 </div>
                 <div class="product-two">
-                  {% include 'product-card-grid', max-height: max_height, product: product_two %}
+                  {% include 'home-product-card-grid', max-height: max_height, product: product_two %}
                 </div>
 
             {% endcase %}
@@ -150,6 +190,11 @@
      "type": "image_text",
      "name": "Image With Text",
      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
         {
           "type": "image_picker",
           "id": "image",
@@ -188,56 +233,10 @@
           "content": "Text Inside Picture"
         },
         {
-          "type": "richtext",
+          "type": "text",
           "id": "text_in_image",
           "label": "Heading",
-          "default": "<p>CITY COLLECTION</p>"
-        },
-        {
-          "type": "color",
-          "id": "text_in_image_color",
-          "label": "Heading Color",
-          "default": "#FFF"
-        },
-        {
-          "type": "range",
-          "id": "text_in_image_size",
-          "label": "Heading Size",
-          "min": 12,
-          "max": 72,
-          "step": 1,
-          "unit": "px",
-          "default": 50
-        },
-        {
-          "type": "range",
-          "id": "text_in_image_letter_spacing",
-          "label": "Heading Letter Spacing",
-          "min": 0,
-          "max": 20,
-          "step": 1,
-          "unit": "px",
-          "default": 0
-        },
-        {
-          "type": "range",
-          "id": "text_in_image_line_height",
-          "label": "Heading Line Height",
-          "min": 5,
-          "max": 100,
-          "step": 5,
-          "unit": "px",
-          "default": 25
-        },
-        {
-          "type": "range",
-          "id": "text_in_image_margin_bottom",
-          "label": "Space Between Heading and Link",
-          "min": 10,
-          "max": 100,
-          "step": 5,
-          "unit": "px",
-          "default": 20
+          "default": "CITY COLLECTION"
         },
         {
           "type": "header",

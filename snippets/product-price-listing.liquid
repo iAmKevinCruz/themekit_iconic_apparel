@@ -9,6 +9,46 @@
     Usage:
     {% include 'product-price-listing', product: product %}
 {% endcomment %}
+<style>
+  .grid-slider-collection .price .price-item {
+		font-size: 12px;
+		font-family: 'Red Rose';
+		line-height: normal;
+		font-weight: 300;
+	}
+
+  .single-product-related-items{
+    padding: 0 !important;
+  }
+  .product-card__title{
+    font-weight: 400 !important;
+  }
+  .grid-slider-collection .price .price-item {
+		font-size: 12px;
+	}
+  .product-card__title {
+    font-size: 12px ;
+		line-height: normal !important;
+	}
+  .price-item-font-thin{
+    font-size: 12px;
+    font-family: 'Red Rose;'
+    line-height: normal;
+    font-weight: 300;
+  }
+  @media only screen and (min-width:991px){
+    .product-card__title{
+      font-size: 15px;
+    }
+    .grid-slider-collection .price .price-item {
+      font-size: 15px;
+    }
+    .price-item-font-thin{
+    font-size: 15px;
+    }
+  }
+</style>
+
 {%- liquid
   if product.title
     assign compare_at_price = product.compare_at_price
@@ -53,11 +93,25 @@
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.regular_price' | t }}</span>
     </dt>
     <dd>
-      <span class="price-item price-item--regular">
+      <span class="price-item price-item--regular price-item-font-thin">
         {%- if product.price_varies -%}
           {{ 'products.product.from_lowest_price_html' | t: lowest_price: money_price }}
         {%- else -%}
-          {{ money_price }}
+        <style>
+          .price-span{
+            display: flex;
+            flex-direction: row;
+
+          }
+          .x-svg{
+            width: 13px;
+            margin: 0 5px;
+          }
+        </style>
+        <div class="price-span">
+          <!-- {{ money_price }} | <svg width="15" height="15"><image xlink:href="https://cdn.shopify.com/s/files/1/0348/1285/4408/files/x_black_svg.svg?v=1652890593" src="yourfallback.png" width="15" height="15"/></svg> MEALS -->
+          {{ money_price }} | <img class="x-svg" src="https://cdn.shopify.com/s/files/1/0348/1285/4408/files/x_grey_svg.svg?v=1652891591" alt=""> MEALS
+        </div>
         {%- endif -%}
       </span>
     </dd>

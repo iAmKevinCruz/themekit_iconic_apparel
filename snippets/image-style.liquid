@@ -8,11 +8,13 @@
   {%- assign maximum_width = maximum_height | times: image.aspect_ratio -%}
 
   #{{ img_id }} {
-    max-width: {{ maximum_width }}px;
-    max-height: {{ maximum_height }}px;
+    /* REMOVED OPTIONS TO MAKE IMAGES PERFECT SQUARES AND ALWAYS ALIGN WITH THE PRICE TEXXT UNDERNEATH TO THE LEFT */
+    /* max-width: {{ maximum_width }}px; */
+    /* max-height: {{ maximum_height }}px; */
   }
-
+  
   #{{ wrapper_id }} {
-    max-width: {{ maximum_width }}px;
+    /* REMOVED OPTIONS TO MAKE IMAGES PERFECT SQUARES AND ALWAYS ALIGN WITH THE PRICE TEXXT UNDERNEATH TO THE LEFT */
+    /* max-width: {{ maximum_width }}px; */
   }
 </style>

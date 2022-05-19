@@ -83,10 +83,10 @@
                   left: -100%;
                   top: -2px;
                   width: 150vw;
-                  /* height: calc(({{length}} * 10px) + 125px); */
                   /* height: calc(({{length}} * 24.5px) + 70px); */
                   height: 120px;
                   z-index: -5;
+                  transition: all .2s cubic-bezier(.075,.82,.165,1);
                 }
               </style>
                 <li>
@@ -135,13 +135,13 @@
                   <img class="lazyload js"
                        src="{{ section.settings.logo_sticky | img_url: '360x360' }}"                     
                        alt="{{ logo_alt | escape }}"
-                       style="max-width: {{ section.settings.logo_max_width }}px">
+                       style="max-width: {{ section.settings.logo_max_width }}px; padding: 7.55px 0">
                   <noscript>
                     {% capture image_size %}{{ section.settings.logo_max_width | escape }}x{% endcapture %}
                     <img src="{{ section.settings.logo_sticky | img_url: image_size }}"
                          srcset="{{ section.settings.logo_sticky | img_url: image_size }} 1x, {{ section.settings.logo_sticky | img_url: image_size, scale: 2 }} 2x"
                          alt="{{ section.settings.logo_sticky.alt | default: shop.name }}"
-                         style="max-width: {{ section.settings.logo_max_width }}px;">
+                         style="max-width: {{ section.settings.logo_max_width }}px; padding: 7.55px 0">
                   </noscript>
                 </a>
                 {%- endif -%}
