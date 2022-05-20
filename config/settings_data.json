@@ -207,7 +207,7 @@
             "type": "text",
             "settings": {
               "title": "Born in Los Angeles",
-              "text": "<p>contact@iconicapparel.com<\/p>"
+              "text": "<p>contact@iconicapparel.com<br\/><br\/>9663 Santa Monica Blvd #1075,<br\/>Beverly Hills, CA, 90210<\/p>"
             }
           },
           "472b035a-bc3b-4846-b841-a828c42e944e": {
@@ -408,8 +408,8 @@
             "type": "featured_collection",
             "settings": {
               "collection": "hats-that-feed-people-1",
-              "collection_title": "Hats",
-              "collection_image": "shopify:\/\/shop_images\/BC-FEMALE-WT_BK-3_4.png",
+              "collection_title": "Headwear",
+              "collection_image": "shopify:\/\/shop_images\/guy_purp_hat.png",
               "button_label": "shop now",
               "button_link": "shopify:\/\/collections\/hats-that-feed-people-1"
             }
@@ -419,7 +419,7 @@
             "settings": {
               "collection": "apparel-1",
               "collection_title": "",
-              "collection_image": "shopify:\/\/shop_images\/ICONICAPPARELSSM22-111-edited_1.jpg",
+              "collection_image": "shopify:\/\/shop_images\/guy_dreads.png",
               "button_label": "shop now",
               "button_link": "\/timer-popup"
             }
@@ -432,66 +432,6 @@
         "settings": {
           "title": "",
           "grid": 2
-        }
-      },
-      "1608708924643c1f5f": {
-        "type": "rich-text",
-        "settings": {
-          "full_width": false,
-          "section_title": "LA vs NY",
-          "text": "<p><\/p>",
-          "button_label": "shop now",
-          "button_link": "shopify:\/\/collections\/la-vs-ny",
-          "button_label2": "",
-          "button_link2": "",
-          "text_size": "medium"
-        }
-      },
-      "1608710778c8340f5f": {
-        "type": "collection",
-        "settings": {
-          "title": "Hats that Feed People",
-          "title1": "shop all hats",
-          "shop-url": "shopify:\/\/collections\/hats-that-feed-people-1",
-          "collection": "frontpage",
-          "grid": 4,
-          "rows": 2,
-          "show_vendor": true,
-          "show_view_all": false
-        }
-      },
-      "1608710788c3106e51": {
-        "type": "rich-text",
-        "settings": {
-          "full_width": false,
-          "section_title": "Streetwear<br>With a Purpose",
-          "text": "",
-          "button_label": "Shop Now",
-          "button_link": "shopify:\/\/collections\/hats-that-feed-people-1",
-          "button_label2": "Mission",
-          "button_link2": "shopify:\/\/pages\/mission",
-          "text_size": "medium"
-        }
-      },
-      "16087944665b6daeec": {
-        "type": "image-bar",
-        "blocks": {
-          "16087944665b6daeec-0": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Iconic_Web_-_Landscape_Truckers_edited.jpg",
-              "alignment": "center",
-              "button_label": "shop now",
-              "button_link": "shopify:\/\/collections\/la-vs-ny",
-              "cta_label": "FEATURED CAMPAIGN"
-            }
-          }
-        },
-        "block_order": [
-          "16087944665b6daeec-0"
-        ],
-        "settings": {
-          "section_height": "x-large"
         }
       },
       "banner-category": {
@@ -726,15 +666,122 @@
           "title": "1 Purchase = 10 Donated",
           "subtitle": "Meals Donated"
         }
+      },
+      "16528116810f99c10d": {
+        "type": "custom-content-v3",
+        "blocks": {
+          "16528116810f99c10d-0": {
+            "type": "image_text",
+            "settings": {
+              "collection": "",
+              "image": "shopify:\/\/shop_images\/girl.png",
+              "width": "66%",
+              "text_in_image": "CITY COLLECTION",
+              "image_link": "shopify:\/\/collections\/all",
+              "image_link_label": "Shop Now"
+            }
+          },
+          "16528116810f99c10d-1": {
+            "type": "product_stacked",
+            "settings": {
+              "product_one": "iconic-summer-bucket-hat-baby-blue",
+              "product_two": "copy-of-city-collection-tee-shirt-orange",
+              "width": "33%"
+            }
+          }
+        },
+        "block_order": [
+          "16528116810f99c10d-0",
+          "16528116810f99c10d-1"
+        ],
+        "settings": {
+          "title": ""
+        }
+      },
+      "1608710778c8340f5f": {
+        "type": "collection",
+        "settings": {
+          "title": "Hats that Feed People",
+          "title1": "shop all hats",
+          "shop-url": "shopify:\/\/collections\/hats-that-feed-people-1",
+          "collection": "frontpage",
+          "grid": 4,
+          "rows": 1,
+          "show_vendor": true,
+          "show_view_all": false
+        }
+      },
+      "16528845599ca72f30": {
+        "type": "custom-content",
+        "blocks": {
+          "ba953b52-2b73-493f-8556-12726f34b17c": {
+            "type": "product",
+            "settings": {
+              "product": "city-collection-tee-shirt-daffodil",
+              "width": "33%",
+              "alignment": "center"
+            }
+          },
+          "aa04bdc7-5666-4abd-a980-e51e9907dd61": {
+            "type": "product",
+            "settings": {
+              "product": "iconic-baseball-cap-tie-dye-orange-black",
+              "width": "33%",
+              "alignment": "center"
+            }
+          },
+          "427f8ea1-0435-416b-81c6-389185258489": {
+            "type": "product",
+            "settings": {
+              "product": "copy-of-city-collection-tee-shirt-orange",
+              "width": "33%",
+              "alignment": "center"
+            }
+          },
+          "78b0a6b0-cbaf-4590-90d9-b9a57a9c527a": {
+            "type": "product",
+            "settings": {
+              "product": "copy-of-iconic-los-angeles-trucker-hat-black-on-yellow",
+              "width": "33%",
+              "alignment": "center"
+            }
+          },
+          "4dc9c1b1-f62c-4e5d-9218-7d09ee0db4e3": {
+            "type": "product",
+            "settings": {
+              "product": "copy-of-city-collection-tee-shirt-daffodil-1",
+              "width": "33%",
+              "alignment": "center"
+            }
+          },
+          "92d8569b-90c8-4600-be28-52855f7d9ca8": {
+            "type": "product",
+            "settings": {
+              "product": "iconic-baseball-cap-black",
+              "width": "33%",
+              "alignment": "center"
+            }
+          }
+        },
+        "block_order": [
+          "ba953b52-2b73-493f-8556-12726f34b17c",
+          "aa04bdc7-5666-4abd-a980-e51e9907dd61",
+          "427f8ea1-0435-416b-81c6-389185258489",
+          "78b0a6b0-cbaf-4590-90d9-b9a57a9c527a",
+          "4dc9c1b1-f62c-4e5d-9218-7d09ee0db4e3",
+          "92d8569b-90c8-4600-be28-52855f7d9ca8"
+        ],
+        "settings": {
+          "title": ""
+        }
       }
     },
     "content_for_index": [
       "1608705353bac2bc47",
+      "16528845599ca72f30",
       "1608707122342b4341",
-      "16087944665b6daeec",
-      "1608708924643c1f5f",
+      "16528116810f99c10d",
       "1608710778c8340f5f",
-      "1608710788c3106e51",
       "16119075406b138f15"
     ]
   },

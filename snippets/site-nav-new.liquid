@@ -74,21 +74,22 @@
             <div class="nav-background-{{ child_list_handle }} {{ length }}"></div>
             <ul>
               {% for childlink in link.links %}
-              {% capture length %} {{ forloop.length }} {% endcapture %}
-              <style>
-                .nav-background-{{ child_list_handle }}{
-                  display: block;
-                  position: absolute;
-                  background-color: white;
-                  left: -100%;
-                  top: -2px;
-                  width: 150vw;
-                  /* height: calc(({{length}} * 24.5px) + 70px); */
-                  height: 120px;
-                  z-index: -5;
-                  transition: all .2s cubic-bezier(.075,.82,.165,1);
-                }
-              </style>
+              
+                {% capture length %} {{ forloop.length }} {% endcapture %}
+                <style>
+                  .nav-background-{{ child_list_handle }}{
+                    display: block;
+                    position: absolute;
+                    background-color: white;
+                    left: -100%;
+                    top: -2px;
+                    width: 150vw;
+                    /* height: calc(({{length}} * 24.5px) + 70px); */
+                    height: 120px;
+                    z-index: -5;
+                    transition: all .2s cubic-bezier(.075,.82,.165,1);
+                  }
+                </style>
                 <li>
                   <a href="{{ childlink.url }}"
                   class="{{ length }} site-nav__link site-nav__child-link{% if forloop.last %} site-nav__link--last{% endif %}"
@@ -96,6 +97,7 @@
                     <span style="color: black;" class="site-nav__label">{{ childlink.title | escape }}</span>
                   </a>
                 </li>
+              
               {% endfor %}
             </ul>
           {% endif %}
@@ -103,6 +105,7 @@
       </li>
     {% else %}
   		{% if link.url != '#logo' %}
+        {% if link.title != 'SEARCH' %}
           <li {% if link.active %} class="site-nav--active"{% endif %} data-link="{{ link.url}}">
             <a href="{{ link.url }}"
               class="site-nav__link site-nav__link--main{% if link.active %} site-nav__link--active{% endif %}"
@@ -111,11 +114,12 @@
               <span class="site-nav__label">{{ link.title | escape }}</span>
             </a>
           </li>
+        {% endif %}
   		{% else %}
   </ul>
   			
               <h1 class="h2 site-header__logo">
-                	<a href="{{ routes.root_url }}" class="site-header__logo-image{% if section.settings.align_logo == 'center' %} site-header__logo-image--centered{% endif %} normal_logo">
+                <a href="{{ routes.root_url }}" class="site-header__logo-image{% if section.settings.align_logo == 'center' %} site-header__logo-image--centered{% endif %} normal_logo">
                   {% capture logo_alt %}{{ section.settings.logo.alt | default: shop.name }}{% endcapture %}
                   <img class="lazyload js"
                        src="{{ section.settings.logo | img_url: '360x360' }}"                     
@@ -130,20 +134,36 @@
                   </noscript>
                 </a>
                 {%- if section.settings.logo_sticky != blank -%}
-                <a href="{{ routes.root_url }}" class="site-header__logo-image{% if section.settings.align_logo == 'center' %} site-header__logo-image--centered{% endif %} sticky_header_logo">
-                  {% capture logo_alt %}{{ section.settings.logo_sticky.alt | default: shop.name }}{% endcapture %}
-                  <img class="lazyload js"
-                       src="{{ section.settings.logo_sticky | img_url: '360x360' }}"                     
-                       alt="{{ logo_alt | escape }}"
-                       style="max-width: {{ section.settings.logo_max_width }}px; padding: 7.55px 0">
-                  <noscript>
-                    {% capture image_size %}{{ section.settings.logo_max_width | escape }}x{% endcapture %}
-                    <img src="{{ section.settings.logo_sticky | img_url: image_size }}"
-                         srcset="{{ section.settings.logo_sticky | img_url: image_size }} 1x, {{ section.settings.logo_sticky | img_url: image_size, scale: 2 }} 2x"
-                         alt="{{ section.settings.logo_sticky.alt | default: shop.name }}"
-                         style="max-width: {{ section.settings.logo_max_width }}px; padding: 7.55px 0">
-                  </noscript>
-                </a>
+                  <a href="{{ routes.root_url }}" class="site-header__logo-image{% if section.settings.align_logo == 'center' %} site-header__logo-image--centered{% endif %} sticky_header_logo">
+                    {% capture logo_alt %}{{ section.settings.logo_sticky.alt | default: shop.name }}{% endcapture %}
+                    <img class="lazyload js"
+                        src="{{ section.settings.logo_sticky | img_url: '360x360' }}"                     
+                        alt="{{ logo_alt | escape }}"
+                        style="max-width: {{ section.settings.logo_max_width }}px; padding: 7.55px 0">
+                    <noscript>
+                      {% capture image_size %}{{ section.settings.logo_max_width | escape }}x{% endcapture %}
+                      <img src="{{ section.settings.logo_sticky | img_url: image_size }}"
+                          srcset="{{ section.settings.logo_sticky | img_url: image_size }} 1x, {{ section.settings.logo_sticky | img_url: image_size, scale: 2 }} 2x"
+                          alt="{{ section.settings.logo_sticky.alt | default: shop.name }}"
+                          style="max-width: {{ section.settings.logo_max_width }}px; padding: 7.55px 0">
+                    </noscript>
+                  </a>
+                {%- endif -%}
+                {%- if section.settings.logo_sticky_hover != blank -%}
+                  <a href="{{ routes.root_url }}" class="site-header__logo-image{% if section.settings.align_logo == 'center' %} site-header__logo-image--centered{% endif %} sticky_header_logo_hover">
+                    {% capture logo_alt %}{{ section.settings.logo_sticky.alt | default: shop.name }}{% endcapture %}
+                    <img class="lazyload js"
+                        src="{{ section.settings.logo_sticky_hover | img_url: '360x360' }}"                     
+                        alt="{{ logo_alt | escape }}"
+                        style="max-width: {{ section.settings.logo_max_width }}px; padding: 7.55px 0">
+                    <noscript>
+                      {% capture image_size %}{{ section.settings.logo_max_width | escape }}x{% endcapture %}
+                      <img src="{{ section.settings.logo_sticky_hover | img_url: image_size }}"
+                          srcset="{{ section.settings.logo_sticky_hover | img_url: image_size }} 1x, {{ section.settings.logo_sticky_hover | img_url: image_size, scale: 2 }} 2x"
+                          alt="{{ section.settings.logo_sticky.alt | default: shop.name }}"
+                          style="max-width: {{ section.settings.logo_max_width }}px; padding: 7.55px 0">
+                    </noscript>
+                  </a>
                 {%- endif -%}
               </h1>
   			

@@ -2398,9 +2398,14 @@ theme.Header = (function () {
     cache.$siteHeader.hover(
       function () {
         $("#site-header").addClass("header-style-toggle");
+        $("#site-header").hasClass("header-fixed")
+          ? $("#site-header").addClass("fixed-logo")
+          : $("#site-header").addClass("normal-logo");
       },
       function () {
         $("#site-header").removeClass("header-style-toggle");
+        $("#site-header").removeClass("fixed-logo");
+        $("#site-header").removeClass("normal-logo");
       }
     );
     cache.$parents.hover(
@@ -2413,15 +2418,28 @@ theme.Header = (function () {
         var $el = $(this);
       }
     );
-    // cache.$parents.hasClass(config.activeClass)
-    //   ? showDeco(cache.$parents)
-    //   : removeDeco(cache.$parents);
     $("#site-header").hover(
       function () {
         return;
       },
       function () {
         hideDropdown(cache.$activeDropdown);
+      }
+    );
+    $(".site-header__logo").hover(
+      function () {
+        hideDropdown(cache.$activeDropdown);
+      },
+      function () {
+        return;
+      }
+    );
+    $("#SiteNav li:nth-child(3)").hover(
+      function () {
+        hideDropdown(cache.$activeDropdown);
+      },
+      function () {
+        return;
       }
     );
 

@@ -1255,10 +1255,19 @@ header.border-bottom.site-header.header-fixed .site-nav__link--active .site-nav_
 .site-nav__dropdown{
 	// transition: ease-in-out .5s all;
 }
-header.border-bottom.site-header.header-style-toggle a.normal_logo{
+.sticky_header_logo_hover{
+	display: none;
+}
+header.border-bottom.site-header.fixed-logo a.sticky_header_logo_hover{
 	display: block !important;
 }
-header.border-bottom.site-header.header-style-toggle a.sticky_header_logo{
+header.border-bottom.site-header.fixed-logo a.sticky_header_logo{
+	display: none !important;
+} 
+header.border-bottom.site-header.normal-logo a.normal_logo{
+	display: block !important;
+}
+header.border-bottom.site-header.normal-logo a.sticky_header_logo{
 	display: none !important;
 }
 header.border-bottom.site-header.header-style-toggle .site-nav__label {
