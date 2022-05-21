@@ -112,7 +112,7 @@
                 {% capture logo_alt %}{{ section.settings.logo_sticky.alt | default: shop.name }}{% endcapture %}
                 <img class="lazyload js"
                      src="{{ section.settings.logo_sticky | img_url: '360x360' }}"               
-                     style="max-width: {{ section.settings.logo_max_width }}px">
+                     style="max-width: {{ section.settings.logo_max_width }}px; padding: 7.5px 0;">
                 <noscript>
                   {% capture image_size %}{{ section.settings.logo_max_width | escape }}x{% endcapture %}
                   <img src="{{ section.settings.logo_sticky | img_url: image_size }}"
@@ -121,6 +121,22 @@
                        style="max-width: {{ section.settings.logo_max_width }}px;">
                 </noscript>
               </a>
+              {%- endif -%}
+              {%- if section.settings.logo_sticky_hover != blank -%}
+                <a href="{{ routes.root_url }}" class="site-header__logo-image{% if section.settings.align_logo == 'center' %} site-header__logo-image--centered{% endif %} sticky_header_logo_hover">
+                  {% capture logo_alt %}{{ section.settings.logo_sticky.alt | default: shop.name }}{% endcapture %}
+                  <img class="lazyload js"
+                      src="{{ section.settings.logo_sticky_hover | img_url: '360x360' }}"                     
+                      alt="{{ logo_alt | escape }}"
+                      style="max-width: {{ section.settings.logo_max_width }}px; padding: 7.55px 0">
+                  <noscript>
+                    {% capture image_size %}{{ section.settings.logo_max_width | escape }}x{% endcapture %}
+                    <img src="{{ section.settings.logo_sticky_hover | img_url: image_size }}"
+                        srcset="{{ section.settings.logo_sticky_hover | img_url: image_size }} 1x, {{ section.settings.logo_sticky_hover | img_url: image_size, scale: 2 }} 2x"
+                        alt="{{ section.settings.logo_sticky.alt | default: shop.name }}"
+                        style="max-width: {{ section.settings.logo_max_width }}px; padding: 7.55px 0">
+                  </noscript>
+                </a>
               {%- endif -%}
             {% else %}
               <a class="site-header__logo-link" href="{{ routes.root_url }}">{{ shop.name }}</a>
@@ -140,10 +156,10 @@
           <div class="mobile-right-header">
               <div class="site-header__icons-wrapper">
 
-                <button type="button" class="btn--link site-header__icon site-header__search-toggle js-drawer-open-top">
+                <!-- <button type="button" class="btn--link site-header__icon site-header__search-toggle js-drawer-open-top">
                   {% include 'icon-search' %}
                   <span class="icon__fallback-text">{{ 'layout.navigation.search' | t }}</span>
-                </button>
+                </button> -->
 
                 {% if shop.customer_accounts_enabled %}
                   {% if customer %}

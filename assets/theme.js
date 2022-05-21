@@ -2408,6 +2408,40 @@ theme.Header = (function () {
         $("#site-header").removeClass("normal-logo");
       }
     );
+
+    function navOpen() {
+      $("#site-header").addClass("fixed-logo");
+      $("#site-header").removeClass("normal-logo");
+      console.log("open drawer");
+    }
+    function navClosed() {
+      $("#site-header").removeClass("fixed-logo");
+      console.log("closed drawer");
+    }
+
+    const header = document.querySelector("#site-header");
+    const options = {
+      attributes: true,
+    };
+
+    function callback(mutationList, observer) {
+      mutationList.forEach(function (mutation) {
+        if (
+          mutation.type === "attributes" &&
+          mutation.attributeName === "class"
+        ) {
+          // handle class change
+          console.log("somethine changed");
+          $("#site-header").hasClass("nav-drawer-open")
+            ? navOpen()
+            : navClosed();
+        }
+      });
+    }
+
+    const observer = new MutationObserver(callback);
+    // observer.observe(header, options);
+
     cache.$parents.hover(
       function () {
         hideDropdown(cache.$activeDropdown);
@@ -2653,6 +2687,8 @@ theme.MobileNav = (function () {
     var translateHeaderHeight = cache.$siteHeader.outerHeight();
 
     cache.$mobileNavContainer.prepareTransition().addClass(classes.navOpen);
+    $("#site-header").addClass("fixed-logo");
+    $("#site-header").removeClass("normal-logo");
 
     cache.$mobileNavContainer.css({
       transform: "translateY(" + translateHeaderHeight + "px)",
@@ -2686,6 +2722,14 @@ theme.MobileNav = (function () {
 
   function closeMobileNav() {
     cache.$mobileNavContainer.prepareTransition().removeClass(classes.navOpen);
+    $("#site-header")
+      .removeClass("header-style-toggle")
+      .removeClass("normal-logo")
+      .removeClass("fixed-logo");
+
+    // $(".sticky_header_logo").css("display", "block !important");
+    // $(".sticky_header_logo_hover").css("display", "none !important");
+    // $(".normal_logo").css("display", "none !important");
 
     cache.$mobileNavContainer.css({
       transform: "translateY(-100%)",
@@ -7734,8 +7778,10 @@ var headerSticky = function () {
   var sticky = $(".site-header"),
     scroll = $(window).scrollTop();
 
-  if (scroll >= 25) sticky.addClass("header-fixed");
-  else sticky.removeClass("header-fixed");
+  if (scroll >= 25) {
+    sticky.addClass("header-fixed");
+    // $('.sticky_header_logo').css('display','')
+  } else sticky.removeClass("header-fixed");
 };
 $(window).scroll(function () {
   headerSticky();
