@@ -1,0 +1,207 @@
+<!-- 
+    product_title: product.title, 
+    current_variant: current_variant, 
+    show_vendor: section.settings.show_vendor, 
+    section_id: section.id, 
+    product: product, 
+    option: option, 
+    show_quantity_selector: section.settings.show_quantity_selector, 
+    enable_payment_button: section.settings.enable_payment_button,
+    show_variant_lables: section.settings.show_variant_labels
+ -->
+
+ <style>
+    
+    .product-data-container{
+        width: 450px;
+        height: 120px;
+        margin: auto;
+    }
+    .product-data{
+        position: absolute;
+        width: 500px;
+        height: 180px;
+        padding: 34px 27px;
+        background-color: #fff;
+        opacity: .9;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%,-49%);
+    }
+    .title-price{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 23px;
+        border-bottom: 1px solid #707070;
+    }
+    .title-price h1{
+        font-size: 18px;
+        font-weight: 400;
+        margin: 0;
+    }
+    .price__regular{
+        margin: 0;
+        font-size: 20px;
+    }
+    .price-item{
+        font-weight: 400;
+    }
+    .price__regular dd{
+        margin: 0;
+    }
+    .product-form{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 27px;
+    }
+    .product-form select{
+        min-height: 40px;
+    }
+    .product-form__item{
+        width: 120px;
+        height: 40px;
+        margin-bottom: 0;
+        padding: 0;
+    }
+    select{
+        font-size: 15px;
+        padding: 10px 15px;
+    }
+    .product-form__controls-group~.product-form__controls-group--submit{
+        margin: 0;
+        width: 180px;
+        min-height: 40px;
+    }
+    .product-form__item button{
+        padding: 10px 5px;
+    }
+    .product-form__cart-submit{
+        width: 180px;
+        min-height: 40px !important;
+        line-height: 1;
+    }
+    .product-form__controls-group {
+        flex-wrap: nowrap;
+    }
+    .product-form__controls-group div:nth-child(1){
+        margin-right: 15px;
+    }
+ </style>
+
+<div class="product-data">
+
+    <div class="product-data-container">
+
+        <div class="title-price">
+            <h1 class="">{{ product.title }}</h1>
+        
+            <div class="product__price">
+              {% include 'product-price', variant: current_variant, show_vendor: show_vendor %}
+            </div>
+        </div>
+    
+        {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+          <div class="product__policies rte" data-product-policies>
+            {%- if shop.taxes_included -%}
+              {{ 'products.product.include_taxes' | t }}
+            {%- endif -%}
+            {%- if shop.shipping_policy.body != blank -%}
+              {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+    
+        {% capture "form_classes" -%}
+          product-form product-form-{{ section.id }}
+          {%- unless show_variant_labels %} product-form--hide-variant-labels {% endunless %}
+          {%- if enable_payment_button and product.has_only_default_variant %} product-form--payment-button-no-variants {%- endif -%}
+          {%- if current_variant.available == false %} product-form--variant-sold-out {%- endif -%}
+        {%- endcapture %}
+    
+        {% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
+          {% unless product.has_only_default_variant %}
+            <div class="product-form__controls-group">
+            {% for option in product.options_with_values %}
+                <div class="selector-wrapper js product-form__item">
+                <!--<label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSelector-{{ forloop.index0 }}">
+                    {{ option.name }}
+                    </label> -->
+                    <select class="single-option-selector single-option-selector-{{ section.id }} product-form__input"
+                    id="SingleOptionSelector-{{ forloop.index0 }}"
+                    data-index="option{{ forloop.index }}"
+                    >
+                    {% for value in option.values %}
+                        <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
+                    {% endfor %}
+                    </select>
+                </div>
+            {% endfor %}
+            </div>
+          {% endunless %}
+    
+          <select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js">
+            {% for variant in product.variants %}
+              <option value="{{ variant.id }}"
+                {%- if variant == current_variant %} selected="selected" {%- endif -%}
+              >
+                {{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+              </option>
+            {% endfor %}
+          </select>
+    
+          {% if show_quantity_selector %}
+            <div class="product-form__controls-group">
+              <div class="product-form__item">
+                <label for="Quantity-{{ section.id }}"></label>
+                <input type="number" id="Quantity-{{ section.id }}"
+                  name="quantity" value="1" min="1" pattern="[0-9]*"
+                  class="product-form__input product-form__input--quantity" data-quantity-input
+                        placeholder="{{ 'products.product.quantity' | t }}"
+                        
+                >
+              </div>
+            </div>
+          {% endif %}
+    
+          <div class="product-form__error-message-wrapper product-form__error-message-wrapper--hidden{% if section.settings.enable_payment_button %} product-form__error-message-wrapper--has-payment-button{% endif %}"
+            data-error-message-wrapper
+            role="alert"
+          >
+            <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+            {% include 'icon-error' %}
+            <span class="product-form__error-message" data-error-message>{{ 'products.product.quantity_minimum_message' | t }}</span>
+          </div>
+    
+          <div class="product-form__controls-group product-form__controls-group--submit">
+            <div class="product-form__item product-form__item--submit
+              {%- if enable_payment_button %} product-form__item--payment-button {%- endif -%}
+              {%- if product.has_only_default_variant %} product-form__item--no-variants {%- endif -%}"
+            >
+              <button type="submit" name="add"
+                {% unless current_variant.available %} aria-disabled="true"{% endunless %}
+                aria-label="{% unless current_variant.available %}{{ 'products.product.sold_out' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endunless %}"
+                class="btn product-form__cart-submit{% if enable_payment_button %} btn--secondary-accent{% endif %}"
+                data-add-to-cart>
+                <span data-add-to-cart-text>
+                  {% unless current_variant.available %}
+                    {{ 'products.product.sold_out' | t }}
+                  {% else %}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {% endunless %}
+                </span>
+                <span class="hide" data-loader>
+                  {% include 'icon-spinner' %}
+                </span>
+              </button>
+              {% if enable_payment_button %}
+                {{ form | payment_button }}
+              {% endif %}
+            </div>
+          </div>
+        {% endform %}
+
+    </div>
+</div>
