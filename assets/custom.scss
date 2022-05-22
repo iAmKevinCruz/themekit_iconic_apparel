@@ -4001,7 +4001,7 @@ div#shopify-section-16087944665b6daeec {
 }}
 
 
-// DYNAMIC COLOR SWATCH CSS
+// DYNAMIC COLOR SWATCH CSS BY KEVIN
 .card-wrapper .bc-colors {
 	justify-content: center;
 	margin: 5px 0;
@@ -4079,4 +4079,64 @@ div#shopify-section-16087944665b6daeec {
 	display: block;
 	font-size: .75rem;
 	color: #000;
+}
+
+// COLLECTION-TEMPLATE CHANGES BY KEVIN
+body.template-collection .main-content div#shopify-section-collection-template>div header.collection-header>.page-width{
+	background: transparent;
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+	padding: 0 15px;
+	
+	@media only screen and (min-width:768px){
+		padding: 0 30px;
+	}
+	@media only screen and (min-width:1200px){
+		padding: 0 50px;
+	}
+}
+.page-width-small{
+	max-width: none !important;
+	padding: 0 15px;
+	
+	@media only screen and (min-width:768px){
+		padding: 0 30px;
+	}
+	@media only screen and (min-width:1200px){
+		padding: 0 50px;
+	}
+}
+
+#Collection .grid .grid__item--collection-template .grid-view-item{
+	margin: 0 auto 15px !important;
+
+	@media only screen and (min-width:768px){
+		margin: 0 auto 30px !important;
+	}
+	@media only screen and (min-width:1200px){
+		margin: 0 auto 50px !important;
+	}
+}
+
+.filters-toolbar{
+	width: auto;
+}
+.filters-toolbar__item-child:first-child{
+	margin: 0;
+}
+.page-width:after{
+	content: none;
+}
+body.template-collection .main-content div#shopify-section-collection-template>div header.collection-header>.page-width .section-header h1{
+	font-family: 'Montserrat';
+	font-size: 15px;
+	padding: 0;
+}
+body.template-collection .main-content div#shopify-section-collection-template>div header.collection-header>.page-width .section-header{
+	max-width: inherit;
+	margin: 0;
 }
