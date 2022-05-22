@@ -11,85 +11,96 @@
  -->
 
  <style>
-    
-    .product-data-container{
-        width: 450px;
-        height: 120px;
-        margin: auto;
-    }
+  .product-data-container{
+    width: 450px;
+    height: 120px;
+    margin: auto;
+  }
+  .product-data{
+    position: absolute;
+    width: 500px;
+    height: 180px;
+    padding: 34px 27px;
+    background-color: #fff;
+    opacity: .9;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%,-49%);
+  }
+  .title-price{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 23px;
+      border-bottom: 1px solid #707070;
+  }
+  .title-price h1{
+      font-size: 18px;
+      font-weight: 400;
+      margin: 0;
+  }
+  .price__regular{
+      margin: 0;
+      font-size: 20px;
+  }
+  .price-item{
+      font-weight: 400;
+  }
+  .price__regular dd{
+      margin: 0;
+  }
+  .product-form{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: 27px;
+  }
+  .product-form select{
+      min-height: 40px;
+  }
+  .product-form__item{
+      width: 100px;
+      height: 40px;
+      flex-basis: auto;
+      margin-bottom: 0;
+      padding: 0;
+  }
+  select{
+      font-size: 15px;
+      padding: 10px 10px;
+  }
+  .product-form__controls-group~.product-form__controls-group--submit{
+      margin: 0;
+      width: 180px;
+      min-height: 40px;
+  }
+  .product-form__item button{
+      padding: 10px 5px;
+  }
+  .product-form__cart-submit{
+      width: 180px;
+      min-height: 40px !important;
+      line-height: 1;
+  }
+  .product-form__controls-group {
+      flex-wrap: nowrap;
+  }
+  .product-form__controls-group div:nth-child(1){
+      margin-right: 15px;
+  }
+
+  @media only screen and (max-width:991px){
     .product-data{
-        position: absolute;
-        width: 500px;
-        height: 180px;
-        padding: 34px 27px;
-        background-color: #fff;
-        opacity: .9;
-        top: 80%;
-        left: 50%;
-        transform: translate(-50%,-49%);
+      background-color: transparent;
+      top: 88%;
     }
-    .title-price{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding-bottom: 23px;
-        border-bottom: 1px solid #707070;
+    #shopify-section-product-template .single-product-slider-content{
+      padding: 30px 30px 210px !important;
     }
-    .title-price h1{
-        font-size: 18px;
-        font-weight: 400;
-        margin: 0;
-    }
-    .price__regular{
-        margin: 0;
-        font-size: 20px;
-    }
-    .price-item{
-        font-weight: 400;
-    }
-    .price__regular dd{
-        margin: 0;
-    }
-    .product-form{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding-top: 27px;
-    }
-    .product-form select{
-        min-height: 40px;
-    }
-    .product-form__item{
-        width: 120px;
-        height: 40px;
-        margin-bottom: 0;
-        padding: 0;
-    }
-    select{
-        font-size: 15px;
-        padding: 10px 15px;
-    }
-    .product-form__controls-group~.product-form__controls-group--submit{
-        margin: 0;
-        width: 180px;
-        min-height: 40px;
-    }
-    .product-form__item button{
-        padding: 10px 5px;
-    }
-    .product-form__cart-submit{
-        width: 180px;
-        min-height: 40px !important;
-        line-height: 1;
-    }
-    .product-form__controls-group {
-        flex-wrap: nowrap;
-    }
-    .product-form__controls-group div:nth-child(1){
-        margin-right: 15px;
-    }
- </style>
+  }
+
+</style>
 
 <div class="product-data">
 
@@ -125,6 +136,7 @@
           {% unless product.has_only_default_variant %}
             <div class="product-form__controls-group">
             {% for option in product.options_with_values %}
+              {% unless option.name == 'Color' %}
                 <div class="selector-wrapper js product-form__item">
                 <!--<label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSelector-{{ forloop.index0 }}">
                     {{ option.name }}
@@ -137,11 +149,17 @@
                         <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
                     {% endfor %}
                     </select>
-                </div>
+                    <script>
+                      console.log('{{option | json}}');
+                    </script>
+                </div>                
+              {% endunless %}
             {% endfor %}
             </div>
           {% endunless %}
-    
+
+          {%- render 'component-colors', product: product, show_heading: false -%}
+          
           <select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js">
             {% for variant in product.variants %}
               <option value="{{ variant.id }}"

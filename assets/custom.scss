@@ -3216,10 +3216,10 @@ background-color: transparent;
 }
   
   .product-single-description-content {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-    padding-top: 50px !important;
-    padding-bottom: 35px !important;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 50px;
+    padding-bottom: 35px;
 }
   .grid-slider-collection .slick-slider .slick-list .slick-track .slick-slide{    padding-left: 15px; padding-right:0px;}
   .template-product .grid-slider-collection .slick-slider {
@@ -3999,3 +3999,84 @@ div#shopify-section-16087944665b6daeec {
 .site-footer__hr {
     margin: 24px 0 20px 0;
 }}
+
+
+// DYNAMIC COLOR SWATCH CSS
+.card-wrapper .bc-colors {
+	justify-content: center;
+	margin: 5px 0;
+}
+.bc-colors {
+	display: flex;
+	align-items: center;
+	// flex-wrap: wrap;
+}
+.bc-colors__heading {
+	width: 100%;
+	font-size: 12px;
+	font-weight: 400;
+	color: #494949;
+	text-transform: uppercase;
+	margin-bottom: 18px;
+	margin-top: 0;
+}
+.bc-colors__item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	// margin-right: 10px;
+	text-align: center;
+}
+.bc-colors-style-2 .bc-colors__item {
+	height: 50px;
+	margin-right: 1rem;
+	margin-bottom: .5rem;
+}
+.bc-colors__item a {
+	text-decoration: none;
+}
+.bc-colors-style-2 .bc-colors__item a {
+	width: 50px;
+	height: 50px;
+	border: 1px solid transparent;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 100%;
+}
+.bc-colors__icon,
+.bc-colors__icon:empty {
+	display: block;
+	width: 28px;
+	height: 28px;
+	border-radius: 100%;
+	border: 1px solid #ccc;
+	background-size: cover;
+	background-position: center;
+	background-color: transparent;
+	// margin-bottom: 10px;
+}
+.bc-colors-style-2 .bc-colors__icon,
+.bc-colors-style-2 .bc-colors__icon:empty {
+	width: 3.8rem;
+	height: 3.8rem;
+	margin-bottom: 0;
+}
+.bc-colors-style-1 .bc-colors__item-selected {
+	border: 1px solid #000;
+	border-radius: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.bc-colors-style-2 .bc-colors__item-selected .bc-colors__icon,
+.bc-colors-style-2 .bc-colors__item-selected .bc-colors__icon:empty {
+	border: 6px solid #dec5b3;
+}
+.bc-colors__name {
+	display: block;
+	font-size: .75rem;
+	color: #000;
+}

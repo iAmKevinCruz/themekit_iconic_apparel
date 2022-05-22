@@ -146,6 +146,7 @@ body {
 
   <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
+  {% section 'product-color-uploads' %}
   {%- if settings.enable_ajax -%}
     {% include 'cart-popup' %}
   {%- endif -%}

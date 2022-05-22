@@ -1,4 +1,5 @@
 <style>
+  /* HERO BANNER SECTION SETTINGS */
   #shopify-section-product-template .single-product-slider-content .product-image-twinslider .product_image{
     padding: 0;
   }
@@ -15,97 +16,46 @@
   .slick-dots{
     display: none !important;
   }
-  #shopify-section-product-related .page-width{
-    padding: 0 15px;
+
+  /* ITEM DESCRIPTION SETTINGS */
+  .product-single-description-content{
+    padding: 15px;
   }
-  .grid__item{
-    padding: 0;
-  }
-  .grid-slider-collection .slick-slider .slick-list .slick-track .slick-slide{
-    /* padding: 0 15px; */
-    padding: 0 0 0 15px;
-  }
-  .grid{
-    margin: 0;
-  }
-  .left-right-heading {
-    /* padding: 0 0 0 15px; */
-    padding: 0;
-  }
-  .grid-slider-collection .slick-slider{
-    margin: 0;
-  }
-  .grid--view-items{
-    margin: 0;
-  }
-  #shopify-section-product-related .slick-prev{
-    left: 15px;
-  }
-  #shopify-section-product-related .slick-next {
-    right: 0;
-  }
-  #shopify-section-product-related .section-header {
-    margin-bottom: 15px;
-  }
-  .grid-slider-collection .slick-slider .slick-list .slick-track {
+  .product-single-description-content .product-description-content-right{
     padding: 0 0 15px;
   }
-  .grid-view-item{
-    margin: 0;
+  .product-single-description-content .product-wrap-data{
+    padding: 30px 15px;
   }
-  .csstransforms{
-    padding-bottom: 0;
-  }
-  .grid-slider-collection .product-card__image-with-placeholder-wrapper{
-    margin-bottom: 15px;
+  @media only screen and (max-width:991px){
+    .product-single-description-content .product-description-content-right{
+      order: -1;
+      text-align: center;
+    }
   }
   @media only screen and (min-width:768px){
-    #shopify-section-product-related .page-width{
-    padding: 0 25px;
+    .product-single-description-content{
+      padding: 30px;
     }
-    .grid-slider-collection .slick-slider .slick-list .slick-track .slick-slide{
-      padding: 0 15px;
+    .product-single-description-content .product-description-content-right{
+      padding: 0 0 30px;
     }
-    .left-right-heading {
-      padding: 0 0 0 15px;
+    .product-single-description-content .product-wrap-data{
+      padding: 30px 15px;
     }
-    #shopify-section-product-related .slick-prev{
-      left: 15px;
-    }
-    #shopify-section-product-related .slick-next {
-      right: 15px;
-    }
-    #shopify-section-product-related .section-header {
-      margin-bottom: 15px;
-    }
-    .grid-slider-collection .slick-slider .slick-list .slick-track {
-    padding: 0 0 30px;
-    }
-    .grid-slider-collection .product-card__image-with-placeholder-wrapper{
-      margin-bottom: 15px;
+    .product-single-description-content .product-description-content-left{
+      padding: 0;
     }
   }
   @media only screen and (min-width:1200px){
-    .grid-slider-collection .slick-slider .slick-list .slick-track .slick-slide{
-      padding: 0 25px;
+    .product-single-description-content{
+      padding: 50px;
     }
-    .left-right-heading {
-      padding: 0 0 0 25px;
+    .product-single-description-content .product-description-content-right{
+      padding: 50px 0;
     }
-    #shopify-section-product-related .slick-prev{
-      left: 25px;
-    }
-    #shopify-section-product-related .slick-next {
-      right: 25px;
-    }
-    #shopify-section-product-related .section-header {
-      margin-bottom: 25px;
-    }
-    .grid-slider-collection .slick-slider .slick-list .slick-track {
-    padding: 0 0 50px;
-    }
-    .grid-slider-collection .product-card__image-with-placeholder-wrapper{
-      margin-bottom: 25px;
+    .product-single-description-content .product-wrap-data{
+      padding: 50px 25px;
     }
   }
 </style>
