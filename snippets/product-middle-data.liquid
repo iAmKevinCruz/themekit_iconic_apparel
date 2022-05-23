@@ -11,8 +11,11 @@
  -->
 
  <style>
+   .title-price h1{
+    font-family: 'Montserrat';
+   }
   .product-data-container{
-    width: 450px;
+    /* width: 450px; */
     height: 120px;
     margin: auto;
   }
@@ -87,16 +90,89 @@
       flex-wrap: nowrap;
   }
   .product-form__controls-group div:nth-child(1){
-      margin-right: 15px;
+      margin-right: 0;
   }
-
+  
   @media only screen and (max-width:991px){
     .product-data{
-      background-color: transparent;
-      top: 88%;
+      background-color: white;
+      width: 450px;
+      height: auto;
+      top: 80%;
+    }
+    .product-data-container{
+      height: auto;
+    }
+    .title-price h1{
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid #707070;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+    }
+    .title-price{
+      flex-direction: column;
+      border-bottom: none;
+      padding-bottom: 15px;
+    }
+    .product-form{
+      flex-direction: column;
+      align-items: center;
+      padding-top: 0;
+    }
+    .product-form__controls-group{
+      padding-bottom: 15px;
+    }
+    .bc-colors{
+      padding-bottom: 15px;
     }
     #shopify-section-product-template .single-product-slider-content{
-      padding: 30px 30px 210px !important;
+      padding: 0 !important;
+      background-color: transparent !important;
+    }
+    
+    #shopify-section-product-template .single-product-slider-content .product-image-twinslider .product_image{
+      width: 100vw !important;
+      height: 100vh;
+      overflow: hidden;
+    }
+    #shopify-section-product-template .single-product-slider-content .slick-track img{
+      transform: scale(1.35);
+      transform-origin: bottom;
+    }
+  }
+  @media only screen and (max-width:768px){
+    #shopify-section-product-template .single-product-slider-content .slick-track img{
+      transform: scale(1.35);
+      transform-origin: top !important;
+    }
+    #shopify-section-product-template .single-product-slider-content .product-image-twinslider .product_image{
+      height: 100vh !important;
+    }
+    .product-data{
+      top: 84%;
+    }
+  }
+  @media only screen and (max-width:650px){
+    #shopify-section-product-template .single-product-slider-content .product-image-twinslider .product_image{
+      height: 97vh !important;
+    }
+    .product-data{
+      top: 84%;
+    }
+    .slick-prev, .slick-next{
+      top: 50%;
+    }
+  }
+  @media only screen and (max-width:465px){
+    #shopify-section-product-template .single-product-slider-content .product-image-twinslider .product_image{
+      height: 85vh !important;
+    }
+    .product-data{
+      top: 81%;
+    }
+    .slick-prev, .slick-next{
+      top: 30%;
     }
   }
 

@@ -1,6 +1,10 @@
 <div class="bc-colors bc-colors-style-1">
     {%- assign productType = product.type | handleize | prepend: 'color-' -%}
-    {%- assign productColorTitle = product.title | split: ' | ' | last -%}
+    {% for tag in product.tags %}
+        {% if tag contains 'color-' %}
+            {%- assign productColorTitle = tag | split: '-' | last -%}
+        {% endif %}
+    {% endfor %}
     {%- assign productColorImage = productColorTitle | strip | replace: ' ', '_' | downcase | prepend: 'c_' -%}
     {%- assign productColor = productColorTitle | strip | replace: ' ', '_' | downcase | prepend: 'c_bg_' -%}
     {%- if show_heading -%}
@@ -10,7 +14,12 @@
     {%- endif -%}
     {%- if collections[productType].products.size > 0 -%}
         {%- for prod in collections[productType].products -%}
-            {%- assign colorTitle = prod.title | split: ' | ' | last -%}        
+            {% for tag in prod.tags %}
+                {% if tag contains 'color-' %}
+                    {%- assign colorTitle = tag | split: '-' | last -%}
+                {% endif %}
+            {% endfor %}
+                 
             {%- assign color = colorTitle | strip | replace: ' ', '-' | downcase  -%}
             {%- if colorTitle == productColorTitle -%}
             <div class="bc-colors__item bc-colors__item-selected">
