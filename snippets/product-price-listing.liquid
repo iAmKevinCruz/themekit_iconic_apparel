@@ -11,7 +11,7 @@
 {% endcomment %}
 <style>
   .grid-slider-collection .price .price-item {
-		font-size: 10px;
+		font-size: 9px;
 		font-family: 'Red Rose';
 		line-height: normal;
 		font-weight: 300;
@@ -27,7 +27,7 @@
 		font-size: 10px;
 	}
   .product-card__title {
-    font-size: 10px ;
+    font-size: 9px ;
 		line-height: normal !important;
 	}
   .price-item-font-thin{
@@ -108,21 +108,10 @@
         {%- if product.price_varies -%}
           {{ 'products.product.from_lowest_price_html' | t: lowest_price: money_price }}
         {%- else -%}
-        <style>
-          .price-span{
-            display: flex;
-            flex-direction: row;
-
-          }
-          .x-svg{
-            width: 13px;
-            margin: 0 5px;
-          }
-        </style>
-        <div class="price-span">
-          <!-- {{ money_price }} | <svg width="15" height="15"><image xlink:href="https://cdn.shopify.com/s/files/1/0348/1285/4408/files/x_black_svg.svg?v=1652890593" src="yourfallback.png" width="15" height="15"/></svg> MEALS -->
-          {{ money_price }} | <img class="x-svg" src="https://cdn.shopify.com/s/files/1/0348/1285/4408/files/x_grey_svg.svg?v=1652891591" alt=""> MEALS
-        </div>
+          <div class="price-span">
+            <!-- {{ money_price }} | <svg width="15" height="15"><image xlink:href="https://cdn.shopify.com/s/files/1/0348/1285/4408/files/x_black_svg.svg?v=1652890593" src="yourfallback.png" width="15" height="15"/></svg> MEALS -->
+            {{ money_price }} | <img class="x-svg" src="https://cdn.shopify.com/s/files/1/0348/1285/4408/files/x_grey_svg.svg?v=1652891591" alt=""> MEALS
+          </div>
         {%- endif -%}
       </span>
     </dd>

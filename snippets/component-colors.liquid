@@ -41,8 +41,11 @@
     {%- else -%}
         <div class="bc-colors__item bc-colors__item-selected">
             <div class="bc-colors__icon" 
-            {% if settings[productColorImage] != blank %}style="background-image: url({{ settings[productColorImage] | img_url: '50x' }});"{% elsif settings[productColor] != blank %}style="background-color:{{ settings[productColor] }};"{% endif %}
+            data-color="{{productColorTitle}}"
             title="{{productColorTitle}}"></div>
+            <!-- <div class="bc-colors__icon" 
+            {% if settings[productColorImage] != blank %}style="background-image: url({{ settings[productColorImage] | img_url: '50x' }});"{% elsif settings[productColor] != blank %}style="background-color:{{ settings[productColor] }};"{% endif %}
+            title="{{productColorTitle}}"></div> -->
         </div>
     {%- endif -%}
 </div>

@@ -1182,7 +1182,7 @@ div#shopify-section-1586805429324 {
 
 .site-nav a {
 	text-decoration: none;
-	padding: 3px 15px;
+	padding: 3px 10px;
 	letter-spacing: 2px !important;
 	font-size: 12px;
 }
@@ -1720,7 +1720,7 @@ body.template-collection .main-content div#shopify-section-collection-template>d
     margin: 0 auto;}
 
 
-#Collection .grid .product-card .product-card__title{ width:75%;}
+// #Collection .grid .product-card .product-card__title{ width:75%;}
 
 #Collection .grid{ margin-left:-50px;}
 
@@ -3310,7 +3310,7 @@ background-color: transparent;
 }
   
   body.template-collection .main-content div#shopify-section-collection-template>div>div#Collection{ margin-top:15px!important;}
-  #Collection .grid .product-card .product-card__title{ width:70%;}
+//   #Collection .grid .product-card .product-card__title{ width:70%;}
     body.template-collection .main-content div#shopify-section-collection-template > div header.collection-header > .page-width .section-header h1 {
 
   font-size: 18px;
@@ -3696,10 +3696,10 @@ background-color: transparent;
   .site-header__mobile-nav .grid__item .mobile-right-header .site-header__icons-wrapper .site-header__menu {
     margin-top: 0;
 }
-  #Collection .grid .product-card .product-card__title {
-    width: 100%;
-    margin-bottom: 3px;
-}
+//   #Collection .grid .product-card .product-card__title {
+//     width: 100%;
+//     margin-bottom: 3px;
+// }
   
   div#shopify-section-timer-popup div#timer_popup_section .timer_popup .timer_popup_wrapper .count_down_timer span#timer>span{    padding: 5px 10px;}
   div#shopify-section-timer-popup div#timer_popup_section .timer_popup .timer_popup_wrapper .count_down_timer span#timer>span .ts-value {
@@ -4091,6 +4091,7 @@ body.template-collection .main-content div#shopify-section-collection-template>d
     width: 100%;
     margin: 0;
 	padding: 0 15px;
+	border-bottom: 1px solid #ebebeb;
 	
 	@media only screen and (min-width:768px){
 		padding: 0 30px;
@@ -4110,18 +4111,16 @@ body.template-collection .main-content div#shopify-section-collection-template>d
 		padding: 0 50px;
 	}
 }
-
 #Collection .grid .grid__item--collection-template .grid-view-item{
 	margin: 0 auto 15px !important;
 
 	@media only screen and (min-width:768px){
-		margin: 0 auto 30px !important;
+		margin: 0 auto 25px !important;
 	}
 	@media only screen and (min-width:1200px){
-		margin: 0 auto 50px !important;
+		// margin: 0 auto 50px !important;
 	}
 }
-
 .filters-toolbar{
 	width: auto;
 }
@@ -4138,5 +4137,115 @@ body.template-collection .main-content div#shopify-section-collection-template>d
 }
 body.template-collection .main-content div#shopify-section-collection-template>div header.collection-header>.page-width .section-header{
 	max-width: inherit;
+	height: 55px;
+	display: flex;
+	align-items: center;
 	margin: 0;
+	
+}
+.site-footer{
+	margin: 0;
+}
+.template-collection .pagination{
+	margin-top: 15px;
+	padding: 0 0 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@media only screen and (min-width:768px){
+		margin-top: 20px;
+		padding: 0 0 30px;
+	}
+
+	@media only screen and (min-width:1200px){
+		margin-top: 40px;
+		padding: 0 0 50px;
+	}
+}
+
+// NAV BAR CHANGES BY KEVIN
+.site-header .logo-align--center .secound-header .site-nav{
+	margin-left: -10px;
+}
+
+// PRODUCT GRID CARD CSS SETTINGS
+.price-span{
+	display: flex;
+	flex-direction: row;
+}
+.x-svg{
+width: 9px;
+margin: 0 3px;
+
+	@media only screen and (min-width:469px){
+	width: 12px;
+	}
+	@media only screen and (min-width:991px){
+	width: 12px;
+	}
+}
+.price__badges--listing{
+	margin-top: 0;
+}
+
+/* 
+
+WHOLESALE PAGE CSS
+
+*/
+.wholesale-page-width{
+    display: flex;
+    justify-content: center;
+    // padding: 150px 0 200px;
+	padding: 18px 15px 50px !important;
+	
+	@media only screen and (min-width:768px){
+		padding: 25px 50px 50px !important;
+	}
+}
+.wholesale-container{
+	background-color: #F6F6F6;
+	border: 1px solid #d6d6d6;
+	padding: 15px;
+	width: 1000px;
+	max-width: 1200px;
+	
+	@media only screen and (min-width:768px){
+		padding: 100px 100px;
+	}
+}
+.wholesale-logo{
+	width: 200px;
+	margin: 0 auto 10px;
+}
+.wholesale-container .section-header h4{
+	font-size: 12px;
+	letter-spacing: 5px;
+	margin-bottom: 30px;
+}
+.section-header{
+	margin-bottom: 30px;
+	@media only screen and (min-width:768px){
+		margin-bottom: 100px;
+	}
+}
+.wholesale-form input,textarea{
+	margin-bottom: 25px;
+	padding: 15px !important;
+	background-color: white;
+	border: 1px solid #707070;
+	width: 100%;
+}
+.wholesale-form .btn{
+	background-color: #000 !important;
+}
+.wholesale-form{
+	font-family: 'Montserrat';
+	font-size: 15px;
+
+}
+.form-items{
+	display: flex;
+	flex-direction: column;
 }

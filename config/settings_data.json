@@ -56,6 +56,7 @@
           "align_logo": "center",
           "logo": "shopify:\/\/shop_images\/Iconicapparel_Logotype_Black_RGB_4x_99b43506-0f90-47e5-b74c-bebd8a3fb4d2.png",
           "logo_sticky": "shopify:\/\/shop_images\/Iconic-logo-Black.png",
+          "logo_sticky_hover": "shopify:\/\/shop_images\/Iconic-logo-White_1a4bf4bf-45c8-4e6e-97d6-7016c304bf4b.png",
           "logo_max_width": 260,
           "main_linklist": "shop",
           "message": false,
@@ -207,7 +208,7 @@
             "type": "text",
             "settings": {
               "title": "Born in Los Angeles",
-              "text": "<p>contact@iconicapparel.com<br\/><br\/>9663 Santa Monica Blvd #1075,<br\/>Beverly Hills, CA, 90210<\/p>"
+              "text": "<p>contact@iconicapparel.com<br\/><br\/>9663 Santa Monica Blvd #1075<br\/>Beverly Hills, CA, 90210<\/p>"
             }
           },
           "472b035a-bc3b-4846-b841-a828c42e944e": {
@@ -254,7 +255,7 @@
             "type": "text",
             "settings": {
               "content_title": "MATERIALS AND CARE",
-              "content_description": "<p>Iconic Apparel products are made with carefully selected materials. Please handle with care for longer product life.<\/p>"
+              "content_description": "<p>Iconic Apparel products are made with carefully selected materials. Please handle with care for longer product life.<br\/><br\/>Protect from direct light, heat and rain. Should it become wet, dry it immediately with a soft cloth<br\/>Fill shoe with tissue paper to help maintain the shape and absorb humidity, then store in the provided flannel bag and box. Clean with a soft, dry cloth or brush<\/p>"
             }
           },
           "2f0bec7a-087e-4be3-a10e-f7eace83aed6": {
@@ -705,7 +706,7 @@
           "title1": "shop all hats",
           "shop-url": "shopify:\/\/collections\/hats-that-feed-people-1",
           "collection": "frontpage",
-          "grid": 4,
+          "grid": 5,
           "rows": 1,
           "show_vendor": true,
           "show_view_all": false
@@ -725,7 +726,7 @@
           "aa04bdc7-5666-4abd-a980-e51e9907dd61": {
             "type": "product",
             "settings": {
-              "product": "iconic-baseball-cap-tie-dye-orange-black",
+              "product": "copy-of-iconic-los-angeles-trucker-hat-black-on-yellow",
               "width": "33%",
               "alignment": "center"
             }
@@ -741,7 +742,7 @@
           "78b0a6b0-cbaf-4590-90d9-b9a57a9c527a": {
             "type": "product",
             "settings": {
-              "product": "copy-of-iconic-los-angeles-trucker-hat-black-on-yellow",
+              "product": "copy-of-iconic-los-angeles-trucker-hat-black-on-black",
               "width": "33%",
               "alignment": "center"
             }
@@ -749,7 +750,7 @@
           "4dc9c1b1-f62c-4e5d-9218-7d09ee0db4e3": {
             "type": "product",
             "settings": {
-              "product": "copy-of-city-collection-tee-shirt-daffodil-1",
+              "product": "copy-of-city-collection-tee-shirt-orange-1",
               "width": "33%",
               "alignment": "center"
             }
@@ -757,7 +758,7 @@
           "92d8569b-90c8-4600-be28-52855f7d9ca8": {
             "type": "product",
             "settings": {
-              "product": "iconic-baseball-cap-black",
+              "product": "copy-of-iconic-los-angeles-trucker-hat-black-on-orange",
               "width": "33%",
               "alignment": "center"
             }
@@ -774,6 +775,187 @@
         "settings": {
           "title": ""
         }
+      },
+      "product-color-uploads": {
+        "type": "product-color-uploads",
+        "blocks": {
+          "2b6c03d4-a33c-44b8-a006-0a6ebe2bac5b": {
+            "type": "swatch",
+            "settings": {
+              "name": "Black",
+              "color": "#000000",
+              "use_image": false
+            }
+          },
+          "cc9b2b64-ed6b-41c4-a2a2-bd6b777bd875": {
+            "type": "swatch",
+            "settings": {
+              "name": "White",
+              "color": "#ffffff",
+              "use_image": false
+            }
+          },
+          "2c040ecb-b949-429f-89c0-ff1b11efde9c": {
+            "type": "swatch",
+            "settings": {
+              "name": "OliveBlack",
+              "color": "rgba(0,0,0,0)",
+              "use_image": true,
+              "swatch_image": "shopify:\/\/shop_images\/1.png"
+            }
+          },
+          "cba8c677-dacb-4861-b378-7e94bfc0d86f": {
+            "type": "swatch",
+            "settings": {
+              "name": "OrangeBlack",
+              "color": "rgba(0,0,0,0)",
+              "use_image": true,
+              "swatch_image": "shopify:\/\/shop_images\/2.png"
+            }
+          },
+          "1825da56-e0a2-4b52-bf95-6a240ff9f577": {
+            "type": "swatch",
+            "settings": {
+              "name": "DaffodilBlack",
+              "color": "rgba(0,0,0,0)",
+              "use_image": true,
+              "swatch_image": "shopify:\/\/shop_images\/3.png"
+            }
+          },
+          "e9635fa9-8a1a-4e7c-b90c-009d8d99a850": {
+            "type": "swatch",
+            "settings": {
+              "name": "YellowPurple",
+              "color": "#d2fa03",
+              "use_image": true,
+              "swatch_image": "shopify:\/\/shop_images\/4.png"
+            }
+          },
+          "867dba13-f6e7-4874-b0ea-d92d45f728d7": {
+            "type": "swatch",
+            "settings": {
+              "name": "OrangeBlue",
+              "color": "rgba(0,0,0,0)",
+              "use_image": true,
+              "swatch_image": "shopify:\/\/shop_images\/5.png"
+            }
+          },
+          "6d24ce84-9b41-4c6d-866c-ece4c0c8a24a": {
+            "type": "swatch",
+            "settings": {
+              "name": "BlackDaffodil",
+              "color": "",
+              "use_image": true,
+              "swatch_image": "shopify:\/\/shop_images\/Iconic_Colors_Swatches.png"
+            }
+          },
+          "05959d6b-618e-4a75-b025-fef450ed02b6": {
+            "type": "swatch",
+            "settings": {
+              "name": "Marble",
+              "color": "",
+              "use_image": true,
+              "swatch_image": "shopify:\/\/shop_images\/Screen_Shot_2022-05-23_at_3.51.45_PM.png"
+            }
+          },
+          "204fbb43-7433-44f7-ae15-ca92cc759ec4": {
+            "type": "swatch",
+            "settings": {
+              "name": "GreenTieDye",
+              "color": "",
+              "use_image": true,
+              "swatch_image": "shopify:\/\/shop_images\/Screen_Shot_2022-05-23_at_3.47.51_PM.png"
+            }
+          },
+          "6e5578dd-1479-4964-8229-6cce21260761": {
+            "type": "swatch",
+            "settings": {
+              "name": "OrangeTieDye",
+              "color": "",
+              "use_image": true,
+              "swatch_image": "shopify:\/\/shop_images\/Screen_Shot_2022-05-23_at_3.48.39_PM.png"
+            }
+          },
+          "053a94b8-2182-49f8-adb9-57949b7898c8": {
+            "type": "swatch",
+            "settings": {
+              "name": "Lime",
+              "color": "#e5f6ef",
+              "use_image": false
+            }
+          },
+          "d3da6641-3275-4d16-84e2-874937f389db": {
+            "type": "swatch",
+            "settings": {
+              "name": "BabyBlue",
+              "color": "#def5fb",
+              "use_image": false
+            }
+          },
+          "f89efdf3-951c-4a2d-b61b-9acdff5c9a61": {
+            "type": "swatch",
+            "settings": {
+              "name": "Lavender",
+              "color": "#f9e5f9",
+              "use_image": false
+            }
+          },
+          "cab47189-187e-4781-a5b5-b4cde2039b4b": {
+            "type": "swatch",
+            "settings": {
+              "name": "WhiteBlack",
+              "color": "",
+              "use_image": true,
+              "swatch_image": "shopify:\/\/shop_images\/6.png"
+            }
+          },
+          "5cd4c1bb-938b-4665-94e5-f036430c5778": {
+            "type": "swatch",
+            "settings": {
+              "name": "BlackWhite",
+              "color": "",
+              "use_image": true,
+              "swatch_image": "shopify:\/\/shop_images\/7.png"
+            }
+          },
+          "beb09c31-70ec-480f-ad92-a06b680cfb96": {
+            "type": "swatch",
+            "settings": {
+              "name": "Nude",
+              "color": "#d4c8b6",
+              "use_image": false
+            }
+          },
+          "213ab204-15a7-4a17-b8aa-c652adbf9c7c": {
+            "type": "swatch",
+            "settings": {
+              "name": "Charcoal",
+              "color": "#56555c",
+              "use_image": false
+            }
+          }
+        },
+        "block_order": [
+          "2b6c03d4-a33c-44b8-a006-0a6ebe2bac5b",
+          "cc9b2b64-ed6b-41c4-a2a2-bd6b777bd875",
+          "2c040ecb-b949-429f-89c0-ff1b11efde9c",
+          "cba8c677-dacb-4861-b378-7e94bfc0d86f",
+          "1825da56-e0a2-4b52-bf95-6a240ff9f577",
+          "e9635fa9-8a1a-4e7c-b90c-009d8d99a850",
+          "867dba13-f6e7-4874-b0ea-d92d45f728d7",
+          "6d24ce84-9b41-4c6d-866c-ece4c0c8a24a",
+          "05959d6b-618e-4a75-b025-fef450ed02b6",
+          "204fbb43-7433-44f7-ae15-ca92cc759ec4",
+          "6e5578dd-1479-4964-8229-6cce21260761",
+          "053a94b8-2182-49f8-adb9-57949b7898c8",
+          "d3da6641-3275-4d16-84e2-874937f389db",
+          "f89efdf3-951c-4a2d-b61b-9acdff5c9a61",
+          "cab47189-187e-4781-a5b5-b4cde2039b4b",
+          "5cd4c1bb-938b-4665-94e5-f036430c5778",
+          "beb09c31-70ec-480f-ad92-a06b680cfb96",
+          "213ab204-15a7-4a17-b8aa-c652adbf9c7c"
+        ],
+        "settings": {}
       }
     },
     "content_for_index": [

@@ -1,3 +1,20 @@
+<style>
+  #shopify-section-footer{
+    margin-top: 0;
+    /* margin-top: 15px; */
+  }
+  @media only screen and (min-width:768px){
+    #shopify-section-footer{
+      /* margin-top: 20px; */
+    }
+  }
+  @media only screen and (min-width:1200px){
+    #shopify-section-footer{
+      /* margin-top: 45px; */
+    }
+  }
+</style>
+
 {% case section.settings.grid %}
   {% when 2 %}
     {%- assign max_height = 530 -%}
@@ -81,8 +98,10 @@
                     <select class="filters-toolbar__input hidden" name="FilterTags" id="FilterTags" aria-describedby="a11y-refresh-page-message a11y-selection-message">
                       <option value="{{ collection.url }}">{{ 'collections.filters.all_tags' | t }}</option>
                       {% for tag in collection.all_tags %}
-                        {%- assign new_url = tag | link_to_tag: tag | split: 'href="' | last | split: '"' | first -%}
-                        <option value="{{ new_url }}"{% if current_tags contains tag %} selected="selected"{% endif %}>{{ tag }}</option>
+                        {% unless tag contains 'color-' %}
+                          {%- assign new_url = tag | link_to_tag: tag | split: 'href="' | last | split: '"' | first -%}
+                          <option value="{{ new_url }}"{% if current_tags contains tag %} selected="selected"{% endif %}>{{ tag }}</option>                          
+                        {% endunless %}
                       {% endfor %}
                     </select>
                     {% include 'icon-chevron-down' %}
@@ -188,7 +207,7 @@
       <ul class="grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}">
         {% for product in collection.products %}
           <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
-            {% include 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
+            {% include 'home-product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
           </li>
         {% else %}
           {% comment %}
