@@ -4175,15 +4175,15 @@ body.template-collection .main-content div#shopify-section-collection-template>d
 	flex-direction: row;
 }
 .x-svg{
-width: 9px;
-margin: 0 3px;
+	width: 9px;
+	margin: 0 3px;
 
-	@media only screen and (min-width:469px){
-	width: 12px;
-	}
-	@media only screen and (min-width:991px){
-	width: 12px;
-	}
+		@media only screen and (min-width:469px){
+		width: 12px;
+		}
+		@media only screen and (min-width:991px){
+		width: 12px;
+		}
 }
 .price__badges--listing{
 	margin-top: 0;
@@ -4201,13 +4201,13 @@ WHOLESALE PAGE CSS
 	padding: 18px 15px 50px !important;
 	
 	@media only screen and (min-width:768px){
-		padding: 25px 50px 50px !important;
+		padding: 25px 50px 100px !important;
 	}
 }
 .wholesale-container{
 	background-color: #F6F6F6;
 	border: 1px solid #d6d6d6;
-	padding: 15px;
+	padding: 30px 15px;
 	width: 1000px;
 	max-width: 1200px;
 	
@@ -4215,9 +4215,13 @@ WHOLESALE PAGE CSS
 		padding: 100px 100px;
 	}
 }
-.wholesale-logo{
-	width: 200px;
+.wholesale-logo svg{
+	width: 175px;
+	height: auto;
 	margin: 0 auto 10px;
+	@media only screen and (min-width:768px){
+		width: 200px;
+	}
 }
 .wholesale-container .section-header h4{
 	font-size: 12px;
@@ -4248,4 +4252,17 @@ WHOLESALE PAGE CSS
 .form-items{
 	display: flex;
 	flex-direction: column;
+}
+
+/*
+	PRODUCT PAGE CSS
+*/
+.product-description-content-right {
+    text-transform: uppercase;
+
+	.x-svg{
+		width: 12px !important;
+		padding-bottom: 3px;
+		margin: 0;
+	}
 }

@@ -78,6 +78,8 @@
   }
 </style>
 
+
+
 <div class="product-template__container page-width"
   id="ProductSection-{{ section.id }}"
   data-section-id="{{ section.id }}"
@@ -117,34 +119,33 @@
   {% endcase %}
 
   <div class="product-single{% if section.settings.enable_payment_button %} product-single--{{ section.settings.media_size }}-media{% endif %}">
-	<div class="single-product-slider-content">
+    <div class="single-product-slider-content test">
       <div class="product-image-twinslider">
-      {% assign i=0 %}
+        {% assign i=0 %}
         {% unless product.images[1] == blank %}
-        <div class="product_image">
-          <img class="grid-view-item__image lazyload product_main_image productslickslider"
-              alt="{{ product.images[1].alt }}"
-              data-src="{{product.images[1] | img_url :'1000x'}}"
-              data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
-              data-aspectratio="{{ product.images[1].aspect_ratio }}"
-              data-sizes="auto"
-              data-image>
-        </div>
+          <div class="product_image" style="{{product.images[1].height | times: 1.35}} !important;">
+            <img class="grid-view-item__image lazyload product_main_image productslickslider"
+                alt="{{ product.images[1].alt }}"
+                data-src="{{product.images[1] | img_url :'1000x'}}"
+                data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                data-aspectratio="{{ product.images[1].aspect_ratio }}"
+                data-sizes="auto"
+                data-image>
+          </div>
         {% endunless %}
-      {% for image in product.images %}   
-        {% if forloop.index != 2 %}
-        <div class="product_image">
-          <img class="grid-view-item__image lazyload product_main_image productslickslider"
-              alt="{{ image.alt }}"
-              data-src="{{image | img_url :'1000x'}}"
-              data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
-              data-aspectratio="{{ image.aspect_ratio }}"
-              data-sizes="auto"
-              data-image>
-        </div>
-        {% endif %}
+        {% for image in product.images %}   
+          {% if forloop.index != 2 %}
+            <div class="product_image" style="{{image.height | times: 1.35}} !important;"> 
+              <img class="grid-view-item__image lazyload product_main_image productslickslider"
+                  alt="{{ image.alt }}"
+                  data-src="{{image | img_url :'1000x'}}"
+                  data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                  data-aspectratio="{{ image.aspect_ratio }}"
+                  data-sizes="auto"
+                  data-image>
+            </div>
+          {% endif %}
         {% endfor %}
-
       </div> 
       
       {% include 'product-middle-data', product_title: product.title, current_variant: current_variant, show_vendor: section.settings.show_vendor, section_id: section.id, product: product, option: option, show_quantity_selector: section.settings.show_quantity_selector, enable_payment_button: section.settings.enable_payment_button, show_variant_lables: section.settings.show_variant_labels  %}
@@ -206,7 +207,13 @@
     <div class="product-description-content-right">
     {{ product.description }}
     </div>
-    
+  
+    {% if section.settings.enable_xmeals %}
+      <script>
+        var xMeals = '{{ section.settings.xmeals }}';
+        $('.product-description-content-right').append(xMeals)
+      </script>
+    {% endif %}
 
       
     </div>
@@ -242,86 +249,87 @@
 // }  
   
 $( document ).ready(function() {  
-var wind_wid = $(window).width();
-if (wind_wid <= 749) {
-$('select').on('change', function (e) {
-$("ul li.product-single__thumbnails-item").each(function(){
+  var wind_wid = $(window).width();
+  if (wind_wid <= 749) {
+    $('select').on('change', function (e) {
+      $("ul li.product-single__thumbnails-item").each(function(){
 
- $(this).find("a.product-single__thumbnail").click(function( event ) {
- $(this).find("a.product-single__thumbnail.active-thumb").removeClass('active-thumb');
- event.preventDefault();
- //$(this).find('.active-thumb').removeClass('active-thumb');
- //$(this).addClass('active-thumb');
-   
- $('a.product-single__thumbnail.active-thumb').not(this).removeClass('active-thumb')
- $(this).toggleClass('active-thumb')
- var img_url = $(this).attr('href');
- $('body').find("img.feature-row__image").attr("srcset", img_url);
- //console.log(main_rep);
- });
-}); 
-}); 
-}
+      $(this).find("a.product-single__thumbnail").click(function( event ) {
+        $(this).find("a.product-single__thumbnail.active-thumb").removeClass('active-thumb');
+        event.preventDefault();
+        //$(this).find('.active-thumb').removeClass('active-thumb');
+        //$(this).addClass('active-thumb');
+          
+        $('a.product-single__thumbnail.active-thumb').not(this).removeClass('active-thumb')
+        $(this).toggleClass('active-thumb')
+        var img_url = $(this).attr('href');
+        $('body').find("img.feature-row__image").attr("srcset", img_url);
+        //console.log(main_rep);
+        });
+      }); 
+    }); 
+  };
 });  
   
 $( document ).ready(function() {
-var color_con = $('.selector-wrapper label').text().trim();
-//console.log(color_con);
-if(color_con == 'Color'){
-  $('select').on('change', function (e) {
-    var color_pro = $(this).val().toLowerCase();
-    $('.product-single__thumbnails li').each(function() {
+  var color_con = $('.selector-wrapper label').text().trim();
+  //console.log(color_con);
+  if(color_con == 'Color'){
+    $('select').on('change', function (e) {
+      var color_pro = $(this).val().toLowerCase();
+      $('.product-single__thumbnails li').each(function() {
         var get_val_attr = $(this).attr('data-varname');
         if(color_pro == get_val_attr){
-        $(this).first().addClass('test');
+          $(this).first().addClass('test');
         }else{
-        $(this).first().removeClass('test')
-        }
+          $(this).first().removeClass('test')
+        };
+      });
+      setTimeout(function(){
+          $('body').find('ul.product-single__thumbnails li.test').first().find('a.product-single__thumbnail').trigger( "click" );
+      }, 200);
     });
-    setTimeout(function(){
-        $('body').find('ul.product-single__thumbnails li.test').first().find('a.product-single__thumbnail').trigger( "click" );
-     }, 200);
- });
-}
+  }
 
- $('.product-image-twinslider').slick({
-  dots: true,
-  infinite: false,
-  speed: 300,
-  slidesToShow: 2,
-  slidesToScroll: 2,
-  prevArrow:"<img class='a-left control-c prev slick-prev' src='https://cdn.shopify.com/s/files/1/0348/1285/4408/files/arrow-left.svg?v=1611030234'>",
-  nextArrow:"<img class='a-right control-c next slick-next' src='https://cdn.shopify.com/s/files/1/0348/1285/4408/files/arrow-right.svg?v=1611030234'>",
-  customPaging : function(slider, i) {
-    var thumb = $(slider.$slides[i]).data();
-    var noslide = Math.ceil(slider.slideCount/2);
-    return  (i + 1) + '/' + noslide;
-            },
+  $('.product-image-twinslider').slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    prevArrow:"<img class='a-left control-c prev slick-prev' src='https://cdn.shopify.com/s/files/1/0348/1285/4408/files/arrow-left.svg?v=1611030234'>",
+    nextArrow:"<img class='a-right control-c next slick-next' src='https://cdn.shopify.com/s/files/1/0348/1285/4408/files/arrow-right.svg?v=1611030234'>",
+    customPaging : function(slider, i) {
+      var thumb = $(slider.$slides[i]).data();
+      var noslide = Math.ceil(slider.slideCount/2);
+      return  (i + 1) + '/' + noslide;
+    },
     responsive: [{ 
-        breakpoint: 990,
-        settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-          customPaging : function(slider, i) {
-    var thumb = $(slider.$slides[i]).data();
-    var noslide = Math.ceil(slider.slideCount);
-    return  (i + 1) + '/' + noslide;
-            }
-        } 
+      breakpoint: 990,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        adaptiveHeight:true,
+        customPaging : function(slider, i) {
+          var thumb = $(slider.$slides[i]).data();
+          var noslide = Math.ceil(slider.slideCount);
+          return  (i + 1) + '/' + noslide;
+        }
+      } 
     }]
-});
+  });
+
   $('.product-wrap-data .product-wrap-data-title ').click(function(){
  // console.log($(this).nextAll('.product-wrap-data-desc'));
      // console.log($(this).closest());
       $(this).next().slideToggle();
       $(this).toggleClass('product-tab-open'); 
-    });
+  });
   $('.product-wrap-data-desc').hide();
   
   $('.product-single-share-button .single-button-share').click(function(){
-  $(this).next('.single-button-share-content').slideToggle();
-  $(this).toggleClass('product-share-open'); 
-  
+    $(this).next('.single-button-share-content').slideToggle();
+    $(this).toggleClass('product-share-open'); 
   });
   $('.single-button-share-content').hide();
 });
@@ -721,6 +729,21 @@ if(color_con == 'Color'){
         "zh-TW": "啟用影片循環功能"
       },
       "default": false
+    },
+    {
+      "type": "header",
+      "content": "Product Description"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_xmeals",
+      "default": true,
+      "label": "Add at the bottom of every product page"
+    },
+    {
+      "type": "html",
+      "id": "xmeals",
+      "label": "Content (use the <img> tag in there to add the X)"
     }
   ],
   "blocks": [
