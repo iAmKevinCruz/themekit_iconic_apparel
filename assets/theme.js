@@ -7719,6 +7719,29 @@ $(document).ready(function () {
       },
     ],
   });
+  $(".section-slide").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    speed: 400,
+    arrows: true,
+    infinite: true,
+    responsive: [
+      {
+        breakpoint: 750,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
   /* grid-progress-bar-slider end  */
 
   /****slideshow slider start**********/

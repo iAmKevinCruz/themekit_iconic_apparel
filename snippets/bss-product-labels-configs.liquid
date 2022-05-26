@@ -1,10 +1,11 @@
-<script>
+{{ 'bss-file-configdata.js' | asset_url | script_tag }}<script>
               if (typeof BSS_PL == 'undefined') {
                   var BSS_PL = {};
               }
+              
               var bssPlApiServer = "https://product-labels-pro.bsscommerce.com";
               BSS_PL.customerTags = {% if customer %}'{%for tag in customer.tags%}{{ tag }},{% endfor %}'{% else %}'null'{% endif %};
-              BSS_PL.configData = [{"name":"Out of stock","priority":0,"img_url":"","pages":"2,1,4,7,3","enable_allowed_countries":false,"locations":"","position":0,"fixed_percent":0,"width":100,"height":25,"product_type":3,"product":"","variant":"","collection":"","collection_image":"","inventory":2,"tags":"","excludeTags":"","enable_visibility_date":false,"from_date":null,"to_date":null,"enable_discount_range":0,"discount_type":1,"discount_from":null,"discount_to":null,"public_img_url":"","label_text":"%7Binventory%7D","label_text_color":"#000000","label_text_font_size":13,"label_text_background_color":"#dddddd","label_text_no_image":1,"label_text_in_stock":"Few left","label_text_out_stock":"SOLD OUT","label_shadow":0,"label_opacity":100,"label_border_radius":2,"label_text_style":0,"label_shadow_color":"#808080","label_text_enable":1,"related_product_tag":null,"customer_tags":null,"exclude_customer_tags":null,"customer_type":"allcustomers","collection_image_type":0,"label_on_image":"2","first_image_tags":null,"label_type":1,"badge_type":0,"custom_selector":null,"margin_top":3,"margin_bottom":0,"mobile_config_label_enable":0,"mobile_height_label":null,"mobile_width_label":null,"mobile_font_size_label":null,"label_text_id":35621,"emoji":null,"emoji_position":null,"transparent_background":"1","custom_page":null,"check_custom_page":null,"label_unlimited_top":33,"label_unlimited_left":33,"label_unlimited_width":30,"label_unlimited_height":30,"margin_left":71,"instock":null,"enable_price_range":0,"price_range_from":null,"price_range_to":null,"enable_product_publish":0,"product_publish_from":null,"product_publish_to":null,"enable_countdown_timer":0,"option_format_countdown":0,"countdown_time":null,"option_end_countdown":null,"start_day_countdown":null,"public_url_s3":"","enable_visibility_period":0,"visibility_period":1,"createdAt":"2022-01-13T23:08:42.000Z","angle":0}];
+              BSS_PL.configData = configDatas;
               BSS_PL.storeId = 19105;
               BSS_PL.currentPlan = "five_usd";
               BSS_PL.storeIdCustomOld = "10678";

@@ -1,4 +1,14 @@
 <style>
+  .custom-grid{
+    display: grid !important;
+    grid-template-columns: repeat(3,1fr);
+  }
+  .image_text{
+    grid-column: 1/3;
+  }
+  .product_stacked{
+    grid-column: 3;
+  }
   .product-one{
     padding-bottom: 0;
   }
@@ -50,7 +60,7 @@
       width: 100%;
       padding: 0;
       grid-column: 1/3;
-      grid-row: 1/4;
+      grid-row: 1;
     }
     .product_stacked{
       margin: 0;
@@ -61,7 +71,7 @@
     .grid-product_stacked{
       display: grid;
       grid-template-columns: repeat(2,1fr);
-      gap: 10px;
+      gap: 15px;
     }
   }
 </style>
@@ -73,100 +83,65 @@
     </div>
   {% endif %}
 
-  <div class="custom-content custom-grid">
-    {%- assign block_width_mobile = '' -%}
+  
+  
+  <!-- <div class="custom-content custom-grid"> -->
+    <ul class="section-slide">
+      {%- assign block_width_mobile = '' -%}
 
-    {% for block in section.blocks %}
-      {% case block.settings.width %}
-        {% when '25%' %}
-          {%- assign max_height = 250 -%}
-          {%- assign block_width = 'medium-up--one-quarter' -%}
-          {%- assign block_width_mobile = 'small--one-half' -%}
-        {% when '33%' %}
-          {%- assign max_height = 345 -%}
-          {%- assign block_width = 'medium-up--one-third' -%}
-          {%- assign block_width_mobile = 'small--one-half' -%}
-        {% when '50%' %}
-          {%- assign max_height = 530 -%}
-          {%- assign block_width = 'medium-up--one-half' -%}
-          {%- assign block_width_mobile = 'small--one-half' -%}
-        {% when '66%' %}
-          {%- assign max_height = 720 -%}
-          {%- assign block_width = 'two-thirds' -%}
-        {% when '75%' %}
-          {%- assign max_height = 810 -%}
-          {%- assign block_width = 'three-quarters' -%}
-        {% when '100%' %}
-          {%- assign max_height = 1090 -%}
-          {%- assign block_width = 'one-whole' -%}
-      {% endcase %}
+      {% for block in section.blocks %}
+        {% case block.settings.width %}
+          {% when '25%' %}
+            {%- assign max_height = 250 -%}
+            {%- assign block_width = 'medium-up--one-quarter' -%}
+            {%- assign block_width_mobile = 'small--one-half' -%}
+          {% when '33%' %}
+            {%- assign max_height = 345 -%}
+            {%- assign block_width = 'medium-up--one-third' -%}
+            {%- assign block_width_mobile = 'small--one-half' -%}
+          {% when '50%' %}
+            {%- assign max_height = 530 -%}
+            {%- assign block_width = 'medium-up--one-half' -%}
+            {%- assign block_width_mobile = 'small--one-half' -%}
+          {% when '66%' %}
+            {%- assign max_height = 720 -%}
+            {%- assign block_width = 'two-thirds' -%}
+          {% when '75%' %}
+            {%- assign max_height = 810 -%}
+            {%- assign block_width = 'three-quarters' -%}
+          {% when '100%' %}
+            {%- assign max_height = 1090 -%}
+            {%- assign block_width = 'one-whole' -%}
+        {% endcase %}
 
+        <li class="custom-content custom-grid">
 
-      <div class="custom__item custom__item--{{ block.type }} {{ block.type }} custom__item--{{ block.id }} {{ block_width }}" {{ block.shopify_attributes }}>
-        <div class="custom__item-inner custom__item-inner--{{ block.type }} grid-{{ block.type }}">
-            {% case block.type %}
+          <!-- <div class="custom__item custom__item--image_text image_text custom__item--{{ section.id }} two-thirds" {{ section.shopify_attributes }}> -->
+          <div class="custom__item custom__item--image_text image_text custom__item--{{ section.id }} " {{ section.shopify_attributes }}>
+            <div class="custom__item-inner custom__item-inner--image_text grid-image_text">
+              {%- assign collection = collections[block.settings.collection] -%}
+              {% include 'collection-grid-item-carousel', collection: collection, collection_custom_image: block.settings.image %}
 
-              {% when 'image_text' %}
-                  {%- assign collection = collections[block.settings.collection] -%}
-                  {% if block.settings.image != blank %}
-                    {% assign collection_image = block.settings.image %}
-                  {% elsif collection.image %}
-                    {% assign collection_image = collection.image %}
-                  {% elsif collection.products.first and collection.products.first.media != empty %}
-                    {%- assign collection_image = collection.products.first.featured_media.preview_image -%}
-                  {% else %}
-                    {% assign collection_image = blank %}
-                  {% endif %}
-
-                  {%- assign img_url_text = collection_image | img_url: '1024x1024' -%}
-
-                  {% assign set = block.settings %}
-                  <a href="{% if set.image_link == blank %}{{collection.url}}{% else %}{{ set.image_link  }}{% endif %}" style="text-decoration: none;">
-                    <div data-bgset="{% include 'bgset', image: collection_image %}"
-                    data-sizes="auto"
-                    data-parent-fit="cover" style="background-image: url('{{ img_url_text }}');" class="image-text collection-grid-item__overlay">
-                    </div>
-                    <div class="collection-grid-item__title-wrapper bottom-left-title">
-                      <div class="collection-grid-item__title h2 large-title">
-                        {% if set.text_in_image != blank %}
-                          {{set.text_in_image}}
-                        {% elsif collection.title == blank %}
-                          {{ 'homepage.onboarding.collection_title' | t }}
-                        {% else %}
-                          {{ collection.title }}
-                        {% endif %}
-                      </div>
-                      {% if set.image_link != blank %}
-                        <a class="only-link shop-now" href="{{ set.image_link }}">{{set.image_link_label}}</a>
-                      {% endif %}
-                    </div>
-                  </a>
-                  <style>
-                    .image-text {
-                      background-repeat: no-repeat;
-                      background-position: center;
-                      background-size: cover;
-                      height: 100%;
-                    }
-                    .custom__item-inner--image_text {
-                      height: 100%;
-                    }
-                  </style>
-
-              {% when 'product_stacked' %}
+            </div>
+          </div>
+  
+          <!-- <div class="custom__item custom__item--product_stacked product_stacked custom__item--{{ section.id }} medium-up--one-third" {{ section.shopify_attributes }}> -->
+          <div class="custom__item custom__item--product_stacked product_stacked custom__item--{{ section.id }}" {{ section.shopify_attributes }}>
+            <div class="custom__item-inner custom__item-inner--product_stacked grid-product_stacked">
               {%- assign product_one = all_products[block.settings.product_one] -%}
               {%- assign product_two = all_products[block.settings.product_two] -%}
                 <div class="product-one">
-                  {% include 'home-product-card-grid', max-height: max_height, product: product_one, enable_image: block.settings.enable_product_one | json, custom_image: block.settings.product_one_img %}
+                  {% include 'home-product-card-grid', max-height: 345, product: product_one, enable_image: block.settings.enable_product_one | json, custom_image: block.settings.product_one_img %}
                 </div>
                 <div class="product-two">
-                  {% include 'home-product-card-grid', max-height: max_height, product: product_two, enable_image: block.settings.enable_product_two, custom_image: block.settings.product_two_img %}
+                  {% include 'home-product-card-grid', max-height: 345, product: product_two, enable_image: block.settings.enable_product_two, custom_image: block.settings.product_two_img %}
                 </div>
-            {% endcase %}
+            </div>
           </div>
-        </div>
+        </li>
       {% endfor %}
-  </div>
+    </ul>
+  
 
 </div>
 
@@ -174,7 +149,7 @@
 
 {% schema %}
 {
-  "name": "Custom content V3",
+  "name": "Custom content V4",
   "class": "index-section",
   "settings": [
     {
@@ -187,7 +162,7 @@
   "blocks": [
     {
      "type": "image_text",
-     "name": "Image With Text",
+     "name": "Custom Section Carousel",
      "settings": [
         {
           "type": "collection",
@@ -251,6 +226,42 @@
           "id": "image_link_label",
           "label": "Link Label",
           "default": "Shop"
+        },
+        {
+          "type": "header",
+          "content": "Stacked Products Settings"
+        },
+        {
+          "type": "product",
+          "id": "product_one",
+          "label": "Top Product"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_product_one",
+          "default": false,
+          "label": "Use Custom Image For Top Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_one_img",
+          "label": "Custom Image For Top Product"
+        },
+        {
+          "type": "product",
+          "id": "product_two",
+          "label": "Bottom Product"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_product_two",
+          "default": false,
+          "label": "Use Custom Image For Bottom Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_two_img",
+          "label": "Custom Image For Top Product"
         }
       ]
     },
@@ -327,7 +338,7 @@
   ],
   "presets": [
     {
-      "name": "Custom content V3",
+      "name": "Custom content V4",
       "category": "Advanced layout",
       "blocks": [
         {

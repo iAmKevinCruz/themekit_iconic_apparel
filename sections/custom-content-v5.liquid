@@ -1,0 +1,339 @@
+<style>
+  .custom-grid{
+    display: grid !important;
+    grid-template-columns: repeat(3,1fr);
+  }
+  .image_text{
+    grid-column: 1/3;
+  }
+  .product_stacked{
+    grid-column: 3;
+  }
+  .product-one{
+    padding-bottom: 0;
+  }
+  .product-two{
+    padding-top: 0;
+  }
+  @media screen and (min-width: 750px) {
+    .product-one{
+      padding-bottom: 7.5px;
+    }
+    .product-two{
+      padding-top: 7.5px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .product-one{
+      padding-bottom: 15px;
+    }
+    .product-two{
+      padding-top: 15px;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    .product-one{
+      padding-bottom: 25px;
+    }
+    .product-two{
+      padding-top: 25px;
+    }
+  }
+  
+  @media screen and (max-width: 749px) {
+    .custom-grid{
+      display: grid;
+      padding: 0 7.5px;
+      grid-template-columns: repeat(2,1fr);
+      grid-auto-rows: minmax(250px, auto);
+      gap: 15px;
+      margin: auto;
+    }
+    .product_one{
+      grid-column: 1;
+    }
+    .product_two{
+      grid-column: 2;
+    }
+    .image_text{
+      margin: 0;
+      width: 100%;
+      padding: 0;
+      grid-column: 1/3;
+      grid-row: 1/3;
+    }
+    .product_stacked{
+      margin: 0;
+      width: 100%;
+      grid-column: 1/3;
+      grid-row: 3/4;
+      padding: 0;
+    }
+    .grid-product_stacked{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 15px;
+    }
+  }
+  div#shopify-section-{{ section.id }} .product_second_image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  div#shopify-section-{{ section.id }} .slick-arrow {
+    width: 25px;
+    height: 35px;
+    background: #efefefd1;
+    z-index: 111;
+    opacity: 1;
+  }
+
+  div#shopify-section-{{ section.id }} .slick-prev{
+    left: 7.5px;
+  }
+  div#shopify-section-{{ section.id }} .slick-next{
+    right: 7.5px;
+  }
+  div#shopify-section-{{ section.id }} .slick-prev:before{
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 18px;
+    background: url(https://cdn.shopify.com/s/files/1/0348/1285/4408/files/left_Arrow_sliders_256x256_crop_center.png?v=1610365360);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  div#shopify-section-{{ section.id }} .slick-next:before{
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 18px;
+    background: url(https://cdn.shopify.com/s/files/1/0348/1285/4408/files/right_Arrow_sliders_256x256_crop_center.png?v=1610365361);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  @media only screen and (min-width:768px){
+    div#shopify-section-{{ section.id }} .slick-prev, .slick-next{
+      top: 48%;
+    }
+    div#shopify-section-{{ section.id }} .slick-prev{
+      left: 15px;
+    }
+    div#shopify-section-{{ section.id }} .slick-next{
+      right: 15px;
+    }
+  }
+  @media only screen and (min-width:1200px){
+    div#shopify-section-{{ section.id }} .slick-prev, .slick-next{
+      top: 48%;
+    }
+    div#shopify-section-{{ section.id }} .slick-prev{
+      left: 25px;
+    }
+    div#shopify-section-{{ section.id }} .slick-next{
+      right: 25px;
+    }
+  }
+</style>
+
+<div class="page-width">
+  {% if section.settings.title != blank %}
+    <div class="section-header text-center">
+      <h4 class="h2">{{ section.settings.title | escape }}</h4>
+    </div>
+  {% endif %}
+
+  
+  
+    <ul class="section-slide">
+      {%- assign block_width_mobile = '' -%}
+
+      {% for block in section.blocks %}
+        <li class="custom-content custom-grid">
+
+          <div class="custom__item custom__item--image_text image_text custom__item--{{ section.id }} " {{ section.shopify_attributes }}>
+            <div class="custom__item-inner custom__item-inner--image_text grid-image_text">
+              {%- assign collection = collections[block.settings.collection] -%}
+              {% if block.settings.image != blank %}
+                {% assign collection_image = block.settings.image %}
+              {% elsif collection.image %}
+                {% assign collection_image = collection.image %}
+              {% elsif collection.products.first and collection.products.first.media != empty %}
+                {%- assign collection_image = collection.products.first.featured_media.preview_image -%}
+              {% else %}
+                {% assign collection_image = blank %}
+              {% endif %}
+
+              {%- assign img_url_text = collection_image | img_url: '1024x1024' -%}
+
+              {% assign set = block.settings %}
+              <a href="{% if set.image_link == blank %}{{collection.url}}{% else %}{{ set.image_link  }}{% endif %}" style="text-decoration: none;">
+                <div data-bgset="{% include 'bgset', image: collection_image %}"
+                data-sizes="auto"
+                data-parent-fit="cover" style="background-image: url('{{ img_url_text }}');" class="image-text collection-grid-item__overlay">
+                </div>
+                <div class="collection-grid-item__title-wrapper bottom-left-title">
+                  <div class="collection-grid-item__title h2 large-title">
+                    {% if set.text_in_image != blank %}
+                      {{set.text_in_image}}
+                    {% elsif collection.title == blank %}
+                      {{ 'homepage.onboarding.collection_title' | t }}
+                    {% else %}
+                      {{ collection.title }}
+                    {% endif %}
+                  </div>
+                  {% if set.image_link != blank %}
+                    <a class="only-link shop-now" href="{{ set.image_link }}">{{set.image_link_label}}</a>
+                  {% endif %}
+                </div>
+              </a>
+              <style>
+                .image-text {
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  background-size: cover;
+                  height: 100%;
+                }
+                .custom__item-inner--image_text {
+                  height: 100%;
+                }
+              </style>
+            </div>
+          </div>
+  
+          <div class="custom__item custom__item--product_stacked product_stacked custom__item--{{ section.id }}" {{ section.shopify_attributes }}>
+            <div class="custom__item-inner custom__item-inner--product_stacked grid-product_stacked">
+              {%- assign product_one = all_products[block.settings.product_one] -%}
+              {%- assign product_two = all_products[block.settings.product_two] -%}
+                <div class="product-one">
+                  {% include 'home-product-card-grid', max-height: 345, product: product_one, enable_image: block.settings.enable_product_one | json, custom_image: block.settings.product_one_img %}
+                </div>
+                <div class="product-two">
+                  {% include 'home-product-card-grid', max-height: 345, product: product_two, enable_image: block.settings.enable_product_two, custom_image: block.settings.product_two_img %}
+                </div>
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  
+
+</div>
+
+
+
+{% schema %}
+{
+  "name": "Custom Content Carousel",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Custom content"
+    }
+  ],
+  "blocks": [
+    {
+     "type": "image_text",
+     "name": "Custom Section Carousel",
+     "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "Text Inside Picture"
+        },
+        {
+          "type": "text",
+          "id": "text_in_image",
+          "label": "Heading",
+          "default": "CITY COLLECTION"
+        },
+        {
+          "type": "header",
+          "content": "Link"
+        },
+        {
+          "type": "url",
+          "id": "image_link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "image_link_label",
+          "label": "Link Label",
+          "default": "Shop"
+        },
+        {
+          "type": "header",
+          "content": "Stacked Products Settings"
+        },
+        {
+          "type": "product",
+          "id": "product_one",
+          "label": "Top Product"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_product_one",
+          "default": false,
+          "label": "Use Custom Image For Top Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_one_img",
+          "label": "Custom Image For Top Product"
+        },
+        {
+          "type": "product",
+          "id": "product_two",
+          "label": "Bottom Product"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_product_two",
+          "default": false,
+          "label": "Use Custom Image For Bottom Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_two_img",
+          "label": "Custom Image For Top Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Content Carousel",
+      "category": "Advanced layout",
+      "blocks": [
+        {
+          "type": "image_text"
+        },
+        {
+          "type": "image_text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

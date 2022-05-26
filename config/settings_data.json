@@ -251,11 +251,11 @@
       "product-template": {
         "type": "product-template",
         "blocks": {
-          "7339626f-a022-4456-b895-e76dbcd78917": {
+          "4a6b6efe-53a1-46b2-815b-8d88244ab4a8": {
             "type": "text",
             "settings": {
-              "content_title": "MATERIALS AND CARE",
-              "content_description": "<p>Iconic Apparel products are made with carefully selected materials. Please handle with care for longer product life.<br\/><br\/>Protect from direct light, heat and rain. Should it become wet, dry it immediately with a soft cloth<br\/>Fill shoe with tissue paper to help maintain the shape and absorb humidity, then store in the provided flannel bag and box. Clean with a soft, dry cloth or brush<\/p>"
+              "content_title": "OUR MISSION",
+              "content_description": "<p>For every item purchased, a minimum of 10 meals will be donated to a vetted hunger relief organization. We're currently working with Feeding America®.<\/p>"
             }
           },
           "2f0bec7a-087e-4be3-a10e-f7eace83aed6": {
@@ -265,18 +265,18 @@
               "content_description": "<p>Complimentary shipping for all orders within the United States.<\/p><p> • Ground- complimentary in the US<\/p><p> • 2nd day- $25<\/p><p> • Overnight- $50<\/p><p>Complimentary returns for all orders within the United States. <a href=\"\/pages\/contact-1\" title=\"Contact\">Visit our FAQ page to learn more here.<\/a><\/p>"
             }
           },
-          "4a6b6efe-53a1-46b2-815b-8d88244ab4a8": {
+          "7339626f-a022-4456-b895-e76dbcd78917": {
             "type": "text",
             "settings": {
-              "content_title": "STREETWEAR WITH A PURPOSE",
-              "content_description": "<p>For every item purchased, a minimum of 10 meals will be donated to a vetted hunger relief organization.<\/p>"
+              "content_title": "MATERIALS AND CARE",
+              "content_description": "<p>Iconic Apparel products are made with carefully selected materials. <br\/><br\/>Apparel: <br\/>Wash in cold (30°C or below) water, whether using a washing machine or washing by hand. Give garments a gentle stretch when they come out of the wash to get them back into shape. Airdry or machine dry on the \"cotton cycle\" (about 135 degrees farenheit). <br\/><br\/>Hats: <br\/>Do not machine wash or dry. Soak and hand wash with cool water and mild laundry detergent (with no bleach). Rinse thoroughly, reshape and let it airdry under shade.<\/p>"
             }
           }
         },
         "block_order": [
-          "7339626f-a022-4456-b895-e76dbcd78917",
+          "4a6b6efe-53a1-46b2-815b-8d88244ab4a8",
           "2f0bec7a-087e-4be3-a10e-f7eace83aed6",
-          "4a6b6efe-53a1-46b2-815b-8d88244ab4a8"
+          "7339626f-a022-4456-b895-e76dbcd78917"
         ],
         "settings": {
           "show_quantity_selector": false,
@@ -286,7 +286,9 @@
           "show_share_buttons": true,
           "media_size": "medium",
           "enable_image_zoom": true,
-          "enable_video_looping": false
+          "enable_video_looping": false,
+          "enable_xmeals": true,
+          "xmeals": "<p><span>For every item purchased, <img class=\"x-svg\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0348\/1285\/4408\/files\/x_grey_svg.svg?v=1652891591\" alt=\"\">  meals will be donated to our partners at Feeding America <\/span><\/p>"
         }
       },
       "product-recommendations": {
@@ -419,10 +421,10 @@
             "type": "featured_collection",
             "settings": {
               "collection": "apparel-1",
-              "collection_title": "",
+              "collection_title": "APPAREL",
               "collection_image": "shopify:\/\/shop_images\/guy_dreads.png",
               "button_label": "shop now",
-              "button_link": "\/timer-popup"
+              "button_link": "shopify:\/\/collections\/apparel-1"
             }
           }
         },
@@ -677,8 +679,8 @@
               "collection": "",
               "image": "shopify:\/\/shop_images\/girl.png",
               "width": "66%",
-              "text_in_image": "CITY COLLECTION",
-              "image_link": "shopify:\/\/collections\/all",
+              "text_in_image": "SHOP THE LOOK",
+              "image_link": "shopify:\/\/collections\/home-page-shop-the-look",
               "image_link_label": "Shop Now"
             }
           },
@@ -686,7 +688,7 @@
             "type": "product_stacked",
             "settings": {
               "product_one": "iconic-summer-bucket-hat-baby-blue",
-              "product_two": "copy-of-city-collection-tee-shirt-orange",
+              "product_two": "copy-of-city-collection-tee-shirt-orange-1",
               "width": "33%"
             }
           }
