@@ -4147,19 +4147,16 @@ body.template-collection .main-content div#shopify-section-collection-template>d
 	margin: 0;
 }
 .template-collection .pagination{
-	margin-top: 15px;
 	padding: 0 0 15px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
 	@media only screen and (min-width:768px){
-		margin-top: 20px;
 		padding: 0 0 30px;
 	}
 
 	@media only screen and (min-width:1200px){
-		margin-top: 40px;
 		padding: 0 0 50px;
 	}
 }
@@ -4264,5 +4261,11 @@ WHOLESALE PAGE CSS
 		width: 12px !important;
 		padding-bottom: 3px;
 		margin: 0;
+	}
+}
+.product-wrap-data-desc{
+	.x-svg{
+		width: 12px !important;
+		margin: 0 0 0 3px;
 	}
 }

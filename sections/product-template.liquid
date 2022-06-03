@@ -70,6 +70,12 @@
     }
   }
 
+  /* PRODUCT GRID AT BOTTOM */
+  @media only screen and (max-width:599px){
+    .product-card__title{
+      font-size: 14px !important;
+    }
+  }
   /* SITE FOOTER SETTINGS */
   @media only screen and (max-width:767px){
     .site-footer__content{
@@ -189,16 +195,23 @@
     <div class="product-single-description-content">
       
     <div class="product-description-content-left">
-       {% for block in section.blocks %}
-      <div class="product-wrap-data">
-      {%- if block.settings.content_title != blank-%}
-        <div class="product-wrap-data-title"> <h4>{{block.settings.content_title}}<span class="open"></span><span class="close"></span></h4></div>
-      {% endif %}
-      
-      {%- if block.settings.content_description != blank-%}
-      <div class="product-wrap-data-desc">{{block.settings.content_description}}</div>
+      {% for block in section.blocks %}
+        <div class="product-wrap-data">
+          {%- if block.settings.content_title != blank-%}
+            <div class="product-wrap-data-title"> <h4>{{block.settings.content_title}}<span class="open"></span><span class="close"></span></h4></div>
+          {% endif %}
+        
+          {%- if block.settings.content_description != blank-%}
+            <div class="product-wrap-data-desc product-wrap-data-{{block.id}}">{{block.settings.content_description}}</div>
+          {% endif %}
+        </div>
+        
+        {% if block.settings.enable_xmeals %}
+          <script>
+            var xMeals = '{{ block.settings.xmeals }}';
+            $('.product-wrap-data-{{block.id}}').append(xMeals)
+          </script>
         {% endif %}
-      </div>
       {% endfor %}
     
     </div>
@@ -761,8 +774,18 @@ $( document ).ready(function() {
           "type": "richtext",
           "id": "content_description",
        	  "label":"Title"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_xmeals",
+          "default": true,
+          "label": "Add at the bottom of every product page"
+        },
+        {
+          "type": "html",
+          "id": "xmeals",
+          "label": "Content (use the <img> tag in there to add the X)"
         }
-
       ]
     }
   ]
