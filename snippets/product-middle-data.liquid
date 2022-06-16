@@ -241,12 +241,12 @@
                     id="SingleOptionSelector-{{ forloop.index0 }}"
                     data-index="option{{ forloop.index }}"
                     >
-                    {% for value in option.values %}
-                        <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
-                    {% endfor %}
+                      {% for value in option.values %}
+                          <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
+                      {% endfor %}
                     </select>
                     <script>
-                      console.log('{{option | json}}');
+                      console.log('{{option.selected_value | json}}');
                     </script>
                 </div>                
               {% endunless %}
@@ -316,6 +316,10 @@
             </div>
           </div>
         {% endform %}
+              <p class="visually-hidden" data-product-status
+        aria-live="polite"
+        role="status"
+      ></p>
 
     </div>
 </div>

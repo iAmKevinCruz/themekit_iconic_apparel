@@ -255,21 +255,27 @@
             "type": "text",
             "settings": {
               "content_title": "OUR MISSION",
-              "content_description": "<p>For every item purchased, a minimum of 10 meals will be donated to a vetted hunger relief organization. We're currently working with Feeding America®.<\/p>"
+              "content_description": "<p>We're commited to our purpose: <\/p>",
+              "enable_xmeals": true,
+              "xmeals": "<p><span>For every item purchased, <img class=\"x-svg\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0348\/1285\/4408\/files\/x_grey_svg.svg?v=1652891591\" alt=\"\">  meals will be donated to our partners at Feeding America <\/span><\/p>"
             }
           },
           "2f0bec7a-087e-4be3-a10e-f7eace83aed6": {
             "type": "text",
             "settings": {
               "content_title": "SHIPPING & RETURNS",
-              "content_description": "<p>Complimentary shipping for all orders within the United States.<\/p><p> • Ground- complimentary in the US<\/p><p> • 2nd day- $25<\/p><p> • Overnight- $50<\/p><p>Complimentary returns for all orders within the United States. <a href=\"\/pages\/contact-1\" title=\"Contact\">Visit our FAQ page to learn more here.<\/a><\/p>"
+              "content_description": "<p>Complimentary shipping for all orders within the United States.<\/p><p> • Ground- complimentary in the US<\/p><p> • 2nd day- $25<\/p><p> • Overnight- $50<\/p><p>Complimentary returns for all orders within the United States. <a href=\"\/pages\/contact-1\" title=\"Contact\">Visit our FAQ page to learn more here.<\/a><\/p>",
+              "enable_xmeals": true,
+              "xmeals": ""
             }
           },
           "7339626f-a022-4456-b895-e76dbcd78917": {
             "type": "text",
             "settings": {
               "content_title": "MATERIALS AND CARE",
-              "content_description": "<p>Iconic Apparel products are made with carefully selected materials. <br\/><br\/>Apparel: <br\/>Wash in cold (30°C or below) water, whether using a washing machine or washing by hand. Give garments a gentle stretch when they come out of the wash to get them back into shape. Airdry or machine dry on the \"cotton cycle\" (about 135 degrees farenheit). <br\/><br\/>Hats: <br\/>Do not machine wash or dry. Soak and hand wash with cool water and mild laundry detergent (with no bleach). Rinse thoroughly, reshape and let it airdry under shade.<\/p>"
+              "content_description": "<p>Iconic Apparel products are made with carefully selected materials. <br\/><br\/>Apparel: <br\/>Wash in cold (30°C or below) water, whether using a washing machine or washing by hand. Give garments a gentle stretch when they come out of the wash to get them back into shape. Airdry or machine dry on the \"cotton cycle\" (about 135 degrees farenheit). <br\/><br\/>Hats: <br\/>Do not machine wash or dry. Soak and hand wash with cool water and mild laundry detergent (with no bleach). Rinse thoroughly, reshape and let it airdry under shade.<\/p>",
+              "enable_xmeals": true,
+              "xmeals": ""
             }
           }
         },
@@ -287,7 +293,7 @@
           "media_size": "medium",
           "enable_image_zoom": true,
           "enable_video_looping": false,
-          "enable_xmeals": true,
+          "enable_xmeals": false,
           "xmeals": "<p><span>For every item purchased, <img class=\"x-svg\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0348\/1285\/4408\/files\/x_grey_svg.svg?v=1652891591\" alt=\"\">  meals will be donated to our partners at Feeding America <\/span><\/p>"
         }
       },
@@ -670,37 +676,6 @@
           "subtitle": "Meals Donated"
         }
       },
-      "16528116810f99c10d": {
-        "type": "custom-content-v3",
-        "blocks": {
-          "16528116810f99c10d-0": {
-            "type": "image_text",
-            "settings": {
-              "collection": "",
-              "image": "shopify:\/\/shop_images\/girl.png",
-              "width": "66%",
-              "text_in_image": "SHOP THE LOOK",
-              "image_link": "shopify:\/\/collections\/home-page-shop-the-look",
-              "image_link_label": "Shop Now"
-            }
-          },
-          "16528116810f99c10d-1": {
-            "type": "product_stacked",
-            "settings": {
-              "product_one": "iconic-summer-bucket-hat-baby-blue",
-              "product_two": "copy-of-city-collection-tee-shirt-orange-1",
-              "width": "33%"
-            }
-          }
-        },
-        "block_order": [
-          "16528116810f99c10d-0",
-          "16528116810f99c10d-1"
-        ],
-        "settings": {
-          "title": ""
-        }
-      },
       "1608710778c8340f5f": {
         "type": "collection",
         "settings": {
@@ -958,13 +933,83 @@
           "213ab204-15a7-4a17-b8aa-c652adbf9c7c"
         ],
         "settings": {}
+      },
+      "16541998063cbb5d60": {
+        "type": "custom-content-carousel",
+        "blocks": {
+          "16541998063cbb5d60-0": {
+            "type": "image_text",
+            "settings": {
+              "collection": "home-page-shop-the-look",
+              "image": "shopify:\/\/shop_images\/girl.png",
+              "text_in_image": "Shop the look",
+              "image_link": "shopify:\/\/collections\/home-page-shop-the-look",
+              "image_link_label": "Shop Now",
+              "product_one": "iconic-summer-bucket-hat-baby-blue",
+              "enable_product_one": false,
+              "product_two": "copy-of-city-collection-tee-shirt-orange-1",
+              "enable_product_two": true,
+              "product_two_img": "shopify:\/\/shop_images\/olive-girl.jpg"
+            }
+          },
+          "16541998063cbb5d60-1": {
+            "type": "image_text",
+            "settings": {
+              "collection": "home-page-shop-the-look-2",
+              "image": "shopify:\/\/shop_images\/back.jpg",
+              "text_in_image": "SHOP THE LOOK",
+              "image_link": "shopify:\/\/collections\/home-page-shop-the-look-2",
+              "image_link_label": "Shop Now",
+              "product_one": "copy-of-iconic-los-angeles-trucker-hat-black-on-orange",
+              "enable_product_one": false,
+              "product_two": "iconic-essential-tee-shirt-charcoal",
+              "enable_product_two": true,
+              "product_two_img": "shopify:\/\/shop_images\/front.jpg"
+            }
+          },
+          "d4844bb2-bbf3-4b63-821e-404d9856a2e1": {
+            "type": "image_text",
+            "settings": {
+              "collection": "home-page-shop-the-look-3",
+              "image": "shopify:\/\/shop_images\/ICONICAPPARELSSM22-68_copy.jpg",
+              "text_in_image": "SHOP THE LOOK",
+              "image_link": "shopify:\/\/collections\/home-page-shop-the-look-3",
+              "image_link_label": "Shop",
+              "product_one": "copy-of-iconic-los-angeles-trucker-hat-black-on-black",
+              "enable_product_one": false,
+              "product_two": "copy-of-city-collection-tee-shirt-orange",
+              "enable_product_two": false
+            }
+          },
+          "ddd82b0a-10c5-4013-8b63-b6d715820fcb": {
+            "type": "image_text",
+            "settings": {
+              "collection": "home-page-shop-the-look-4",
+              "image": "shopify:\/\/shop_images\/ICONICAPPARELSSM22-103_copy_6f7b0f66-0102-42ee-a807-b49d78f4e880.jpg",
+              "text_in_image": "SHOP THE LOOK",
+              "image_link": "shopify:\/\/collections\/home-page-shop-the-look-4",
+              "image_link_label": "Shop",
+              "product_one": "iconic-drip-collection-white",
+              "enable_product_one": false,
+              "product_two": "city-collection-shorts-white-1",
+              "enable_product_two": false
+            }
+          }
+        },
+        "block_order": [
+          "16541998063cbb5d60-0",
+          "16541998063cbb5d60-1",
+          "d4844bb2-bbf3-4b63-821e-404d9856a2e1",
+          "ddd82b0a-10c5-4013-8b63-b6d715820fcb"
+        ],
+        "settings": {}
       }
     },
     "content_for_index": [
       "1608705353bac2bc47",
       "16528845599ca72f30",
       "1608707122342b4341",
-      "16528116810f99c10d",
+      "16541998063cbb5d60",
       "1608710778c8340f5f",
       "16119075406b138f15"
     ]

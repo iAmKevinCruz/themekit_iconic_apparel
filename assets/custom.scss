@@ -4269,3 +4269,17 @@ WHOLESALE PAGE CSS
 		margin: 0 0 0 3px;
 	}
 }
+
+/*
+	SOLD OUT PRODUCT BADGES
+*/
+// .bss_pl_img .bss_pl_label_text.bss-pl-frontend{
+// 	@media screen (max-width:749px){
+// 		font-size: 11px !important;
+// 	}
+// }
+@media only screen and (max-width:749px){
+	.bss_pl_label_text{
+		font-size: 9px !important;
+	}
+}
