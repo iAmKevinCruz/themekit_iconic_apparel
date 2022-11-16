@@ -381,7 +381,8 @@
         "block_order": [
           "1586842911172"
         ],
-        "settings": {}
+        "settings": {
+        }
       },
       "1608705353bac2bc47": {
         "type": "slideshow",
@@ -778,7 +779,7 @@
               "name": "OliveBlack",
               "color": "rgba(0,0,0,0)",
               "use_image": true,
-              "swatch_image": "shopify:\/\/shop_images\/1.png"
+              "swatch_image": "shopify:\/\/shop_images\/1_6c33fc9f-656a-4522-9715-90e961eb9089.png"
             }
           },
           "cba8c677-dacb-4861-b378-7e94bfc0d86f": {
@@ -787,7 +788,7 @@
               "name": "OrangeBlack",
               "color": "rgba(0,0,0,0)",
               "use_image": true,
-              "swatch_image": "shopify:\/\/shop_images\/2.png"
+              "swatch_image": "shopify:\/\/shop_images\/2_fe94e72d-7cd4-42b3-80e1-af61392de3a7.png"
             }
           },
           "1825da56-e0a2-4b52-bf95-6a240ff9f577": {
@@ -796,7 +797,7 @@
               "name": "DaffodilBlack",
               "color": "rgba(0,0,0,0)",
               "use_image": true,
-              "swatch_image": "shopify:\/\/shop_images\/3.png"
+              "swatch_image": "shopify:\/\/shop_images\/3_084d772f-e098-4209-a6a8-5dc265da2df2.png"
             }
           },
           "e9635fa9-8a1a-4e7c-b90c-009d8d99a850": {
@@ -805,7 +806,7 @@
               "name": "YellowPurple",
               "color": "#d2fa03",
               "use_image": true,
-              "swatch_image": "shopify:\/\/shop_images\/4.png"
+              "swatch_image": "shopify:\/\/shop_images\/Iconic_Colors_Swatches_3.png"
             }
           },
           "867dba13-f6e7-4874-b0ea-d92d45f728d7": {
@@ -814,7 +815,7 @@
               "name": "OrangeBlue",
               "color": "rgba(0,0,0,0)",
               "use_image": true,
-              "swatch_image": "shopify:\/\/shop_images\/5.png"
+              "swatch_image": "shopify:\/\/shop_images\/Iconic_Colors_Swatches_2.png"
             }
           },
           "6d24ce84-9b41-4c6d-866c-ece4c0c8a24a": {
@@ -823,7 +824,7 @@
               "name": "BlackDaffodil",
               "color": "",
               "use_image": true,
-              "swatch_image": "shopify:\/\/shop_images\/Iconic_Colors_Swatches.png"
+              "swatch_image": "shopify:\/\/shop_images\/3.png"
             }
           },
           "05959d6b-618e-4a75-b025-fef450ed02b6": {
@@ -910,6 +911,24 @@
               "color": "#56555c",
               "use_image": false
             }
+          },
+          "6876e638-2570-447b-9c32-3edfd140e90f": {
+            "type": "swatch",
+            "settings": {
+              "name": "Orangeblackprint",
+              "color": "",
+              "use_image": true,
+              "swatch_image": "shopify:\/\/shop_images\/4_74ec3da9-4b98-4222-baec-22661ea2fe4c.png"
+            }
+          },
+          "006af3da-33dd-42dd-98db-208f2901a3c1": {
+            "type": "swatch",
+            "settings": {
+              "name": "Blueyellowprint",
+              "color": "",
+              "use_image": true,
+              "swatch_image": "shopify:\/\/shop_images\/5_dabfd861-92f4-4de9-8e35-a9901e875ba8.png"
+            }
           }
         },
         "block_order": [
@@ -930,9 +949,12 @@
           "cab47189-187e-4781-a5b5-b4cde2039b4b",
           "5cd4c1bb-938b-4665-94e5-f036430c5778",
           "beb09c31-70ec-480f-ad92-a06b680cfb96",
-          "213ab204-15a7-4a17-b8aa-c652adbf9c7c"
+          "213ab204-15a7-4a17-b8aa-c652adbf9c7c",
+          "6876e638-2570-447b-9c32-3edfd140e90f",
+          "006af3da-33dd-42dd-98db-208f2901a3c1"
         ],
-        "settings": {}
+        "settings": {
+        }
       },
       "16541998063cbb5d60": {
         "type": "custom-content-carousel",
@@ -1002,7 +1024,8 @@
           "d4844bb2-bbf3-4b63-821e-404d9856a2e1",
           "ddd82b0a-10c5-4013-8b63-b6d715820fcb"
         ],
-        "settings": {}
+        "settings": {
+        }
       }
     },
     "content_for_index": [
@@ -1019,7 +1042,8 @@
       "sections": {
         "header": {
           "type": "header",
-          "settings": {}
+          "settings": {
+          }
         },
         "hero-1": {
           "type": "hero",
@@ -1030,22 +1054,26 @@
         },
         "feature-row": {
           "type": "feature-row",
-          "settings": {}
+          "settings": {
+          }
         },
         "feature-columns": {
           "type": "feature-columns",
           "blocks": {
             "feature-columns-0": {
               "type": "text_block",
-              "settings": {}
+              "settings": {
+              }
             },
             "feature-columns-1": {
               "type": "text_block",
-              "settings": {}
+              "settings": {
+              }
             },
             "feature-columns-2": {
               "type": "text_block",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -1074,15 +1102,18 @@
           "blocks": {
             "quotes-0": {
               "type": "quote",
-              "settings": {}
+              "settings": {
+              }
             },
             "quotes-1": {
               "type": "quote",
-              "settings": {}
+              "settings": {
+              }
             },
             "quotes-2": {
               "type": "quote",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -1099,15 +1130,18 @@
           "blocks": {
             "image-bar-0": {
               "type": "image",
-              "settings": {}
+              "settings": {
+              }
             },
             "image-bar-1": {
               "type": "image",
-              "settings": {}
+              "settings": {
+              }
             },
             "image-bar-2": {
               "type": "image",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -1115,18 +1149,21 @@
             "image-bar-1",
             "image-bar-2"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "footer": {
           "type": "footer",
           "blocks": {
             "footer-0": {
               "type": "link_list",
-              "settings": {}
+              "settings": {
+              }
             },
             "footer-1": {
               "type": "newsletter",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -1278,20 +1315,23 @@
         },
         "1492033809691": {
           "type": "map",
-          "settings": {}
+          "settings": {
+          }
         },
         "1492033877875": {
           "type": "quotes",
           "blocks": {
             "1492033877875-0": {
               "type": "quote",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
             "1492033877875-0"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "1492033924902": {
           "type": "custom-content",
@@ -1317,15 +1357,18 @@
           "blocks": {
             "1492096252560-0": {
               "type": "featured_collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "1492096252560-1": {
               "type": "featured_collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "1492096252560-2": {
               "type": "featured_collection",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -1364,15 +1407,18 @@
           "blocks": {
             "link_list": {
               "type": "link_list",
-              "settings": {}
+              "settings": {
+              }
             },
             "text": {
               "type": "text",
-              "settings": {}
+              "settings": {
+              }
             },
             "newsletter": {
               "type": "newsletter",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
